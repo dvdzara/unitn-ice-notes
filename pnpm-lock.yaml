@@ -15,7 +15,7 @@ importers:
         specifier: 5.1.0
         version: 5.1.0(astro@4.15.6(rollup@4.21.3)(typescript@5.6.2))(tailwindcss@3.4.11)
       '@eslint/js':
-        specifier: ^9.10.0
+        specifier: 9.10.0
         version: 9.10.0
       '@types/eslint__js':
         specifier: 8.42.3
@@ -27,16 +27,16 @@ importers:
         specifier: 10.4.20
         version: 10.4.20(postcss@8.4.45)
       eslint:
-        specifier: ^9.10.0
+        specifier: 9.10.0
         version: 9.10.0(jiti@1.21.6)
       eslint-plugin-astro:
-        specifier: ^1.2.4
+        specifier: 1.2.4
         version: 1.2.4(eslint@9.10.0(jiti@1.21.6))(typescript@5.6.2)
       eslint-plugin-jsx-a11y:
-        specifier: ^6.10.0
+        specifier: 6.10.0
         version: 6.10.0(eslint@9.10.0(jiti@1.21.6))
       prettier:
-        specifier: ^3.3.3
+        specifier: 3.3.3
         version: 3.3.3
       prettier-plugin-astro:
         specifier: 0.14.1
