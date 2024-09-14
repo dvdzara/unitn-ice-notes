@@ -7,7 +7,7 @@
   rules:
     - if: $CI_PIPELINE_SOURCE == "merge_request_event"
 
-.pnpm-cache:
+.pnpm-cache: &pnpm-cache
   before_script:
     - pnpm config set store-dir .pnpm
     - pnpm install
@@ -59,13 +59,13 @@ mr-lint-docker-compose:
   <<: *mr-common
   image: docker.io/library/docker:27.2.1-cli@sha256:6c9f1da3862b1ca5be1bf70d7ed12cc532ad022c0739e841dd46922c1d45b81c
   script:
-    - find . -name 'docker-compose.yml' -exec docker compose -f {} config -q \;
+    - find . -name 'docker-compose.yml' | while read f ; do docker compose -f $f config -q ; done
 
 mr-lint-dockerfile:
   <<: *mr-common
   image: registry.zrnt.dev/oci/hadolint:v1.0.9@sha256:a003fd0d6bdbbfbb5442f79a786e0d97dcb3d2adae20bdee6195f5ad2b8b47db
   script:
-    - find . -name 'Dockerfile' -exec hadolint {} \;
+    - find . -name 'Dockerfile' | while read f ; do hadolint $f ; done
 
 mr-lint-js:
   <<: *mr-common
@@ -103,5 +103,5 @@ semantic-release:
     - cp .gitlab/release.json .releaserc
     - semantic-release
   variables:
-    COMMITTER_NAME: Semantic Release Bot
     COMMITTER_EMAIL: semantic-release-bot@zarantonello.dev
+    COMMITTER_NAME: Semantic Release Bot

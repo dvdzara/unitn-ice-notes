@@ -1,7 +1,7 @@
 FROM registry.zrnt.dev/oci/base:v1.1.6 AS builder
 
 WORKDIR /srv
-COPY package.json pnpm-lock.yaml .
+COPY package.json pnpm-lock.yaml ./
 RUN pnpm install
 
 COPY . .
