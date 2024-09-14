@@ -84,7 +84,7 @@ mr-lint-markdown-pandoc:
   <<: *mr-common
   image: registry.zrnt.dev/oci/pandoc:v1.1.2@sha256:bc394e661b95eb40b74baa828fabcc2936148a106099cf6cb927136ea3bf4e8e
   script:
-    - find . -name '*.md' | while read f ; do pandoc --mathml --to html5 --wrap=none --fail-if-warnings $f ; done
+    - find . -name '*.md' | while read f ; do pandoc --mathml --to html5 --wrap=none --fail-if-warnings $f > /dev/null ; done
     - git diff --quiet
 
 mr-lint-yaml:
