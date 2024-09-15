@@ -1,7 +1,10 @@
 ---
+language: it
 name: Geometria e algebra lineare
+semester: first
 teachers:
   - Elisa Postinghel
+year: 1
 ---
 
 # Corso di geometria e algebra linerare
@@ -18,7 +21,7 @@ teachers:
 
 ## Professori
 
-- Elisa Postinghel <elisa.postinghel@unitn.it>
+- Elisa Postinghel [elisa.postinghel@unitn.it](mailto:elisa.postinghel@unitn.it)
 
 ## Esame
 

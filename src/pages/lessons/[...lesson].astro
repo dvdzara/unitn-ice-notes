@@ -1,0 +1,35 @@
+---
+import type { GetStaticPaths } from "astro";
+import { getCollection, type CollectionEntry } from "astro:content";
+import Base from "../../layouts/Base.astro";
+import { getEntry } from "astro:content";
+import Prose from "../../components/markdown/Prose.astro";
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const lessonCollection = await getCollection("lessons");
+
+  return lessonCollection.map((lesson) => {
+    return {
+      params: { lesson: lesson.slug },
+      props: { lesson, course: lesson.data.course },
+    };
+  });
+};
+
+interface Props {
+  course: CollectionEntry<"courses">;
+  lesson: CollectionEntry<"lessons">;
+}
+
+const { course, lesson } = Astro.props;
+const lessonRender = await lesson.render();
+---
+
+<Base
+  title={lesson.data.date.toLocaleString()}
+  lang={(await getEntry(course)).data.language}
+>
+  <Prose>
+    <lessonRender.Content />
+  </Prose>
+</Base>

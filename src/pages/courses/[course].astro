@@ -1,0 +1,30 @@
+---
+import type { GetStaticPaths } from "astro";
+import { getCollection, type CollectionEntry } from "astro:content";
+import Base from "../../layouts/Base.astro";
+import Prose from "../../components/markdown/Prose.astro";
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const courseCollection = await getCollection("courses");
+
+  return courseCollection.map((course) => {
+    return {
+      params: { course: course.slug },
+      props: { course },
+    };
+  });
+};
+
+interface Props {
+  course: CollectionEntry<"courses">;
+}
+
+const { course } = Astro.props;
+const courseRender = await course.render();
+---
+
+<Base title={course.data.name} lang={course.data.language}>
+  <Prose>
+    <courseRender.Content />
+  </Prose>
+</Base>
