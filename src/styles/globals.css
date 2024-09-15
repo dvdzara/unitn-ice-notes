@@ -1,3 +1,9 @@
 :root {
   color-scheme: dark;
 }
+
+.MathJax {
+  display: inline-block;
+  color: lime;
+  vertical-align: middle;
+}

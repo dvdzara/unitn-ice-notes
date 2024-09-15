@@ -1,52 +1,24 @@
 ---
+import Header from "../components/Header.astro";
+import HtmlHead from "../components/HtmlHead.astro";
+import Main from "../components/Main.astro";
+import Sidebar from "../components/Sidebar.astro";
 import "../styles/globals.css";
 
 interface Props {
   title: string;
   lang: "it" | "en";
-  pagePath?: string;
 }
 
-const { title, lang, pagePath } = Astro.props;
-const { version } = await import("../../package.json");
-const date = new Date();
+const { title, lang } = Astro.props;
 ---
 
-<!doctype html>
-<html {lang} class="h-full bg-gray-950 text-white">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="description"
-      content="Notes from Information and Computer Engineering course at UniTn."
-    />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <meta name="generator" content={Astro.generator} />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <title>{title}</title>
-  </head>
+<html {lang} class="h-full scroll-smooth bg-gray-950 text-white">
+  <HtmlHead {title} />
 
-  <body class="h-full">
-    <div class="flex h-full flex-col">
-      <header class="flex bg-gray-900 p-4">
-        <img src="/favicon.svg" alt="ice block" class="h-10" />
-        <h1 class="my-auto h-fit">ICE Notes</h1>
-        <div class="flex-auto">
-          {pagePath && <p>{pagePath}</p>}
-        </div>
-
-        <nav class="my-auto">
-          <ul><li><a href="/">Home</a></li></ul>
-        </nav>
-      </header>
-      <main class="flex-auto p-4">
-        <slot name="main" />
-      </main>
-      <footer class="flex flex-col items-center bg-gray-900 p-4 text-gray-500">
-        <p>Davide Zarantonello</p>
-        <p>Last Update: {date.toISOString()}</p>
-        <p>Version: {version}</p>
-      </footer>
-    </div>
+  <body class="flex h-full flex-col">
+    <Header />
+    <Sidebar />
+    <Main><slot /></Main>
   </body>
 </html>

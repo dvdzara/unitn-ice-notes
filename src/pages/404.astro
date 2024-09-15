@@ -1,10 +1,13 @@
 ---
+import A from "../components/html/A.astro";
 import Base from "../layouts/Base.astro";
 ---
 
 <Base title="Error 404" lang="en">
-  <div slot="main" class="flex flex-col items-center">
-    <p class="p-4">404 Not found</p>
-    <a href="/" class="rounded bg-gray-900 p-4">Return to Home</a>
+  <div class="flex flex-col items-center">
+    <div class="flex flex-col rounded-xl bg-gray-900 p-8 text-center">
+      <p class="pb-8 text-2xl">Error 404: page not found</p>
+      <A href="/" class="rounded-lg bg-gray-800 p-4">Return to Home</A>
+    </div>
   </div>
 </Base>

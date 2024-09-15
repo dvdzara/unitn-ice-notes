@@ -1,7 +1,10 @@
 ---
+language: it
 name: Analisi 1
+semester: first
 teachers:
   - Andrea Marchese
+year: 1
 ---
 
 # Corso di analisi 1
@@ -12,13 +15,13 @@ teachers:
   - teoria degli insiemi;
   - numeri reali e complessi;
 - successioni numeriche e limiti;
-- funzioni (solo con D e C $\in{R}$), continuità;
+- funzioni (solo con $D,C\in{R}$), continuità;
 - derivate;
 - integrali;
 
 ## Professori
 
-- Andrea Marchese <andrea.marchese@unitn.it>
+- Andrea Marchese [andrea.marchese@unitn.it](mailto:andrea.marchese@unitn.it)
 - Andrea Pinamonti
 - Mattia Piva
 

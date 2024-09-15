@@ -1,26 +1,10 @@
 ---
 import Base from "../layouts/Base.astro";
-import { getCollection, type CollectionEntry } from "astro:content";
-
-const coursesCollection: CollectionEntry<"courses">[] =
-  await getCollection("courses");
 ---
 
 <Base title="Home" lang="en">
-  <nav slot="header"><a href="/">Home</a></nav>
+  <h1 class="text-red-500">ICE Notes</h1>
 
-  <div slot="main">
-    <p>Corsi:</p>
-    <ul>
-      {
-        coursesCollection.map((c) => (
-          <li>
-            <a href={c.id} class="ml-2">
-              - {c.data.name}
-            </a>
-          </li>
-        ))
-      }
-    </ul>
-  </div>
+  Notes for the Information and Computer Engineering course at University of
+  Trento.
 </Base>
