@@ -1,13 +1,6 @@
 ---
-language: it
-name: Analisi 1
-semester: first
-teachers:
-  - Andrea Marchese
-year: 1
+title: Analisi 1
 ---
-
-# Corso di analisi 1
 
 ## Programma del corso
 

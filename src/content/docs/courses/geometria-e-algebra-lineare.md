@@ -1,13 +1,6 @@
 ---
-language: it
-name: Geometria e algebra lineare
-semester: first
-teachers:
-  - Elisa Postinghel
-year: 1
+title: Geometria e algebra linerare
 ---
-
-# Corso di geometria e algebra linerare
 
 ## Programma del corso
 
