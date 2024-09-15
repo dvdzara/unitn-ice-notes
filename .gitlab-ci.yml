@@ -58,13 +58,13 @@ mr-lint-docker-compose:
   <<: *mr-common
   image: docker.io/library/docker:27.2.1-cli@sha256:1a7292ebe42a8e32e66daade95487a1726de20ed5253dacdc28b188e7106a83d
   script:
-    - find . -name 'docker-compose.yml' | while read f ; do docker compose -f $f config -q ; done
+    - find . -name 'docker-compose.yml' | while read f ; do docker compose -f "$f" config -q ; done
 
 mr-lint-dockerfile:
   <<: *mr-common
   image: registry.zrnt.dev/oci/hadolint:v1.0.9@sha256:a003fd0d6bdbbfbb5442f79a786e0d97dcb3d2adae20bdee6195f5ad2b8b47db
   script:
-    - find . -name 'Dockerfile' | while read f ; do hadolint $f ; done
+    - find . -name 'Dockerfile' | while read f ; do hadolint "$f" ; done
 
 mr-lint-js:
   <<: *mr-common
@@ -83,7 +83,7 @@ mr-lint-markdown-pandoc:
   <<: *mr-common
   image: registry.zrnt.dev/oci/pandoc:v1.1.2@sha256:bc394e661b95eb40b74baa828fabcc2936148a106099cf6cb927136ea3bf4e8e
   script:
-    - find . -name '*.md' | while read f ; do pandoc --mathml --to html5 --wrap=none --fail-if-warnings $f > /dev/null ; done
+    - find . -name '*.md' | while read f ; do pandoc --mathjax --to html5 --wrap=none --fail-if-warnings "$f" > /dev/null ; done
     - git diff --quiet
 
 mr-lint-yaml:

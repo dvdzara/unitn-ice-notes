@@ -1,9 +1,4 @@
-:root {
-  color-scheme: dark;
-}
-
 .MathJax {
-  display: inline-block;
-  color: lime;
-  vertical-align: middle;
+  color: var(--sl-color-accent-high);
+  display: inline-flex;
 }
