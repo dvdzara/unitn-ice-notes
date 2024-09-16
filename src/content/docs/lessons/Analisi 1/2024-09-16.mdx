@@ -1,0 +1,57 @@
+---
+title: Lezione 4 (2024-09-16)
+---
+
+import { LinkCard, CardGrid } from "@astrojs/starlight/components";
+
+## Restrizione di una funzione
+
+:::note[Dati]
+
+- $$f: A\rightarrow B$$;
+- $$D\subsetneqq A$$
+
+:::
+
+Restrizione: $$f_{\vert D}: D\rightarrow B$$ ($$\forall x\in{D}, f_{\vert D}(x)=f(x)$$).
+
+Non ha senso calcolare $$f_{\vert D}$$ con elementi $$\notin{D}$$.
+
+:::note[Esempio]
+
+$$f: R\rightarrow R, f(x)=\llcorner x\lrcorner$$: non è iniettiva.
+
+$$D=N, f_{\vert D}: N\rightarrow R, f(x)=\llcorner x\lrcorner$$: è iniettiva.
+
+:::
+
+Di solito la restrizione si usa per fare in modo che una funzione acquisti certe proprietà in un determinato intervallo.
+
+## Funzioni di variabile reale
+
+La maggior parte delle funzioni saranno definite: $$f: D\rightarrow R, D\in{R}$$.
+
+Il grafico della funzione è un sottoinsieme del piano cartesiano ($$R\times R=R^2$$).
+
+$$graf(f)=\{(x,y)\in{R^2}\ \vert \ x\in{D}, y=f(x)\}$$
+
+:::note[Esempio]
+
+$$f(x)=x$$:
+
+- è iniettiva: $$\forall x_1,x_2\in{R}, x_1\neq x_2, f(x_1)\neq f(x_2)$$ perchè $$f(x_1)=x_1$$ e $$f(x_2)=x_2$$;
+- è suriettiva: $$\forall y\in{R}\exists\ x\in{R}\ \vert\ y=f(x)$$;
+- è biiettiva: vedi sopra;
+- inversa: $$f(x)=f^-1(y)$$, $$x=x$$;
+- $$graf(f)$$: $$\{(x,y)\in{R^2}\ \vert\ x\in{R}, y=f(x)\}$$, $$\{(x,x)\in{R^2}\ \vert\ x\in{R}\}$$
+
+:::
+
+---
+
+<CardGrid>
+  <LinkCard
+    title="Appunti di Andrea"
+    href="https://drive.google.com/file/d/1Ab8UCsCI-s0JKwDlds7nFh5q9I9CkGBA/view"
+  />
+</CardGrid>
