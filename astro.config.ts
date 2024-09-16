@@ -20,12 +20,20 @@ export default defineConfig({
       title: "ICE Notes",
       sidebar: [
         {
+          label: "ICE Notes",
+          slug: "index",
+        },
+        {
           label: "Courses",
           autogenerate: { directory: "courses" },
         },
         {
           label: "Lessons",
           autogenerate: { directory: "lessons", collapsed: true },
+        },
+        {
+          label: "Typesetting guidelines",
+          slug: "typesetting-guidelines",
         },
       ],
     }),

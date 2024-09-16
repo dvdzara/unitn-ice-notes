@@ -1,0 +1,97 @@
+---
+title: Lezione 3 (2024-09-16)
+---
+
+## Fasci di piani
+
+:::note[Data]
+
+- una retta $$r$$ con equazioni cartesiane:
+
+  $$
+  \begin{cases}
+  ax+by+cz+d=0\\
+  a_1x+b_1y+c_1z+d_1=0
+  \end{cases}
+  $$
+
+:::
+
+Esiste un infinito numero di piani che contengono $$r$$. Questo insieme è detto
+fascio di piani di sostegno $$r$$ ed è descritto come:
+
+$$\lambda(ax+by+cz+d=0)+\mu(a_1x+b_1y+c_1z+d_1=0)$$
+
+Per ogni coppia di scalari $$(\lambda,\mu)\neq(0,0)$$ otteniamo l'equazione
+cartesiana di un piano contenente la retta $$r$$.
+
+## Posizione reciproca nello spazio
+
+### Tra 2 rette
+
+:::note[Date]
+
+- $$r$$ e $$r_1$$ distinte nello spazio e individuate dai punti $$P,Q$$ e dai
+  vettori direzionali $$\underline{v},\underline{w}$$;
+
+:::
+
+$$r$$ ed $$r_1$$ possono essere:
+
+- parallele: se $$\underline{v}=\lambda\underline{w},\lambda\in{R}$$;
+- incidenti: se hanno un punto in comune;
+- sghembe: altrimenti;
+
+$$r$$ e $$r_1$$ sono ortogonali se $$\underline{v}\cdot\underline{w}=0$$
+
+2 rette possono essere incidenti e ortogonali oppure sghembe e ortogonali.
+
+#### Rette complanari
+
+Rette parallele o incidenti giacciono sullo stesso piano.
+
+Per trovare il piano $$\pi$$ che contiene 2 rette complanari:
+
+- se $$r$$ e $$r_1$$ sono incidenti posso ottenere equazioni parametriche di
+  $$\pi$$ usando le coordinate di $$P$$ (punto di intersezione),
+  $$\underline{v}$$ e $$\underline{w}$$;
+- in entrambi i casi (sia parallele che incidenti):
+  - dato un fascio di piani di sostegno $$r$$, ce n'è uno che contiene $$r_1$$;
+  - prendo l'equazione del fascio di sostegno $$r$$ e impongo il passaggio per
+    un punto appartenente ad $$r_1$$ e diverso da quello di intersezione;
+
+### Tra 2 piani
+
+:::note[Dati]
+
+- $$\pi: ax+by+cz+d=0$$;
+- $$\pi_1: a_1x+b_1y+c_1z+d=0$$;
+- $$\underline{n}: (a,b,c)$$;
+- $$\underline{n_1}: (a_1,b_1,c_1)$$;
+
+:::
+
+$$\pi$$ e $$\pi_1$$ sono:
+
+- paralleli se $$\underline{n}=\lambda\underline{n_1}, \lambda\in{R}$$;
+- incidenti: altrimenti (l'intersezione tra i 2 è una retta);
+
+$$\pi$$ e $$\pi_1$$ sono ortogonali se $$\underline{n}\cdot\underline{n_1}=0$$.
+
+### Tra una retta e un piano
+
+:::note[Dati]
+
+- piano $$\pi$$ con vettore normale $$\underline{n}$$;
+- $$r$$ con vettore direzionale $$\underline{v}$$;
+
+:::
+
+$$r$$ e $$\pi$$ sono:
+
+- paralleli: quando $$\underline{n}$$ e $$\underline{v}$$ sono ortogonali;
+- incidenti: se hanno un punto in comune (se e solo se
+  $$\underline{v}\cdot\underline{n}\neq0$$);
+
+$$r$$ e $$\pi$$ sono ortogonali se
+$$\underline{v}=\lambda\underline{n}, \lambda\in{R}$$.

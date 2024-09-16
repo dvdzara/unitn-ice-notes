@@ -8,7 +8,7 @@ export default {
       },
     },
     {
-      files: ["./src/**/*.{astro,md}"],
+      files: ["./src/**/*.{astro,md,mdx}"],
       options: {
         proseWrap: "always",
       },
