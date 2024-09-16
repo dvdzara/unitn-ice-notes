@@ -1,0 +1,106 @@
+---
+title: Lezione 3 (2024-09-12)
+---
+
+import { LinkCard, CardGrid } from "@astrojs/starlight/components";
+
+## Funzioni
+
+- numero: grandezza costante;
+- funzione: grandezza variabile;
+
+Una funzione esprime come una certa grandezza (variabile dipendente) varia al
+variare di un'altra (variabile indipendente).
+
+:::note[Dati]
+
+- $$A,B\neq\emptyset$$;
+
+:::
+
+Una funzione $$f$$ da $$A$$ a $$B$$ ($$f: A\rightarrow B$$) associa ad ogni elemento di
+$$x\in{A}$$ uno ed un solo elemento di $$y\in{B}$$.
+
+Una corrispondenza è un sottoinsieme dell'insieme
+$$A\times B=\{(x,y)\ \vert\ x\in{A},y\in{B}\}$$.
+
+$$\forall x\in{A},\exists!\ y\in{B}\ \vert\ y=f(x)$$
+
+Se ad un elemento di $$A$$ non corrisponde un elemento di $$B$$, allora $$A$$ non è il
+dominio di una funzione.
+
+### Notazione: $$f: A\rightarrow B$$
+
+- $$A$$: dominio di $$f$$;
+- $$B$$: codominio di $$f$$;
+- immagine di $$f$$ ($$Im(f)$$): insieme dei valori che la funzione può assumere.
+  $$Im(f)\subset B$$;
+
+La definizione di codominio è arbitraria, basta solo che esso sia un
+sovrainsieme di $$Im(f)$$.
+
+## Proprietà delle funzioni
+
+### Iniettiva
+
+A valore diverso di $$x$$ corrisponde valore diverso di $$f(x)$$.
+
+$$\forall x_1,x_2, x_1\neq x_2\rightarrow f(x_1)\neq f(x_2)$$
+
+### Suriettiva
+
+Ad ogni elemento di $$B$$ è associato almeno un elemento di $$A$$.
+
+$$\forall y\in{B},\exists\ x\in{A}\ \vert\ y=f(x)$$
+
+Quindi $$f(a)\subset B$$ e $$B\subset f(A)$$.
+
+### Biiettiva
+
+Funzione sia iniettiva che suriettiva.
+
+$$\forall y\in{B},\exists!\ x\in{A}\ \vert\ y=f(x)$$.
+
+## Composizione tra funzioni
+
+:::note[Date]
+
+- $$f: A\rightarrow B$$;
+- $$g: C\rightarrow D$$;
+
+:::
+
+Se $$Im(f)\subset C$$, allora possiamo definire la composizione:
+$$g\circ f: A\rightarrow D=g(f(x))$$.
+
+La composizione non è nè commutativa nè associativa.
+
+## Funzioni inverse
+
+:::note[Data]
+
+- $$f: A\rightarrow B$$ biettiva;
+
+:::
+
+La funzione inversa $$f^-1(x)$$ associa ad ogni punto di $$A$$ un punto di $$B$$ tale
+che $$f^-1(y)=x$$ e $$y=f(x)$$.
+
+$$
+\begin{cases}
+y=f(x)\\
+x\in{A}
+\end{cases}\rightarrow\begin{cases}
+x=f^-1(y)\\
+y\in{B}
+\end{cases}
+$$
+
+---
+
+<CardGrid>
+  <LinkCard
+    title="Appunti di Andrea"
+    href="https://drive.google.com/file/d/1UvZWdK31RydMakWWjiDx52XiyAW2n7F4/view"
+  />
+</CardGrid>
