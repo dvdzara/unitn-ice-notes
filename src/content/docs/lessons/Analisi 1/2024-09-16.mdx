@@ -13,7 +13,8 @@ import { LinkCard, CardGrid } from "@astrojs/starlight/components";
 
 :::
 
-Restrizione: $$f_{\vert D}: D\rightarrow B$$ ($$\forall x\in{D}, f_{\vert D}(x)=f(x)$$).
+Restrizione: $$f_{\vert D}: D\rightarrow B$$
+($$\forall x\in{D}, f_{\vert D}(x)=f(x)$$).
 
 Non ha senso calcolare $$f_{\vert D}$$ con elementi $$\notin{D}$$.
 
@@ -25,13 +26,16 @@ $$D=N, f_{\vert D}: N\rightarrow R, f(x)=\llcorner x\lrcorner$$: è iniettiva.
 
 :::
 
-Di solito la restrizione si usa per fare in modo che una funzione acquisti certe proprietà in un determinato intervallo.
+Di solito la restrizione si usa per fare in modo che una funzione acquisti certe
+proprietà in un determinato intervallo.
 
 ## Funzioni di variabile reale
 
-La maggior parte delle funzioni saranno definite: $$f: D\rightarrow R, D\in{R}$$.
+La maggior parte delle funzioni saranno definite:
+$$f: D\rightarrow R, D\in{R}$$.
 
-Il grafico della funzione è un sottoinsieme del piano cartesiano ($$R\times R=R^2$$).
+Il grafico della funzione è un sottoinsieme del piano cartesiano
+($$R\times R=R^2$$).
 
 $$graf(f)=\{(x,y)\in{R^2}\ \vert \ x\in{D}, y=f(x)\}$$
 
@@ -39,13 +43,55 @@ $$graf(f)=\{(x,y)\in{R^2}\ \vert \ x\in{D}, y=f(x)\}$$
 
 $$f(x)=x$$:
 
-- è iniettiva: $$\forall x_1,x_2\in{R}, x_1\neq x_2, f(x_1)\neq f(x_2)$$ perchè $$f(x_1)=x_1$$ e $$f(x_2)=x_2$$;
+- è iniettiva: $$\forall x_1,x_2\in{R}, x_1\neq x_2, f(x_1)\neq f(x_2)$$ perchè
+  $$f(x_1)=x_1$$ e $$f(x_2)=x_2$$;
 - è suriettiva: $$\forall y\in{R}\exists\ x\in{R}\ \vert\ y=f(x)$$;
 - è biiettiva: vedi sopra;
 - inversa: $$f(x)=f^-1(y)$$, $$x=x$$;
-- $$graf(f)$$: $$\{(x,y)\in{R^2}\ \vert\ x\in{R}, y=f(x)\}$$, $$\{(x,x)\in{R^2}\ \vert\ x\in{R}\}$$
+- $$graf(f)$$: $$\{(x,y)\in{R^2}\ \vert\ x\in{R}, y=f(x)\}$$,
+  $$\{(x,x)\in{R^2}\ \vert\ x\in{R}\}$$
 
 :::
+
+## Iniettività e suriettività dal punto di vista geometrico
+
+$$f$$ è iniettiva se una qualsiasi retta orizzontale nel piano cartesiano
+interseca $$f(x)$$ al massimo una volta.
+
+---
+
+$$f$$ è suriettiva se una qualsiasi retta orizzontale nel piano cartesiano
+interseca $$f(x)$$ almeno una volta.
+
+---
+
+$$f$$ è biiettiva se una qualsiasi retta orizzontale nel piano cartesiano
+interseca $$f(x)$$ una ed una sola volta.
+
+## Funzioni limitate
+
+- funzione limitata superiormente:
+  $$\exists\ M\in{R}\ \vert\ \forall x\in{R}, f(x)\leq M$$;
+- funzione limitata inferiormente:
+  $$\exists\ m\in{R}\ \vert\ \forall x\in{R}, f(x)\geq m$$;
+- funzione limitata: limitata sia superiormente che inferiormente;
+
+## Funzioni simmetriche
+
+- funzione pari: $$f(x)=f(-x)$$;
+- funzione dispari: $$f(-x)=-f(x)$$;
+- funzione periodica: $$\exists\ T\in{R}, k\in{Z}\ \vert\ f(x+KT)=f(x)$$;
+
+## Funzioni monotone
+
+- crescente: $$x_1,x_2\in{R}, x_1<x_2 \rightarrow f(x_1)\leq f(x_2)$$;
+- strettamente crescente: $$x_1,x_2\in{R}, x_1<x_2 \rightarrow f(x_1)<f(x_2)$$;
+
+Esistono anche le varianti decrescente e strettamente decrescente.
+
+## Funzione inversa nel piano cartesiano
+
+$$graf(f^-1)$$ è la simmetria di $$graf(f)$$ rispetto alla retta $$y=x$$.
 
 ---
 
