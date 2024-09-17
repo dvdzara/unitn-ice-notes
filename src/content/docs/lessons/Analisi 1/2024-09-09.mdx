@@ -2,20 +2,21 @@
 title: Lezione 1 (2024-09-09)
 ---
 
+import { Details } from "../../../../components/Details.astro";
 import { LinkCard, CardGrid } from "@astrojs/starlight/components";
 
 ## Insiemi numerici
 
-- non importa l'ordine;
+- non importa l'ordine degli elementi;
 - composti da simboli, numeri o altri insiemi;
 
-:::note[Esempio]
+<Details summary="Esempio">
 
 - $$A=\{a,b,c,d,e\}$$
 - $$B=\{proprietà\ che\ accomuna\ gli\ elementi\}$$
 - $$C=\{2k+1\ \vert\ k=0,1,2,...\}$$
 
-:::
+</Details>
 
 Possono essere definiti come elenco ($$A$$) o indicando la proprietà che
 accomuna tutti gli elementi ($$B$$).
@@ -42,11 +43,13 @@ Simbolo di sottoinsieme: $$A\subseteq B$$
 Sottoinsieme strettamente contenuto: $$A\subsetneqq B$$. A è un sottoinsieme
 strettamente contenuto in B: $$\exists x\ \vert\ x\in{B}\ e\ x\notin{A}$$
 
-Osservazioni:
+:::tip[Osservazioni]
 
 - $$A\cup B$$ è sottoinsieme di A e B;
 - $$A\cap B$$ non è sottoinsieme nè di A, nè di B;
 - $$A=B$$ se $$A\subseteq B$$ e $$B\subseteq{A}$$;
+
+:::
 
 ## Linguaggio matematico
 
@@ -54,11 +57,11 @@ Osservazioni:
 
 Rappresentano qualcosa che può essere vero o falso.
 
-:::note[Esempio]
+<Details summary="Esempio">
 
-- $$a\in{A}$$
+$$a\in{A}$$
 
-:::
+</Details>
 
 ### Operatori logici ($$e$$, $$o$$, $$\lnot$$)
 
@@ -69,6 +72,8 @@ Rappresentano qualcosa che può essere vero o falso.
 | f     | v     | f     | v     | v           |
 | f     | f     | f     | f     | v           |
 
+---
+
 Leggi di De Morgan (negazioni degli operatori logici):
 
 - $$\lnot(A\ e\ B)=(\lnot A)\ o\ (\lnot B)$$
@@ -76,7 +81,13 @@ Leggi di De Morgan (negazioni degli operatori logici):
 
 ### Predicato
 
-Proposizione con variabili ($$P(x)\ \vert\ x\ è\ pari$$).
+Proposizione con variabili.
+
+<Details summary="Esempio">
+
+$$P(x)\ \vert\ x\ è\ pari$$
+
+</Details>
 
 Il risultato può dipendere o no dal valore della variabile.
 
@@ -102,18 +113,29 @@ $$P\rightarrow Q\equiv(\lnot Q)\rightarrow(\lnot P)$$
 
 ### Quantificatori
 
-- esistenziale: $$\exists$$, $$(\exists a\in{A})$$ (esiste $$a$$ appartenente ad
-  $$A$$);
-- universale: $$\forall$$, $$(\forall a\in{A})$$ (ogni $$a$$ appartiene ad
-  $$A$$);
+- esistenziale: $$\exists$$
+
+  <Details summary="Esempio">
+    $$\exists\ a\in{A}$$: esiste $$a$$ appartenente ad $$A$$
+  </Details>
+
+- universale: $$\forall$$
+
+  <Details summary="Esempio">
+    $$\forall a\in{A}$$: ogni $$a$$ appartiene ad $$A$$
+  </Details>
 
 Negazione di una proposizione con quantificatori:
 
 - $$\lnot(\forall x,\ P(x))=\exists x\ \vert\ \lnot P(x)$$
 - $$\lnot(\exists x\ \vert\ P(x))=\forall x,\ \lnot P(x)$$
 
+:::note
+
 Con $$\forall$$ non si usa il simbolo $$\vert$$ (tale che): si indica soltanto
 la proprietà che è soddisfatta da tutti gli elementi.
+
+:::
 
 ---
 
