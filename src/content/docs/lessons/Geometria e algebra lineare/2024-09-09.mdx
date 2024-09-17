@@ -2,15 +2,17 @@
 title: Lezione 1 (2024-09-09)
 ---
 
+import Details from "../../../../components/Details.astro";
+
 ## Vettori geometrici
 
 ### Segmento orientato
 
-:::note[Dati]
+<Details summary="Dati">
 
 - $$A$$ e $$B$$ in uno spazio tridimensionale.
 
-:::
+</Details>
 
 Un segmento orientato $$\vec{AB}$$ è un segmento che ha come estremo iniziale il
 punto $$A$$ e come estremo finale il punto $$B$$.
@@ -49,15 +51,15 @@ $$\underline{v}\neq\underline{0}$$.
 
 ### Somma
 
-:::note[Dati]
+<Details summary="Dati">
 
 - $$\underline{v}$$ e $$\underline{w}$$, con rappresentanti
   $$\underline{v}=\vec{AB}$$, $$\underline{w}=\vec{BC}$$;
 - $$\underline{v}+\underline{w}$$ come la classe di equivalenza $$\vec{AC}$$;
 
-:::
+</Details>
 
-Proprietà:
+**Proprietà**:
 
 - commutativa: $$\underline{v}+\underline{w}=\underline{w}+\underline{v}$$
 - associativa:
@@ -68,12 +70,12 @@ Proprietà:
 
 ### Prodotto per uno scalare
 
-:::note[Dati]
+<Details summary="Dati">
 
 - $$\underline{v}\neq\underline{0}$$;
 - $$\lambda\neq0$$ (un numero reale (scalare));
 
-:::
+</Details>
 
 Il vettore geometrico $$\lambda\underline{v}$$ è il vettore con direzione
 uguale, modulo $$|\underline{v}||\lambda|$$ e verso uguale se $$\lambda>0$$ o
@@ -81,14 +83,14 @@ opposto se $$\lambda<0$$
 
 Se $$\lambda=0$$ allora $$\lambda\underline{v}=\underline{0}$$.
 
-Proprietà:
+**Proprietà**:
 
-:::note[Dati]
+<Details summary="Dati">
 
 - $$\forall\underline{v}$$, $$\underline{w}$$;
 - $$\forall\lambda$$, $$\mu$$;
 
-:::
+</Details>
 
 - $$\lambda(\mu\underline{v})=(\lambda\mu)\underline{v}$$
 - $$1\underline{v}=\underline{v}$$
@@ -97,11 +99,11 @@ Proprietà:
 
 ### Prodotto scalare
 
-:::note[Dati]
+<Details summary="Dati">
 
 - $$\underline{v}$$, $$\underline{w}$$.
 
-:::
+</Details>
 
 Il prodotto scalare $$\underline{v}\cdot\underline{w}$$ è un numero reale dato
 da $$|\underline{v}||\underline{w}|\cos{\alpha}$$
@@ -109,14 +111,14 @@ da $$|\underline{v}||\underline{w}|\cos{\alpha}$$
 $$\alpha$$ è l'angolo compreso tra 2 rappresentanti di $$\underline{v}$$ e
 $$\underline{w}$$ con lo stesso estremo iniziale.
 
-Proprietà:
+**Proprietà**:
 
-:::note[Dati]
+<Details summary="Dati">
 
 - $$\forall\underline{v}$$, $$\underline{w}$$, $$\underline{u}$$;
 - $$\forall\lambda\in{R}$$;
 
-:::
+</Details>
 
 - $$\underline{v}\cdot\underline{w}=\underline{w}\cdot\underline{v}$$
 - $$\lambda(\underline{v})\cdot\underline{w}=\lambda(\underline{v}\cdot\underline{w})$$
@@ -128,11 +130,11 @@ Proprietà:
 
 ## Proiezioni ortogonali
 
-:::note[Dati]
+<Details summary="Dati">
 
 - $$\underline{v}$$, $$\underline{w}$$.
 
-:::
+</Details>
 
 - se |$$\underline{w}|=1$$, la sua proiezione di $$\underline{v}$$ su
   $$\underline{w}$$ è $$(\underline{v}\cdot\underline{w})\underline{w}$$

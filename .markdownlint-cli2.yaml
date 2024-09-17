@@ -1,0 +1,5 @@
+config:
+  no-inline-html: false
+globs:
+  - "**/*.md"
+  - "**/*.mdx"

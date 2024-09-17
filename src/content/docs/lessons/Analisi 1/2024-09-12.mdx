@@ -2,6 +2,7 @@
 title: Lezione 3 (2024-09-12)
 ---
 
+import Details from "../../../../components/Details.astro";
 import { LinkCard, CardGrid } from "@astrojs/starlight/components";
 
 ## Funzioni
@@ -12,11 +13,11 @@ import { LinkCard, CardGrid } from "@astrojs/starlight/components";
 Una funzione esprime come una certa grandezza (variabile dipendente) varia al
 variare di un'altra (variabile indipendente).
 
-:::note[Dati]
+<Details summary="Dati">
 
 - $$A,B\neq\emptyset$$;
 
-:::
+</Details>
 
 Una funzione $$f$$ da $$A$$ a $$B$$ ($$f: A\rightarrow B$$) associa ad ogni
 elemento di $$x\in{A}$$ uno ed un solo elemento di $$y\in{B}$$.
@@ -63,12 +64,12 @@ $$\forall y\in{B},\exists!\ x\in{A}\ \vert\ y=f(x)$$.
 
 ## Composizione tra funzioni
 
-:::note[Date]
+<Details summary="Dati">
 
 - $$f: A\rightarrow B$$;
 - $$g: C\rightarrow D$$;
 
-:::
+</Details>
 
 Se $$Im(f)\subset C$$, allora possiamo definire la composizione:
 $$g\circ f: A\rightarrow D=g(f(x))$$.
@@ -77,11 +78,11 @@ La composizione non è nè commutativa nè associativa.
 
 ## Funzioni inverse
 
-:::note[Data]
+<Details summary="Dati">
 
 - $$f: A\rightarrow B$$ biettiva;
 
-:::
+</Details>
 
 La funzione inversa $$f^-1(x)$$ associa ad ogni punto di $$A$$ un punto di $$B$$
 tale che $$f^-1(y)=x$$ e $$y=f(x)$$.

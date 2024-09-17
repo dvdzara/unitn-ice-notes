@@ -2,7 +2,12 @@
 title: Typesetting guidelines
 ---
 
-Guidelines to write `*.mdx` files in a consistent manner.
+Guidelines to write `*.md` or `*.mdx` files in a consistent manner.
+
+## Prose styling
+
+- text inside list items starts with a small letter and ends with a semicolon;
+- normal text starts with a capital letter and ends with a dot;
 
 ## Math mode styling
 

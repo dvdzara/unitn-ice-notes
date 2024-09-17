@@ -1,0 +1,114 @@
+---
+title: Lezione 1 (2024-09-17)
+---
+
+import Details from "../../../../components/Details.astro";
+import { Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+
+## Definizione di informatica
+
+- Association for Computing Machinery:
+
+  > Studio sistematico degli algoritmi che descrivono e trasformano
+  > l'informazione, la loro teoria, analisi, progetto, efficienza, realizzazione
+  > e applicazione .
+
+- Ceri, Mandrioli, Sbattella:
+
+  > La scienza della rappresentazione e dell'elaborazione dell'informazione.
+
+Entrambe le definizioni non implicano l'uso di un calcolatore.
+
+## Algoritmo
+
+### Definizione
+
+> Sequenza precisa di operazioni che definisce una sequenza **finita** di passi
+> che portano alla realizzazione di un compito.
+
+<Details summary="Esempio">
+
+Sommare 2 numeri con un pallottoliere:
+
+```text
+  a=4
+  OOOO---OOOOOOOOOO
+
+  b=7
+  OOOOOOO---OOOOOOO
+
+  a+b=11
+  OOOOOOOOOOO---OOO
+```
+
+<Steps>
+
+1. Nella prima riga spostare un disco da sinistra a destra;
+2. Nella terza riga spostare un disco da destra a sinistra;
+3. Ripetere 1,2 fino ad esaurimento dischi;
+4. Ripetere 1,2,3 ma con la seconda riga;
+5. I dischi a sinistra sulla terza riga sono la somma;
+
+</Steps>
+
+</Details>
+
+Un algoritmo deve avere una descrizione comprensibile al suo esecutore.
+
+Proprietà di un algoritmo:
+
+- correttezza;
+- efficienza;
+
+<Details summary="Altri esempi di algoritmi">
+
+- cercare un partner;
+- trovare un appartamento;
+
+[Problema della segretaria](https://en.wikipedia.org/wiki/Secretary_problem)
+
+</Details>
+
+## Grafi
+
+Se due grafi (reti di nodi) sono isomorfi, hanno le stesse caratteristiche in
+termini di nodi e archi.
+
+## Elementi di un algoritmo
+
+### Descrizione del problema
+
+Categorie di problemi:
+
+- calcolo e conversione: conversioni, valori, ...;
+- decisione: fare decisioni in base alle proprietà degli elementi di un insieme;
+- ricerca: trovare un elemento in un insieme;
+
+3 fasi:
+
+1. linguaggio naturale;
+2. pseudocodice;
+3. codice (C, C++);
+
+### Altri elementi
+
+- condizioni di partenza;
+- compito da eseguire;
+- risultato finale;
+
+## Metodo top-down
+
+Se un passo dell'algoritmo non è direttamente applicabile, occorre definire un
+sub-algoritmo per specificare.
+
+Questo metodo si chiama top-down, si parte da istruzioni generali e si
+rifiniscono fino ad arrivare a quelle specifiche.
+
+---
+
+<CardGrid>
+  <LinkCard
+    title="Appunti di Andrea"
+    href="https://drive.google.com/file/d/1OxwvicjdCMxen4uZtnzq_Rw4uWLrCZp3/view"
+  />
+</CardGrid>

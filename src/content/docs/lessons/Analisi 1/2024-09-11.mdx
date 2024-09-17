@@ -2,8 +2,8 @@
 title: Lezione 2 (2024-09-11)
 ---
 
-import { Details } from "../../../../components/Example.astro";
-import { Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import Details from "../../../../components/Details.astro";
+import { Steps, Card, LinkCard, CardGrid } from "@astrojs/starlight/components";
 
 ## Numeri reali
 
@@ -49,12 +49,12 @@ intervallo non può essere chiuso in $$\pm\infty$$.
 
 #### Maggioranti/minoranti
 
-:::note[Dati]
+<Details summary="Dati">
 
 - $$A\in{R}$$
 - $$A\neq0$$
 
-:::
+</Details>
 
 - maggiorante: $$\exists M\ \vert\ \forall x\in{A},x\leq M$$
 - minorante: $$\exists m\ \vert\ \forall x\in{A},x\geq m$$
@@ -79,12 +79,12 @@ Si scrive come $$\bar{x}$$/$$\underline{x}$$ o $$\sup{A}$$/$$\inf{A}$$.
 
 ### Assioma di completezza dei numeri reali
 
-:::note[Dati]
+<Details summary="Dati">
 
 - $$A\subseteq R$$
 - $$A\neq 0$$, $$\exists\sup{A}$$
 
-:::
+</Details>
 
 $$\exists\sup{A}\in{R}$$
 
@@ -92,11 +92,11 @@ Questa proprietà non vale per i numeri razionali.
 
 ### Parte intera di un numero reale
 
-:::note[Dato]
+<Details summary="Dati">
 
 - $$x\in{R}$$
 
-:::
+</Details>
 
 $$\llcorner x\lrcorner=\sup{y\in{Z}:y<x}$$
 
@@ -118,41 +118,47 @@ L'insieme dei numeri naturali non è limitato superiormente.
 
 ### Densità di Q in R
 
-:::note[Dati]
+<Details summary="Dati">
 
 - $$\forall a,b\in{R}$$
 - $$a<b$$
 
-:::
+</Details>
 
 $$\exists x\in{Q}\ \vert\ a<q<b$$
 
-:::note[Dati]
+<Card title="Dimostrazione">
+
+<Details summary="Dati">
 
 - $$(a<b)\equiv(b-a>0)$$
 - $$\exists n\in{N}\ \vert\ (n>\frac{1}{b-a})\equiv(b-a=\frac{1}{n})$$, $$n>0$$
 - $$m=\frac{\llcorner na\lrcorner+1}{n}$$, $$m\in{Z}$$
 
-:::
-
-:::tip[Dimostrazione]
+</Details>
 
 Dimostro che q è minore di b.
 
 <Steps>
 
-1. $$q=\frac{m}{n}=\frac{\llcorner na\lrcorner+1}{n}=\frac{\llcorner na\lrcorner}{n}+\frac{1}{n}\leq\frac{na}{n}+\frac{1}{n}=a+\frac{1}{n}$$
+1. $$
+   q=\frac{m}{n}=\frac{\llcorner na\lrcorner+1}{n}=\frac{\llcorner na\lrcorner}{n}+
+   \frac{1}{n}\leq\frac{na}{n}+\frac{1}{n}=a+\frac{1}{n}
+   $$
 2. $$q\leq a+\frac{1}{n}<a+(b-a)=b\rightarrow q<b$$
 
 </Steps>
 
 Dimostro che q è maggiore di a.
 
-$$q=\frac{m}{n}=\frac{\llcorner na\lrcorner+1}{n}>\frac{(na-1)+1}{n}=\frac{na}{n}\rightarrow q>a$$
+$$
+q=\frac{m}{n}=\frac{\llcorner na\lrcorner+1}{n}>\frac{(na-1)+1}{n}=\frac{na}{n}
+\rightarrow q>a
+$$
 
-:::
+</Card>
 
-:::caution
+:::tip
 
 Per indicare la fine di una dimostrazione di solito si usa un quadrato:
 $$\square$$.
