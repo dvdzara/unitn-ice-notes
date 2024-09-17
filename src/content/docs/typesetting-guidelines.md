@@ -1,4 +1,6 @@
 ---
+next: false
+prev: false
 title: Typesetting guidelines
 ---
 
