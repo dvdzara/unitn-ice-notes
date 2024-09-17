@@ -1,3 +1,9 @@
-.katex {
+mjx-container {
   color: var(--sl-color-accent-high);
+  display: inline-block;
+  margin: 0 !important;
+}
+
+mjx-container[display="true"] {
+  margin: 1rem auto !important;
 }
