@@ -1,4 +1,3 @@
-.MathJax {
+.katex {
   color: var(--sl-color-accent-high);
-  display: inline-flex;
 }

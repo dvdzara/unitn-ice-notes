@@ -1,13 +1,23 @@
 import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
 import remarkMath from "remark-math";
-import rehypeMathjax from "rehype-mathjax";
+import rehypeKatex from "rehype-katex";
 
 export default defineConfig({
   integrations: [
     starlight({
       credits: true,
       customCss: ["./src/styles/globals.css"],
+      head: [
+        {
+          tag: "link",
+          attrs: {
+            // TODO add renovate-bot regex customManager to update this.
+            href: "https://cdn.jsdelivr.net/npm/katex@v0.16.11/dist/katex.min.css",
+            rel: "stylesheet",
+          },
+        },
+      ],
       editLink: {
         baseUrl: "https://git.zarantonello.dev/davide/ice-notes/-/edit/main",
       },
@@ -38,7 +48,7 @@ export default defineConfig({
     }),
   ],
   markdown: {
-    rehypePlugins: [rehypeMathjax],
+    rehypePlugins: [rehypeKatex],
     remarkPlugins: [remarkMath],
   },
 });
