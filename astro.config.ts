@@ -9,7 +9,7 @@ export default defineConfig({
       credits: true,
       customCss: ["./src/styles/globals.css"],
       editLink: {
-        baseUrl: "https://git.zarantonello.dev/davide/uni/-/edit/main",
+        baseUrl: "https://git.zarantonello.dev/davide/ice-notes/-/edit/main",
       },
       favicon: "/favicon.svg",
       lastUpdated: true,

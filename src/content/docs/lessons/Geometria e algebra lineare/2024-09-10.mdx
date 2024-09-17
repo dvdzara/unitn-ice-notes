@@ -2,7 +2,8 @@
 title: Lezione 2 (2024-09-10)
 ---
 
-import { LinkCard, CardGrid } from "@astrojs/starlight/components";
+import Details from "../../../../components/Details.astro";
+import { Card, LinkCard, CardGrid } from "@astrojs/starlight/components";
 
 ## Coordinate tridimensionali
 
@@ -12,12 +13,12 @@ Un vettore $$\vec{AB}$$ è composto da $$(x_B-x_A, y_B-y_a, z_B-z_A)$$.
 
 ### Decomposizione di un vettore sugli assi
 
-:::note[Dati]
+<Details summary="Dati">
 
 $$\underline{i}$$, $$\underline{j}$$ e $$\underline{k}$$, versori paralleli agli
 assi cartesiani x, y e z.
 
-:::
+</Details>
 
 Un vettore si definisce:
 $$\underline{v}=v_1 \underline{i}+v_2\underline{j}+v_3\underline{k}=(v_1,v_2,v_3)$$.
@@ -32,34 +33,34 @@ $$(\underline{v}\cdot\underline{i},\underline{v}\cdot\underline{j},\underline{v}
 
 ### Somma
 
-:::note[Dati]
+<Details summary="Dati">
 
 - $$\underline{v}=(v_1,v_2,v_3)$$;
 - $$\underline{w}=(w_1,w_2,w_3)$$;
 
-:::
+</Details>
 
 $$\underline{v}+\underline{w}=(v_1+w_1,v_2+w_2,v_3+w_3)$$
 
 ### Prodotto per uno scalare
 
-:::note[Dati]
+<Details summary="Dati">
 
 - $$\underline{v}=(v_1,v_2,v_3)$$;
 - $$\lambda\in{R}$$;
 
-:::
+</Details>
 
 $$\lambda\underline{v}=(\lambda v_1,\lambda v_2,\lambda v_3)$$
 
 ### Prodotto scalare
 
-:::note[Dati]
+<Details summary="Dati">
 
 - $$\underline{v}=(v_1,v_2,v_3)$$;
 - $$\underline{w}=(w_1,w_2,w_3)$$;
 
-:::
+</Details>
 
 $$\underline{v}\cdot\underline{w}=(v_1w_1,v_2w_2,v_3w_3)$$
 
@@ -69,11 +70,11 @@ scalare è sempre 1 (l'angolo tra le componenti dei vettori sullo stesso asse è
 
 ## Modulo di un vettore con coordinate
 
-:::note[Dato]
+<Details summary="Dati">
 
 - $$\underline{v}=(v_1,v_2,v_3)$$.
 
-:::
+</Details>
 
 $$|\underline{v}|=\sqrt{v_1^2+v_2^2+v_3^2}$$
 
@@ -83,13 +84,13 @@ $$|\underline{v}|=\sqrt{v_1^2+v_2^2+v_3^2}$$
 
 Equazione cartesiana:
 
-:::note[Dati]
+<Details summary="Dati">
 
 - $$\pi$$: un piano nello spazio;
 - $$P$$: punto su $$\pi$$;
 - $$\underline{n}$$: un vettore normale (ortogonale) a $$\pi$$;
 
-:::
+</Details>
 
 Uno specifico punto $$P$$ e vettore $$\underline{n}$$ determinano la posizione
 di uno specifico piano.
@@ -97,16 +98,16 @@ di uno specifico piano.
 $$\pi$$ è il luogo dei punti $$Q=(x,y,z)$$ dello spazio tali che $$\vec{PQ}$$ è
 ortogonale a $$\underline{n}$$ ($$\vec{PQ}\cdot\underline{n}=0$$).
 
-:::note[Dati]
+<Details summary="Dati">
 
 - $$P=(x_P,y_P,z_P)$$;
 - $$\underline{n}=(a,b,c)$$;
 - $$\vec{PQ}=(x-x_P,y-y_P,z-z_P)$$;
 - $$\vec{PQ}\cdot\underline{n}=0$$;
 
-:::
+</Details>
 
-:::tip[Dimostrazione]
+<Card title="Dimostrazione">
 
 Ricavo l'equazione cartesiana di $$\pi$$:
 
@@ -114,20 +115,20 @@ $$(x-x_P,y-y_P,z-z_P)\cdot(a,b,c)=$$
 $$=a(x-x_P)+b(y-y_P)+c(z-z_P)=$$  
 $$=ax+by+cz+d=0,\ d=-(ax_P+by_P+cz_P)$$
 
-:::
+</Card>
 
 $$ax+by+cz+d=0$$ è l'equazione cartesiana di $$\pi$$.
 
 Equazione parametrica:
 
-:::note[Dati]
+<Details summary="Dati">
 
 - A,B,C 3 punti non allineati;
 - un piano $$\pi$$ che li contiene;
 - $$\underline{v}=\vec{AB}$$;
 - $$\underline{w}=\vec{AC}$$;
 
-:::
+</Details>
 
 Un punto Q sta su $$\pi$$ se e solo se $$\vec{AQ}$$ può essere descritto come
 somma di 2 vettori: uno con direzione uguale a $$\underline{v}$$ e uno con
@@ -135,7 +136,7 @@ direzione uguale a $$\underline{w}$$:
 
 $$\exists t,s\ \vert\ \vec{AQ}=t\underline{v}+s\underline{w}$$
 
-:::note[Dati]
+<Details summary="Dati">
 
 - $$A=(x_A,y_A,z_A)$$;
 - $$B=(x_B,y_B.z_B)$$;
@@ -145,7 +146,7 @@ $$\exists t,s\ \vert\ \vec{AQ}=t\underline{v}+s\underline{w}$$
 - $$\underline{w}=\vec{AC}=(w_1,w_2,w_3)$$;
 - $$\vec{AQ}=(x-x_A,y-y_A,z-z_A)$$
 
-:::
+</Details>
 
 L'equazione parametrica di $$\pi$$ è:
 
@@ -164,13 +165,13 @@ l'equazione cartesiana di $$\pi$$.
 
 Equazione parametrica:
 
-:::note[Dati]
+<Details summary="Dati">
 
 - una retta $$r$$ determinata da 2 punti distinti in uno spazio;
 - $$\underline{v}=\vec{AB}$$ il vettore direzionale della retta $$r$$;
 - $$t\in{R}$$;
 
-:::
+</Details>
 
 Un punto $$Q$$ sta sulla retta $$r$$ se e solo se il vettore $$\vec{AQ}$$ ha la
 stessa direzione di $$\underline{v}$$ (quindi $$\vec{AQ}=t\underline{v}$$)

@@ -2,29 +2,30 @@
 title: Lezione 4 (2024-09-16)
 ---
 
+import Details from "../../../../components/Details.astro";
 import { LinkCard, CardGrid } from "@astrojs/starlight/components";
 
 ## Restrizione di una funzione
 
-:::note[Dati]
+<Details summary="Dati">
 
 - $$f: A\rightarrow B$$;
 - $$D\subsetneqq A$$
 
-:::
+</Details>
 
 Restrizione: $$f_{\vert D}: D\rightarrow B$$
 ($$\forall x\in{D}, f_{\vert D}(x)=f(x)$$).
 
 Non ha senso calcolare $$f_{\vert D}$$ con elementi $$\notin{D}$$.
 
-:::note[Esempio]
+<Details summary="Esempio">
 
 $$f: R\rightarrow R, f(x)=\llcorner x\lrcorner$$: non è iniettiva.
 
 $$D=N, f_{\vert D}: N\rightarrow R, f(x)=\llcorner x\lrcorner$$: è iniettiva.
 
-:::
+</Details>
 
 Di solito la restrizione si usa per fare in modo che una funzione acquisti certe
 proprietà in un determinato intervallo.
@@ -39,7 +40,7 @@ Il grafico della funzione è un sottoinsieme del piano cartesiano
 
 $$graf(f)=\{(x,y)\in{R^2}\ \vert \ x\in{D}, y=f(x)\}$$
 
-:::note[Esempio]
+<Details summary="Esempio">
 
 $$f(x)=x$$:
 
@@ -51,7 +52,7 @@ $$f(x)=x$$:
 - $$graf(f)$$: $$\{(x,y)\in{R^2}\ \vert\ x\in{R}, y=f(x)\}$$,
   $$\{(x,x)\in{R^2}\ \vert\ x\in{R}\}$$
 
-:::
+</Details>
 
 ## Iniettività e suriettività dal punto di vista geometrico
 

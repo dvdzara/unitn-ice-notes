@@ -1,8 +1,3 @@
-.docker-common: &docker-common
-  image: docker.io/library/docker:27.2.1-cli@sha256:ce5ca0c57db0e5a43bf59a7cf62c2309b53f63dc86e18521798744054c000024
-  rules:
-    - if: $CI_COMMIT_TAG
-
 .mr-common: &mr-common
   rules:
     - if: $CI_PIPELINE_SOURCE == "merge_request_event"
@@ -20,32 +15,16 @@ default:
     - default
 
 docker-image:
-  <<: *docker-common
-  parallel:
-    matrix:
-      - ARCH:
-          - arm64
+  image: docker.io/library/docker:27.2.1-cli@sha256:ce5ca0c57db0e5a43bf59a7cf62c2309b53f63dc86e18521798744054c000024
+  rules:
+    - if: $CI_COMMIT_TAG
   script:
     - docker login $CI_REGISTRY -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD
     - docker build -t $CI_REGISTRY/$CI_PROJECT_PATH:$CI_COMMIT_SHA-$ARCH . -f docker/Dockerfile
-    - docker push $CI_REGISTRY/$CI_PROJECT_PATH:$CI_COMMIT_SHA-$ARCH
+    - docker push $CI_REGISTRY/$CI_PROJECT_PATH:latest
+    - docker push $CI_REGISTRY/$CI_PROJECT_PATH:$CI_COMMIT_TAG
   tags:
-    - $ARCH
-
-docker-manifest:
-  <<: *docker-common
-  needs:
-    - docker-image
-  parallel:
-    matrix:
-      - TAG:
-          - latest
-          - $CI_COMMIT_TAG
-  script:
-    - docker login registry.zrnt.dev -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD
-    - docker manifest rm registry.zrnt.dev/$CI_PROJECT_PATH:$TAG || true
-    - docker manifest create registry.zrnt.dev/$CI_PROJECT_PATH:$TAG registry.zrnt.dev/$CI_PROJECT_PATH:$CI_COMMIT_SHA-arm64
-    - docker manifest push registry.zrnt.dev/$CI_PROJECT_PATH:$TAG
+    - arm64
 
 mr-fmt-prettier:
   <<: *mr-common
@@ -72,19 +51,13 @@ mr-lint-js:
   image: registry.zrnt.dev/oci/base:v1.1.6@sha256:02b09f8c673594faa4634cdaccfb1dcf24790c2c8195d394d6bf4045811a1f32
   script:
     - pnpm run check
+    - pnpm run build
 
 mr-lint-markdown:
   <<: *mr-common
   image: registry.zrnt.dev/oci/markdownlint-cli2:v1.0.2@sha256:876d4f030008dcc254e334b186adab9bf8dc2396f5b94e137c65a1e189cd891c
   script:
-    - markdownlint-cli2 **/*.md
-
-mr-lint-markdown-pandoc:
-  <<: *mr-common
-  image: registry.zrnt.dev/oci/pandoc:v1.1.2@sha256:bc394e661b95eb40b74baa828fabcc2936148a106099cf6cb927136ea3bf4e8e
-  script:
-    - find . -name '*.md' | while read f ; do pandoc --mathjax --to html5 --wrap=none --fail-if-warnings "$f" > /dev/null ; done
-    - git diff --quiet
+    - markdownlint-cli2
 
 mr-lint-yaml:
   <<: *mr-common
