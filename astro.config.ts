@@ -13,7 +13,6 @@ export default defineConfig({
       },
       favicon: "/favicon.svg",
       lastUpdated: true,
-      pagination: false,
       social: {
         gitlab: "https://git.zarantonello.dev/davide",
       },
