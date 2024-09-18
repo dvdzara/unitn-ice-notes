@@ -32,19 +32,19 @@ mr-fmt-prettier:
   extends:
     - .mr-common
     - .pnpm-cache
-  image: registry.zrnt.dev/oci/prettier:v1.0.7@sha256:a6f214a9ec4e9be58fe8549aa7442adad8cf1d152913468ea9764522ca84b3c2
+  image: registry.zrnt.dev/oci/prettier:v1.0.8@sha256:2126c2e4284aa14b910b1288cd99e3bb57909ab03ede4ba2366c7b20a1c07c9d
   script:
     - prettier --check .
 
 mr-lint-docker-compose:
   extends: .mr-common
-  image: docker.io/library/docker:27.2.1-cli@sha256:ce5ca0c57db0e5a43bf59a7cf62c2309b53f63dc86e18521798744054c000024
+  image: docker.io/library/docker:27.2.1-cli@sha256:235a25499afa28f3c359b4a90d4245fc74d21f2f368cfb7bbc48aca1e189609d
   script:
     - find . -name 'docker-compose.yml' | while read f ; do docker compose -f "$f" config -q ; done
 
 mr-lint-dockerfile:
   extends: .mr-common
-  image: registry.zrnt.dev/oci/hadolint:v1.0.9@sha256:a003fd0d6bdbbfbb5442f79a786e0d97dcb3d2adae20bdee6195f5ad2b8b47db
+  image: registry.zrnt.dev/oci/hadolint:v1.0.10@sha256:60d0c145191ff3ad36d0ade02a9260ba0d7a5b014e7a7a647498bff53cca11d4
   script:
     - find . -name 'Dockerfile' | while read f ; do hadolint "$f" ; done
 
@@ -52,23 +52,23 @@ mr-lint-js:
   extends:
     - .mr-common
     - .pnpm-cache
-  image: registry.zrnt.dev/oci/base:v1.1.7@sha256:ac1ff3bdd0e5c9dc0e90e63e3b9a311987f922346f0b27532073f9e02815a576
+  image: registry.zrnt.dev/oci/base:v1.1.8@sha256:ac1ff3bdd0e5c9dc0e90e63e3b9a311987f922346f0b27532073f9e02815a576
   script:
     - pnpm run check
     - pnpm run build
 
 mr-lint-markdown:
   extends: .mr-common
-  image: registry.zrnt.dev/oci/markdownlint-cli2:v1.0.2@sha256:876d4f030008dcc254e334b186adab9bf8dc2396f5b94e137c65a1e189cd891c
+  image: registry.zrnt.dev/oci/markdownlint-cli2:v1.0.3@sha256:6bb09465faa40d18be305daf6b4d2b494bcdd33d7ccee47ad38948bac3af4cc8
   script: markdownlint-cli2 --config .gitlab/config.markdownlint.json *.md *.mdx
 
 mr-lint-yaml:
   extends: .mr-common
-  image: registry.zrnt.dev/oci/yamllint:v1.0.8@sha256:a138f0779b0cba15fefb0f8c73dc69aa3ab454497adddacc9b04c822ba7120e8
+  image: registry.zrnt.dev/oci/yamllint:v1.0.9@sha256:1c3fe3c3f6797c0ded5b4d708c2172906545d9c9a35dc8f00d5447313b1c1556
   script: yamllint -c .gitlab/yamllint.yml .
 
 semantic-release:
-  image: registry.zrnt.dev/oci/semantic-release:v1.0.8@sha256:591fd305ca41b35aa091ff07527e7c6c8a13152721a6007f93e474c4050eb45b
+  image: registry.zrnt.dev/oci/semantic-release:v1.0.9@sha256:5cfcf79ca6d814a10611f3a95593487f5d6d9fbc3be285a470e2f276f8d6f20f
   rules:
     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
   script:
