@@ -11,13 +11,13 @@ import { Steps, Card, LinkCard, CardGrid } from "@astrojs/starlight/components";
 
 <Details summary="Esempio">
 
-- $$N=\{0,1,2,3,\ldots\}$$
-- $$Z=\{2,1,-2,\ldots\}$$
-- $$Q=\left\{\frac{p}{q}\vert p,q\in{Z},q\neq0\right\}$$
+- $$\mathbb{N}=\{0,1,2,3,\ldots\}$$
+- $$\mathbb{Z}=\{2,1,-2,\ldots\}$$
+- $$\mathbb{Q}=\left\{\frac{p}{q}\ \vert\ p,q\in{Z}, q\neq 0 \right\}$$
+
+$$\mathbb{N}\subsetneqq \mathbb{Z}$$, $$\mathbb{Z}\subsetneqq \mathbb{Q}$$
 
 </Details>
-
-$$N\subsetneqq Z$$, $$Z\subsetneqq Q$$
 
 Sono insiemi ordinati.
 
@@ -31,27 +31,27 @@ Ogni numero razionale si può rappresentare in forma decimale limitata o
 periodica e viceversa.
 
 Alcuni numeri decimali non possono essere rappresentati con numeri razionali. I
-numeri reali contengono $$Q$$ e tutti i numeri non rappresentabili
+numeri reali contengono $$\mathbb{Q}$$ e tutti i numeri non rappresentabili
 razionalmente.
 
 ### Intervalli
 
-- $$(a,b)=\{x\in{R}\ \vert\ a < x < b\}$$: intervallo aperto.
-- $$[a,b]=\{x\in{R}\ \vert\ a\leq x\leq b\}$$: intervallo chiuso.
+- $$(a,b)=\{x\in\mathbb{R}\ \vert\ a < x < b\}$$: intervallo aperto.
+- $$[a,b]=\{x\in\mathbb{R}\ \vert\ a\leq x\leq b\}$$: intervallo chiuso.
 
 Gli intervalli possono essere aperti da una parte e chiusi dall'altra.
 
 Intervalli illimitati: un intervallo che ha un lato aperto e che tende ad
 infinito.
 
-$$\pm\infty$$ non sono numeri $$\in{R}$$, sono solo simboli, quindi un
+$$\pm\infty$$ non sono numeri $$\in\mathbb{R}$$, sono solo simboli, quindi un
 intervallo non può essere chiuso in $$\pm\infty$$.
 
 #### Maggioranti/minoranti
 
 <Details summary="Dati">
 
-- $$A\in{R}$$
+- $$A\in\mathbb{R}$$
 - $$A\neq0$$
 
 </Details>
@@ -81,12 +81,12 @@ Si scrive come $$\bar{x}$$/$$\underline{x}$$ o $$\sup{A}$$/$$\inf{A}$$.
 
 <Details summary="Dati">
 
-- $$A\subseteq R$$
+- $$A\subseteq\mathbb{R}$$
 - $$A\neq 0$$, $$\exists\sup{A}$$
 
 </Details>
 
-$$\exists\sup{A}\in{R}$$
+$$\exists\sup{A}\in\mathbb{R}$$
 
 Questa proprietà non vale per i numeri razionali.
 
@@ -94,16 +94,16 @@ Questa proprietà non vale per i numeri razionali.
 
 <Details summary="Dati">
 
-- $$x\in{R}$$
+- $$x\in\mathbb{R}$$
 
 </Details>
 
-$$\llcorner x\lrcorner=\sup{y\in{Z}:y<x}$$
+$$\llcorner x\lrcorner=\sup{y \in\mathbb{Z}\ \vert\ y < x}$$
 
 $$\llcorner x\lrcorner$$ è l'estremo superiore dell'insieme dei numeri interi
 $$\leq x$$.
 
-:::warn
+:::caution
 
 Per i numeri negativi la parte intera è data dal numero intero minore
 ($$\llcorner -3.5\lrcorner =-4$$)
@@ -120,20 +120,20 @@ L'insieme dei numeri naturali non è limitato superiormente.
 
 <Details summary="Dati">
 
-- $$\forall a,b\in{R}$$
+- $$\forall a,b\in\mathbb{R}$$
 - $$a<b$$
 
 </Details>
 
-$$\exists x\in{Q}\ \vert\ a<q<b$$
+$$\exists x\in\mathbb{Q}\ \vert\ a<q<b$$
 
 <Card title="Dimostrazione">
 
 <Details summary="Dati">
 
 - $$(a<b)\equiv(b-a>0)$$
-- $$\exists n\in{N}\ \vert\ (n>\frac{1}{b-a})\equiv(b-a=\frac{1}{n})$$, $$n>0$$
-- $$m=\frac{\llcorner na\lrcorner+1}{n}$$, $$m\in{Z}$$
+- $$\exists n\in\mathbb{N}\ \vert\ (n>\frac{1}{b-a})\equiv(b-a=\frac{1}{n}), n>0$$
+- $$m=\frac{\llcorner na\lrcorner+1}{n}, m\in\mathbb{Z}$$
 
 </Details>
 

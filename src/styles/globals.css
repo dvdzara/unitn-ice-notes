@@ -7,3 +7,7 @@ mjx-container {
 mjx-container[display="true"] {
   margin: 1rem auto !important;
 }
+
+iframe {
+  border: none;
+}

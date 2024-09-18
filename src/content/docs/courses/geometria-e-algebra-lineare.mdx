@@ -8,6 +8,8 @@ prev:
 title: Geometria e algebra lineare
 ---
 
+import { getCollection } from "astro:content";
+import { Details } from "../../../components";
 import { LinkCard, CardGrid } from "@astrojs/starlight/components";
 
 ## Programma del corso
@@ -31,6 +33,22 @@ import { LinkCard, CardGrid } from "@astrojs/starlight/components";
 $$\ge\frac{15}{30}$$) non serve fare l'esame completo.
 
 Con voto $$\ge\frac{15}{30}$$ si può fare un esame orale per alzare il voto.
+
+---
+
+<Details summary="Lezioni">
+
+<ul>
+  {(await getCollection("docs"))
+    .filter((c) => c.slug.startsWith("lessons/geometria-e-algebra-lineare/"))
+    .map((c) => (
+      <li>
+        <a href={c.slug}>{c.data.title}</a>
+      </li>
+    ))}
+</ul>
+
+</Details>
 
 ---
 
