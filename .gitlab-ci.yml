@@ -15,7 +15,7 @@ default:
     - default
 
 docker-image:
-  image: docker.io/library/docker:27.2.1-cli@sha256:ce5ca0c57db0e5a43bf59a7cf62c2309b53f63dc86e18521798744054c000024
+  image: docker.io/library/docker:27.2.1-cli@sha256:235a25499afa28f3c359b4a90d4245fc74d21f2f368cfb7bbc48aca1e189609d
   rules:
     - if: $CI_COMMIT_TAG
   script:
@@ -37,7 +37,7 @@ mr-fmt-prettier:
 
 mr-lint-docker-compose:
   <<: *mr-common
-  image: docker.io/library/docker:27.2.1-cli@sha256:ce5ca0c57db0e5a43bf59a7cf62c2309b53f63dc86e18521798744054c000024
+  image: docker.io/library/docker:27.2.1-cli@sha256:235a25499afa28f3c359b4a90d4245fc74d21f2f368cfb7bbc48aca1e189609d
   script:
     - find . -name 'docker-compose.yml' | while read f ; do docker compose -f "$f" config -q ; done
 
