@@ -2,7 +2,7 @@
 title: Lezione 4 (2024-09-16)
 ---
 
-import Details from "../../../../components/Details.astro";
+import { Details } from "../../../../components";
 import { LinkCard, CardGrid } from "@astrojs/starlight/components";
 
 ## Restrizione di una funzione
@@ -33,24 +33,25 @@ proprietà in un determinato intervallo.
 ## Funzioni di variabile reale
 
 La maggior parte delle funzioni saranno definite:
-$$f: D\rightarrow R, D\in{R}$$.
+$$f: D\rightarrow \mathbb{R}, D\in\mathbb{R}$$.
 
 Il grafico della funzione è un sottoinsieme del piano cartesiano
-($$R\times R=R^2$$).
+($$\mathbb{R}\times\mathbb{R}=\mathbb{R}^2$$).
 
-$$graf(f)=\{(x,y)\in{R^2}\ \vert \ x\in{D}, y=f(x)\}$$
+$$graf(f)=\{(x,y)\in\mathbb{R}^2\ \vert \ x\in{D}, y=f(x)\}$$
 
 <Details summary="Esempio">
 
 $$f(x)=x$$:
 
-- è iniettiva: $$\forall x_1,x_2\in{R}, x_1\neq x_2, f(x_1)\neq f(x_2)$$ perchè
-  $$f(x_1)=x_1$$ e $$f(x_2)=x_2$$;
-- è suriettiva: $$\forall y\in{R}\exists\ x\in{R}\ \vert\ y=f(x)$$;
+- è iniettiva: $$\forall x_1,x_2\in\mathbb{R}, x_1\neq x_2, f(x_1)\neq f(x_2)$$
+  perchè $$f(x_1)=x_1$$ e $$f(x_2)=x_2$$;
+- è suriettiva:
+  $$\forall y\in\mathbb{R}\exists\ x\in\mathbb{R}\ \vert\ y=f(x)$$;
 - è biiettiva: vedi sopra;
 - inversa: $$f(x)=f^-1(y)$$, $$x=x$$;
-- $$graf(f)$$: $$\{(x,y)\in{R^2}\ \vert\ x\in{R}, y=f(x)\}$$,
-  $$\{(x,x)\in{R^2}\ \vert\ x\in{R}\}$$
+- $$graf(f)$$: $$\{(x,y)\in\mathbb{R}^2\ \vert\ x\in\mathbb{R}, y=f(x)\}$$,
+  $$\{(x,x)\in\mathbb{R}^2\ \vert\ x\in\mathbb{R}\}$$
 
 </Details>
 
@@ -72,21 +73,22 @@ interseca $$f(x)$$ una ed una sola volta.
 ## Funzioni limitate
 
 - funzione limitata superiormente:
-  $$\exists\ M\in{R}\ \vert\ \forall x\in{R}, f(x)\leq M$$;
+  $$\exists\ M\in\mathbb{R}\ \vert\ \forall x\in\mathbb{R}, f(x)\leq M$$;
 - funzione limitata inferiormente:
-  $$\exists\ m\in{R}\ \vert\ \forall x\in{R}, f(x)\geq m$$;
+  $$\exists\ m\in\mathbb{R}\ \vert\ \forall x\in\mathbb{R}, f(x)\geq m$$;
 - funzione limitata: limitata sia superiormente che inferiormente;
 
 ## Funzioni simmetriche
 
 - funzione pari: $$f(x)=f(-x)$$;
 - funzione dispari: $$f(-x)=-f(x)$$;
-- funzione periodica: $$\exists\ T\in{R}, k\in{Z}\ \vert\ f(x+KT)=f(x)$$;
+- funzione periodica: $$\exists\ T\in\mathbb{R}, k\in{Z}\ \vert\ f(x+KT)=f(x)$$;
 
 ## Funzioni monotone
 
-- crescente: $$x_1,x_2\in{R}, x_1<x_2 \rightarrow f(x_1)\leq f(x_2)$$;
-- strettamente crescente: $$x_1,x_2\in{R}, x_1<x_2 \rightarrow f(x_1)<f(x_2)$$;
+- crescente: $$x_1,x_2\in\mathbb{R}, x_1<x_2 \Rightarrow f(x_1)\leq f(x_2)$$;
+- strettamente crescente:
+  $$x_1,x_2\in\mathbb{R}, x_1<x_2 \Rightarrow f(x_1)<f(x_2)$$;
 
 Esistono anche le varianti decrescente e strettamente decrescente.
 

@@ -1,4 +1,4 @@
-# ICE Notes
+# 🧊 ICE Notes
 
 These are the source files for the website
 [ice-notes.zarantonello.dev](https://ice-notes.zarantonello.dev).

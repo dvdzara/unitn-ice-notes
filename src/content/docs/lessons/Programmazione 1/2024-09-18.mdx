@@ -1,0 +1,111 @@
+---
+title: Lezione 2 (2024-09-18)
+---
+
+## Algoritmi
+
+### Trovare le soluzioni reali del polinomio `ax^2+bx+c=0` e stamparle
+
+#### Pseudocodice
+
+- chiedere valori dei parametri `a`,`b`,`c`;
+- calcolare delta;
+- se delta < 0;
+  - andare a fine;
+- se delta = 0;
+  - calcolare -b\2a;
+  - stampare soluzione;
+  - andare a fine;
+- se delta >= 0;
+  - calcolare (-b+sqrt(delta))/2a;
+  - stampare soluzione;
+  - calcolare (-b-sqrt(delta))/2a;
+  - stampare soluzione;
+  - andare a fine;
+
+### Calcolo della mediana
+
+#### Descrizione
+
+Dato un insieme ordinato di numeri, la mediana è il valore più grande della metà
+dei numeri più piccoli dell'insieme e il valore più piccolo della metà dei
+numeri più grandi.
+
+Se l'insieme ha una quantità pari di elementi, la mediana è la media tra i 2
+valori al centro dell'insieme.
+
+#### Pseudocodice
+
+Dato un insieme di elementi `n_1,n_2,...,n_n`:
+
+- leggi i valori in un vettore `a=[n_1,...,n_n]`;
+- ordina gli elementi di `a`;
+- calcola la mediana di `a`;
+- stampa il valore trovato;
+
+### Salita degli scalini
+
+Dati n scalini, e possibilità di farne 1,2 o 3 alla volta, trovare il numero di
+combinazioni possibili.
+
+## Architettura di un calcolatore
+
+Legge di Moore: ogni 18 mesi la dimensione di un transistor si dimezza.
+
+Clock speed: rimasta circa la stessa dall'inizio degli anni 2000.
+
+- applicazioni;
+- software di sistema;
+- sistema operativo;
+- hardware;
+
+Tra ogni livello c'è un interfaccia per comunicare.
+
+### Hardware
+
+Macchina di Von Neumann: componenti del calcolatore comunicano attraverso un bus
+di sistema.
+
+```text
+ ----------bus di sistema---------
+ |     |         |               |
+CPU   RAM   periferiche   memoria di massa
+```
+
+Componenti:
+
+- bus di sistema: consente la comunicazione tra componenti;
+- CPU: elaborazione delle istruzioni;
+- memoria centrale: memorizza dati e istruzioni;
+- memoria di massa: memorizza dati persistenti;
+- periferiche: altro;
+
+#### CPU
+
+Esegue sempre un ciclo:
+
+1. carica istruzioni da eseguire dalla RAM;
+2. interpreta le istruzioni;
+3. esegue le istruzioni;
+
+Il suo lavoro è regolato da un clock, più è elevata la frequenza, più
+(teoricamente) è alta la velocità.
+
+Le fasi di elaborazione si susseguono in modo sequenziale.
+
+### Rappresentazione dei dati
+
+I computer rappresentano l'informazione in modo binario `0` o `1`.
+
+#### Memoria centrale
+
+Memoria non persistente.
+
+Al loro avvio, i programmi vengono caricati per poi essere letti dalla CPU.
+
+È composta da una sequenza di celle, ognuna delle quali contiene una parola
+(word). La grandezza di una word dipende dal processore (32/64 bit).
+
+Si chiama RAM (Random Access Memory) perchè è possibile accedere a qualsiasi
+elemento nella stessa quantità di tempo indipendentemente dalla posizione in cui
+si trova.

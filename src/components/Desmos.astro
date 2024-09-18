@@ -1,0 +1,34 @@
+---
+import { Details } from ".";
+
+interface Props {
+  graph: string;
+  height?: number;
+  width?: number;
+  size?: number;
+}
+
+let { graph, height, width, size } = Astro.props;
+
+if (!size) {
+  size = 300;
+}
+
+if (!width) {
+  width = size;
+}
+
+if (!height) {
+  height = size;
+}
+---
+
+<Details summary="Grafico">
+  <iframe
+    src={`https://www.desmos.com/calculator/${graph}?embed`}
+    loading="lazy"
+    style={`width: ${width}px; height: ${height}px;`}
+    title={graph}
+  >
+  </iframe>
+</Details>

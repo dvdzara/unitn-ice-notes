@@ -8,6 +8,8 @@ prev:
 title: Analisi 1
 ---
 
+import { getCollection } from "astro:content";
+import { Details } from "../../../components";
 import { LinkCard, CardGrid } from "@astrojs/starlight/components";
 
 ## Programma del corso
@@ -16,7 +18,7 @@ import { LinkCard, CardGrid } from "@astrojs/starlight/components";
   - teoria degli insiemi;
   - numeri reali e complessi;
 - successioni numeriche e limiti;
-- funzioni (solo con $$D,C\in{R}$$), continuità;
+- funzioni (solo con $$D,C\in\mathbb{R}$$), continuità;
 - derivate;
 - integrali;
 
@@ -33,6 +35,22 @@ import { LinkCard, CardGrid } from "@astrojs/starlight/components";
 $$\ge\frac{18}{30}$$) non serve fare l'esame completo.
 
 No esami orali.
+
+---
+
+<Details summary="Lezioni">
+
+<ul>
+  {(await getCollection("docs"))
+    .filter((c) => c.slug.startsWith("lessons/analisi-1/"))
+    .map((c) => (
+      <li>
+        <a href={c.slug}>{c.data.title}</a>
+      </li>
+    ))}
+</ul>
+
+</Details>
 
 ---
 

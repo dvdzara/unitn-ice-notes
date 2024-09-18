@@ -1,8 +1,8 @@
-.mr-common: &mr-common
+.mr-common:
   rules:
     - if: $CI_PIPELINE_SOURCE == "merge_request_event"
 
-.pnpm-cache: &pnpm-cache
+.pnpm-cache:
   before_script:
     - pnpm config set store-dir .pnpm
     - pnpm install
@@ -29,53 +29,50 @@ docker-image:
     - arm64
 
 mr-fmt-prettier:
-  <<: *mr-common
-  <<: *pnpm-cache
+  extends:
+    - .mr-common
+    - .pnpm-cache
   image: registry.zrnt.dev/oci/prettier:v1.0.7@sha256:a6f214a9ec4e9be58fe8549aa7442adad8cf1d152913468ea9764522ca84b3c2
   script:
     - prettier --check .
 
 mr-lint-docker-compose:
-  <<: *mr-common
-  image: docker.io/library/docker:27.2.1-cli@sha256:235a25499afa28f3c359b4a90d4245fc74d21f2f368cfb7bbc48aca1e189609d
+  extends: .mr-common
+  image: docker.io/library/docker:27.2.1-cli@sha256:ce5ca0c57db0e5a43bf59a7cf62c2309b53f63dc86e18521798744054c000024
   script:
     - find . -name 'docker-compose.yml' | while read f ; do docker compose -f "$f" config -q ; done
 
 mr-lint-dockerfile:
-  <<: *mr-common
+  extends: .mr-common
   image: registry.zrnt.dev/oci/hadolint:v1.0.9@sha256:a003fd0d6bdbbfbb5442f79a786e0d97dcb3d2adae20bdee6195f5ad2b8b47db
   script:
     - find . -name 'Dockerfile' | while read f ; do hadolint "$f" ; done
 
 mr-lint-js:
-  <<: *mr-common
-  <<: *pnpm-cache
+  extends:
+    - .mr-common
+    - .pnpm-cache
   image: registry.zrnt.dev/oci/base:v1.1.7@sha256:ac1ff3bdd0e5c9dc0e90e63e3b9a311987f922346f0b27532073f9e02815a576
   script:
     - pnpm run check
     - pnpm run build
 
 mr-lint-markdown:
-  <<: *mr-common
+  extends: .mr-common
   image: registry.zrnt.dev/oci/markdownlint-cli2:v1.0.2@sha256:876d4f030008dcc254e334b186adab9bf8dc2396f5b94e137c65a1e189cd891c
-  script:
-    - markdownlint-cli2
+  script: markdownlint-cli2 --config .gitlab/config.markdownlint.json *.md *.mdx
 
 mr-lint-yaml:
-  <<: *mr-common
+  extends: .mr-common
   image: registry.zrnt.dev/oci/yamllint:v1.0.8@sha256:a138f0779b0cba15fefb0f8c73dc69aa3ab454497adddacc9b04c822ba7120e8
-  script:
-    - yamllint -c .gitlab/yamllint.yml .
+  script: yamllint -c .gitlab/yamllint.yml .
 
 semantic-release:
   image: registry.zrnt.dev/oci/semantic-release:v1.0.8@sha256:591fd305ca41b35aa091ff07527e7c6c8a13152721a6007f93e474c4050eb45b
   rules:
-    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH && $CI_COMMIT_AUTHOR != "$COMMITTER_NAME <$COMMITTER_EMAIL>"
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
   script:
-    - git config user.name "$COMMITTER_NAME"
-    - git config user.email "$COMMITTER_EMAIL"
+    - git config user.name "Semantic Release Bot"
+    - git config user.email 'semantic-release-bot@zarantonello.dev'
     - cp .gitlab/release.json .releaserc
     - semantic-release
-  variables:
-    COMMITTER_EMAIL: semantic-release-bot@zarantonello.dev
-    COMMITTER_NAME: Semantic Release Bot
