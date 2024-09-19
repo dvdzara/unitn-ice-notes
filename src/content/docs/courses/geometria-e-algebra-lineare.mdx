@@ -43,7 +43,7 @@ Con voto $$\ge\frac{15}{30}$$ si può fare un esame orale per alzare il voto.
     .filter((c) => c.slug.startsWith("lessons/geometria-e-algebra-lineare/"))
     .map((c) => (
       <li>
-        <a href={c.slug}>{c.data.title}</a>
+        <a href={`/${c.slug}`}>{c.data.title}</a>
       </li>
     ))}
 </ul>

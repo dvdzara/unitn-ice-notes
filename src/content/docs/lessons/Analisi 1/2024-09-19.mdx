@@ -1,0 +1,137 @@
+---
+title: Lezione 6 (2024-09-19)
+---
+
+import { Details, Desmos } from "../../../../components";
+import { LinkCard, CardGrid, Steps } from "@astrojs/starlight/components";
+
+## Funzioni definite a tratti
+
+Il dominio è diviso in parti e per ogni parte il grafico è dato da un funzione
+diversa.
+
+<Details summary="Esempio">
+
+$$
+f(x)=|x|=
+\begin{cases}\begin{align}
+x \geq 0 &\Rightarrow x \\
+x < 0 &\Rightarrow -x
+\end{align}\end{cases}
+$$
+
+</Details>
+
+## Trasformazioni del grafico di una funzione
+
+### Riflessione
+
+- asse x: $$f(x) \rightarrow -f(x)$$;
+- asse y: $$f(x) \rightarrow f(-x)$$;
+
+### Traslazione
+
+- verticale: $$f(x)+a$$:
+  - $$a > 0$$: il grafico si muove verso l'alto;
+  - $$a < 0$$: il grafico si muove verso il basso;
+- orizzontale: $$f(x+a)$$:
+  - $$a > 0$$: il grafico si muove verso sinistra;
+  - $$a < 0$$: il grafico si muove verso destra;
+
+### Riscalamento
+
+- verticale: $$kf(x)$$:
+  - $$k > 1$$: il grafico si espande;
+  - $$k < 1$$: il grafico si comprime;
+- orizzontale: $$f(kx)$$:
+  - $$k > 1$$: il grafico si comprime;
+  - $$k < 1$$: il grafico si espande;
+
+## Esercizi
+
+### Composizione di funzioni
+
+<Details summary="Dati">
+
+- $$f(x)=1-|x|$$;
+- $$g(x)=\sin^{-1}{(x)}$$
+
+</Details>
+
+$$f \circ g(x)$$:
+
+<Steps>
+
+1. $$\sin^{-1}{(x)}$$:
+
+   <Desmos graph="bfdqd7px55" />
+
+2. $$|\sin^{-1}{(x)}|$$:
+
+   <Desmos graph="b0owsso02j" />
+
+3. $$-|\sin^{-1}{(x)}|$$:
+
+   <Desmos graph="31wu1ceydl" />
+
+4. $$-|\sin^{-1}{(x)}|+1$$:
+
+   <Desmos graph="zo27edijbs" />
+
+</Steps>
+
+---
+
+$$g \circ f(x)$$:
+
+<Steps>
+
+1. $$\sin^{-1}{(x)}$$:
+
+   <Desmos graph="bfdqd7px55" />
+
+2. $$\sin^{-1}{(-x)}$$:
+
+   <Desmos graph="lrg3j1i45l" />
+
+3. $$\sin^{-1}{(-x+1)}$$:
+
+   <Desmos graph="vti12ozocm" />
+
+4. $$\sin^{-1}{(-|x|+1)}$$:
+
+   <Desmos graph="xkcwabn5vi" />
+
+</Steps>
+
+### Inversa di una funzione
+
+<Details summary="Dati">
+
+- $$f: [\frac{1}{2}, +\infty) \rightarrow \mathbb{R}$$;
+- $$f(x)=x^2-x+1$$;
+
+</Details>
+
+<Desmos graph="ujadjaawuw" />
+
+Il dominio di $$f^{-1}(x)$$ è dato dal codominio di $$f(x)$$:
+
+$$f^{-1}(x): [\frac{3}{4}, +\infty) \rightarrow [\frac{1}{2}, +\infty)$$
+
+<Steps>
+
+1. Trovo l'inversa:
+
+   $$x^2-x+1-y=0$$
+
+2. Risolvo l'equazione di 2° grado.
+
+   $$\frac{-1\pm\sqrt{4y-3}}{2}$$, tengo solo quella con il $$+$$ perché le
+   soluzioni dell'altra sono fuori dal dominio di $$f^{-1}{(x)}$$.
+
+3. Poi scambio $$x$$ e $$y$$ e trovo il valore di $$x$$.
+
+   <Desmos graph="ih7rtigkmf" />
+
+</Steps>
