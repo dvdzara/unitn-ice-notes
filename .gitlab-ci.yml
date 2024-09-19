@@ -32,7 +32,7 @@ mr-fmt-prettier:
   extends:
     - .mr-common
     - .pnpm-cache
-  image: registry.zrnt.dev/oci/prettier:v1.0.8@sha256:2126c2e4284aa14b910b1288cd99e3bb57909ab03ede4ba2366c7b20a1c07c9d
+  image: registry.zrnt.dev/oci/prettier:v1.0.9@sha256:2126c2e4284aa14b910b1288cd99e3bb57909ab03ede4ba2366c7b20a1c07c9d
   script:
     - prettier --check .
 
@@ -44,7 +44,7 @@ mr-lint-docker-compose:
 
 mr-lint-dockerfile:
   extends: .mr-common
-  image: registry.zrnt.dev/oci/hadolint:v1.0.10@sha256:60d0c145191ff3ad36d0ade02a9260ba0d7a5b014e7a7a647498bff53cca11d4
+  image: registry.zrnt.dev/oci/hadolint:v1.0.11@sha256:60d0c145191ff3ad36d0ade02a9260ba0d7a5b014e7a7a647498bff53cca11d4
   script:
     - find . -name 'Dockerfile' | while read f ; do hadolint "$f" ; done
 
@@ -59,16 +59,16 @@ mr-lint-js:
 
 mr-lint-markdown:
   extends: .mr-common
-  image: registry.zrnt.dev/oci/markdownlint-cli2:v1.0.3@sha256:6bb09465faa40d18be305daf6b4d2b494bcdd33d7ccee47ad38948bac3af4cc8
+  image: registry.zrnt.dev/oci/markdownlint-cli2:v1.0.4@sha256:6bb09465faa40d18be305daf6b4d2b494bcdd33d7ccee47ad38948bac3af4cc8
   script: markdownlint-cli2 --config .gitlab/config.markdownlint.json *.md *.mdx
 
 mr-lint-yaml:
   extends: .mr-common
-  image: registry.zrnt.dev/oci/yamllint:v1.0.9@sha256:1c3fe3c3f6797c0ded5b4d708c2172906545d9c9a35dc8f00d5447313b1c1556
+  image: registry.zrnt.dev/oci/yamllint:v1.0.10@sha256:1c3fe3c3f6797c0ded5b4d708c2172906545d9c9a35dc8f00d5447313b1c1556
   script: yamllint -c .gitlab/yamllint.yml .
 
 semantic-release:
-  image: registry.zrnt.dev/oci/semantic-release:v1.0.9@sha256:5cfcf79ca6d814a10611f3a95593487f5d6d9fbc3be285a470e2f276f8d6f20f
+  image: registry.zrnt.dev/oci/semantic-release:v1.0.10@sha256:5cfcf79ca6d814a10611f3a95593487f5d6d9fbc3be285a470e2f276f8d6f20f
   rules:
     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
   script:
