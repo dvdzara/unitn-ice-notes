@@ -16,7 +16,7 @@ These notes should resume lessons taken at UniTn's ICE bachelor course.
     .filter((c) => c.slug.startsWith("courses/"))
     .map((c) => (
       <li>
-        <a href={c.slug}>{c.data.title}</a>
+        <a href={`/${c.slug}`}>{c.data.title}</a>
       </li>
     ))}
 </ul>

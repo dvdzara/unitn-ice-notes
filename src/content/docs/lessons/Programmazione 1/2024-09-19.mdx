@@ -1,0 +1,163 @@
+---
+title: Lezione 3 (2024-09-19)
+---
+
+## Programmazione in C
+
+Un algoritmo espresso in linguaggio informale, va tradotto in un linguaggio che
+un computer può capire (C,C++,Java).
+
+La sequenza di istruzioni date al calcolatore viene detta programma.
+
+### Caratteristiche
+
+Un linguaggio è definito da:
+
+- sintassi: regole che descrivono le stringhe di parole riconosciute dal
+  linguaggio;
+- semantica: regole per interpretazione delle stringhe che descrivono i processi
+  computazionali dell'esecutore;
+
+Cosa deve fare un linguaggio di programmazione:
+
+- astrazione della memoria;
+- astrazione delle istruzioni;
+- astrazione del linguaggio per definire gli algoritmi;
+
+### Hello world
+
+Programma basico usato per testare che il processo di compilazione funzioni.
+
+```c
+// Include the `printf` function from the standard library.
+#include <stdio.h>
+
+int main(int argc, char *argv[]) {
+  // Print `Hello World` to the screen.
+  printf("Hello World!\n");
+
+  // Print all arguments passed to the program.
+  for (int i = 0; i < argc; ++i) {
+    printf("%s\n", argv[i]);
+  }
+}
+```
+
+### Funzioni per input/output
+
+Sono definite in `stdio.h`.
+
+- input: per leggere da `stdin` si usa `scanf(&variabile)`;
+- output: per scrivere a `stdout` si usa `printf("espressione")`;
+
+### Storia di C
+
+Inventato nel 1972 da Brian Kerninghan e Dennis Ritchie, evoluzione di 2
+linguaggi pre-esistenti (BCPL e B), sempre inventati da Ritchie.
+
+Nel 1989 viene creato uno standard e viene aggiornato nel 1999, 2011, 2017
+e 2023.
+
+### Confronto tra C e C++
+
+- C:
+  - evoluzione linguaggi preesistenti;
+  - utilizzato per quasi tutti gli OS moderni;
+- C++:
+  - evoluzione di C da parte di Stroustrup;
+  - fornisce astrazioni sulle strutture dati (templates);
+  - è possibile fare OOP (object oriented programming);
+
+## Compilazione e interpretazione
+
+- compilazione:
+  - il programma viene tradotto in un altro linguaggio (di solito di livello
+    inferiore);
+  - il compilatore non è necessario per l'esecuzione;
+  - migliori prestazioni, ma la compilazione richiede tempo;
+- interpretazione:
+  - traduce ed esegue direttamente il codice;
+  - oltre al programma serve anche un interprete;
+  - l'esecuzione è più lenta;
+
+## Lessico di C
+
+Caratteristiche:
+
+- case sensitive, distingue maiuscole e minuscole;
+- tutti i caratteri di spaziamento sono ignorati;
+- 2 modi di commentare:
+  - `/* commento */`: commenti multilineari;
+  - `// commento`: commenti su una singola linea;
+
+Elementi:
+
+- keywords: parole riservate dal linguaggio, usate per definire le operazioni di
+  base del programma (if, for, while, ...);
+- identificatori: nomi di qualsiasi oggetto definito dal programmatore
+  (variabili, funzioni, tipi). Un identificatore non può prendere un nome che fa
+  parte delle keywords.
+
+### Regole di nomenclatura degli identificatori
+
+Un identificatore può essere un nome qualsiasi (eccetto quelli riservati dalle
+parole chiave), ma deve seguire alcune regole:
+
+- deve essere una successione di lettere, cifre e simbolo `_`;
+- il primo carattere non può essere una cifra;
+- lettere maiuscole e minuscole creano identificatori diversi;
+
+:::caution
+
+Evitare di utilizzare lo stesso identificatore per variabili diverse o di usare
+più identificatori per la stessa variabile.
+
+:::
+
+:::tip
+
+Alcune buone pratiche:
+
+- anche se un identificatore non può contenere spazi, le parole possono essere
+  divise facendole iniziare con una lettera maiuscola (`macchinaRossa`), oppure
+  separandole con un trattino (`macchina_rossa`);
+- è meglio mantenere una certa consistenza sullo stile usato per separare le
+  parole negli identificatori;
+
+:::
+
+### Variabili
+
+Utilizzate per memorizzare un valore in un'area di memoria.
+
+Il valore può essere modificato durante il corso del programma.
+
+È possibile ottenere l'indirizzo di memoria (virtuale) di qualsiasi variabile
+scrivendo il simbolo `&` prima del nome: `indirizzo_di_a = &a`.
+
+Alcune variabili sono costanti, ovvero non sono modificabili dopo la loro
+dichiarazione.
+
+#### Dichiarazione
+
+Prima di essere usata una variabile deve essere dichiarata, bisogna definire il
+suo tipo (numero, stringa, struttura di dati), il suo nome e il suo valore
+iniziale.
+
+:::caution
+
+Se non si definisce un valore iniziale, il compilatore o il sistema operativo
+possono darne uno casuale, dando un comportamento indefinito al programma.
+
+:::
+
+Una variabile si dichiara in questo modo:
+
+```c
+// Variabile normale.
+int var1 = 0;
+// Variabile costante. Non può più essere cambiata.
+const int var2 = 2;
+// Variabile che contiene una stringa (tipo diverso di variabile).
+const char* nome = "nome a caso";
+```

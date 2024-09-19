@@ -27,7 +27,7 @@ import { LinkCard, CardGrid } from "@astrojs/starlight/components";
 - Andrea Marchese [andrea.marchese@unitn.it](mailto:andrea.marchese@unitn.it);
 - Andrea Pinamonti
   [andrea.pinamonti@unitn.it](mailto:andrea.pinamonti@unitn.it);
-- Mattia Piva;
+- Matteo Piva [matteo.piva@unitn.it](mailto:matteo.piva@unitn.it); ;
 
 ## Esame
 
@@ -45,7 +45,7 @@ No esami orali.
     .filter((c) => c.slug.startsWith("lessons/analisi-1/"))
     .map((c) => (
       <li>
-        <a href={c.slug}>{c.data.title}</a>
+        <a href={`/${c.slug}`}>{c.data.title}</a>
       </li>
     ))}
 </ul>
