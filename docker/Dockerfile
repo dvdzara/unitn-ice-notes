@@ -1,4 +1,4 @@
-FROM registry.zrnt.dev/oci/base:v1.1.8@sha256:ac1ff3bdd0e5c9dc0e90e63e3b9a311987f922346f0b27532073f9e02815a576 AS builder
+FROM registry.zrnt.dev/oci/base:v1.1.9@sha256:56273b54431b31471aa67acdaa6d7c6a987c031e516e6928baa9cdfeea1b5f8d AS builder
 
 WORKDIR /srv
 COPY package.json pnpm-lock.yaml ./
