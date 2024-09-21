@@ -32,7 +32,7 @@ mr-fmt-prettier:
   extends:
     - .mr-common
     - .pnpm-cache
-  image: registry.zrnt.dev/oci/prettier:v1.0.9@sha256:2126c2e4284aa14b910b1288cd99e3bb57909ab03ede4ba2366c7b20a1c07c9d
+  image: registry.zrnt.dev/oci/prettier:v1.0.10@sha256:950579d4ab941300ccff5c8e0449bf74c01bbc8df79a34fb9b53f1525dbdc026
   script:
     - prettier --check .
 
