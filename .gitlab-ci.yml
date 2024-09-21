@@ -15,7 +15,7 @@ default:
     - default
 
 docker-image:
-  image: docker.io/library/docker:27.3.0-cli@sha256:e2c2ce1047f733140c5482803421c0546ff1348976d149eb410a57671ee12830
+  image: docker.io/library/docker:27.3.1-cli@sha256:6806d2764925d3b483f9732422b95321781765aeece274b4e60063d02e13efd6
   rules:
     - if: $CI_COMMIT_TAG
   script:
@@ -38,7 +38,7 @@ mr-fmt-prettier:
 
 mr-lint-docker-compose:
   extends: .mr-common
-  image: docker.io/library/docker:27.3.0-cli@sha256:e2c2ce1047f733140c5482803421c0546ff1348976d149eb410a57671ee12830
+  image: docker.io/library/docker:27.3.1-cli@sha256:6806d2764925d3b483f9732422b95321781765aeece274b4e60063d02e13efd6
   script:
     - find . -name 'docker-compose.yml' | while read f ; do docker compose -f "$f" config -q ; done
 
@@ -52,7 +52,7 @@ mr-lint-js:
   extends:
     - .mr-common
     - .pnpm-cache
-  image: registry.zrnt.dev/oci/base:v1.1.8@sha256:ac1ff3bdd0e5c9dc0e90e63e3b9a311987f922346f0b27532073f9e02815a576
+  image: registry.zrnt.dev/oci/base:v1.1.9@sha256:56273b54431b31471aa67acdaa6d7c6a987c031e516e6928baa9cdfeea1b5f8d
   script:
     - pnpm run check
     - pnpm run build
