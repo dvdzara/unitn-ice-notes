@@ -1,10 +1,10 @@
 ---
-next:
-  link: /lessons/analisi-1/2024-09-09
-  label: Lezione 1 (2024-09-09)
 prev:
   link: /
   label: ICE Notes
+sidebar:
+  label: Info sul corso
+  order: 1
 title: Analisi 1
 ---
 
@@ -36,13 +36,19 @@ $$\ge\frac{18}{30}$$) non serve fare l'esame completo.
 
 No esami orali.
 
+Prima provetta è il 24/10/2024, occorre iscriversi in
+[esse3](https://www.esse3.unitn.it) entro 3-4 giorni prima della prova.
+
+È ammesso un formulario in formato a4 (fronte e retro), dove si può scrivere ciò
+che si vuole alla grandezza che si vuole.
+
 ---
 
 <Details summary="Lezioni">
 
 <ul>
   {(await getCollection("docs"))
-    .filter((c) => c.slug.startsWith("lessons/analisi-1/"))
+    .filter((c) => c.slug.startsWith("analisi-1/lezioni/"))
     .map((c) => (
       <li>
         <a href={`/${c.slug}`}>{c.data.title}</a>

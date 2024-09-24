@@ -1,10 +1,10 @@
 ---
-next:
-  link: /lessons/geometria-e-algebra-lineare/2024-09-09
-  label: Lezione 1 (2024-09-09)
 prev:
   link: /
   label: ICE Notes
+sidebar:
+  label: Info sul corso
+  order: 1
 title: Geometria e algebra lineare
 ---
 
@@ -40,7 +40,7 @@ Con voto $$\ge\frac{15}{30}$$ si può fare un esame orale per alzare il voto.
 
 <ul>
   {(await getCollection("docs"))
-    .filter((c) => c.slug.startsWith("lessons/geometria-e-algebra-lineare/"))
+    .filter((c) => c.slug.startsWith("geometria-e-algebra-lineare/lezioni/"))
     .map((c) => (
       <li>
         <a href={`/${c.slug}`}>{c.data.title}</a>

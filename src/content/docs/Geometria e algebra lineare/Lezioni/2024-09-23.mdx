@@ -1,0 +1,208 @@
+---
+title: Lezione 4 (2024-09-23)
+---
+
+import { Details } from "../../../../components";
+import { Tabs, TabItem, Aside } from "@astrojs/starlight/components";
+
+## Distanze nello spazio 3d
+
+### Tra 2 punti
+
+La distanza tra 2 punti $$P=(x_p, y_p, z_p)$$ e $$Q=(x_q, y_q, z_q)$$ è data dal
+modulo del vettore $$ \overrightarrow{PQ}$$.
+
+$$d(P,Q) = | \overrightarrow{PQ}| = \sqrt{(x_q - x_p)^2 + (y_q - y_p)^2 + (z_q - z_p)^2}$$
+
+### Tra un punto e un piano
+
+<Aside type="tip">
+
+<Details summary="Dati">
+
+- $$\underline{e}$$, versore;
+- $$\underline{v}$$, vettore geometrico;
+
+</Details>
+
+La proiezione ortogonale di $$\underline{v}$$ su $$\underline{e}$$ è data da
+$$\underline{e}(\underline{v}\cdot\underline{e})$$
+
+</Aside>
+
+Sia $$P=(x_p, y_p, z_p)$$ un punto e sia $$\pi$$ un piano con equazione
+cartesiana $$ax+by+cz+d=0$$, allora
+$$d(P, \pi) = \frac{|ax_p+by_p+cz_p+d|}{\sqrt{a^2 + b^2 + c^2}}$$.
+
+### Tra un punto e una retta
+
+Data una retta $$r$$ e un punto $$P \in{r}$$, trovo la retta $$s$$ ortogonale ad
+$$r$$ e passante per $$P$$.
+
+Trovo il punto $$H$$ di intersezione tra $$r$$ e $$s$$, la distanza è quella tra
+i 2 punti $$H$$ e $$P$$.
+
+Per trovare $$H$$:
+
+<Tabs>
+
+<TabItem label="Metodo 1">
+
+Scelgo un punto $$Q(t) \in{r}$$. $$Q(t)$$ può scorrere sulla retta $$r$$ al
+variare di $$t$$;
+
+Trovo $$t$$ tale che $$ \overrightarrow{PQ(t)} \cdot \underline{v} = 0$$.
+
+</TabItem>
+
+<TabItem label="Metodo 2">
+
+Trovo Il piano $$\pi$$ ortogonale a $$r$$ e passante per $$P$$.
+
+$$H$$ è il punto di intersezione tra $$r$$ e $$\pi$$.
+
+$$\underline{v}$$ è normale a $$\pi$$, il parametro $$d$$ dell'equazione
+cartesiana è dato imponendo il passaggio di $$\pi$$ per $$P$$.
+
+$$H$$ è dato da $$ax_r + by_r + cz_r + d = 0$$.
+
+$$x_r$$, $$y_r$$ e $$z_r$$ sono le equazioni parametriche di $$r$$.
+
+</TabItem>
+
+</Tabs>
+
+### Tra 2 rette
+
+Date $$r$$ e $$r_1$$ rette, $$d(r, r_1)$$ è la distanza minima tra un punto
+qualsiasi di $$r$$ e un punto qualsiasi di $$r_1$$.
+
+- se sono incidenti: la distanza è 0 perché c'è un punto in comune;
+- se sono parallele: scelgo un qualsiasi punto in $$r_1$$ e trovo la sua
+  distanza da $$r$$;
+- se sono sghembe:
+
+  <Tabs>
+
+  <TabItem label="Metodo 1">
+
+  Si trova il segmento $$ \overrightarrow{PQ}$$ i cui estremi sono
+  rispettivamente su $$r$$ e $$r_1$$ e che sia ortogonale ad entrambe le rette.
+
+  <Details summary="Esempio">
+
+  - $$
+    r=\begin{cases}
+    x = 1-t \\
+    y = -1+3t \\
+    z = -t
+    \end{cases}
+    $$
+
+  - $$
+    r_1=\begin{cases}
+    x = \\
+    y = \\
+    z = 1-s
+    \end{cases}
+    $$
+
+  $$\underline{v}$$ e $$\underline{w}$$ sono vettori direzionali di $$r$$ e
+  $$r_1$$.
+
+  $$
+  \begin{cases}
+   \overrightarrow{P(t)Q(s)} \cdot \underline{v} = 0 \\
+   \overrightarrow{P(t)Q(s)} \cdot \underline{w} = 0 \\
+  \end{cases}
+  $$
+
+  </Details>
+
+  </TabItem>
+
+  <TabItem label="Metodo 2">
+
+  <Details summary="Dati">
+
+  - il fascio di piani di sostegno $$r$$;
+  - il piano $$\pi$$ parallelo ad $$r_1$$;
+
+  </Details>
+
+  $$d(\pi, Q)$$ dove $$Q$$ è un punto qualunque di $$r_1$$.
+
+  </TabItem>
+
+  </Tabs>
+
+## Sistemi lineari
+
+Spazio delle ennuple (n-uple):
+$$\mathbb{R}^n = \{(a_1, ..., a_n)\ \vert\ a_n \in\mathbb{R}, n \in\mathbb{N}\}$$.
+
+$$(1,2,3) \in\mathbb{R}^3$$ è una terna.
+
+### Operazioni tra n-uple
+
+- somma: $$a+b = (a_1, ..., a_n) + (b_1, ..., b_n) = (a_1+b_1, ..., a_n+b_n)$$;
+- prodotto per uno scalare:
+  $$\lambda a = \lambda (a_1, ..., a_n) = (\lambda a_1, ..., \lambda a_n)$$;
+
+Generalizzano quanto già visto per i vettori geometrici in coordinate.
+
+### Definizione
+
+Un sistema di equazioni lineari (o sistema lineare) di $$m$$ equazioni in $$n$$
+incognite è:
+
+$$
+\begin{cases}
+a_{11}x_1 + a_{12}x_2 + \ldots + a_{1n}x_n = b_1 \\
+a_{21}x_1 + a_{22}x_2 + \ldots + a_{2n}x_n = b_2 \\
+\vdots \\
+a_{m1}x_1 + a_{m2}x_2 + \ldots + a_{mn}x_n = b_m
+\end{cases}
+$$
+
+Una soluzione del sistema lineare ($$*$$) è una ennupla di numeri reali che sia
+soluzione di tutte le $$m$$ equazioni.
+
+Se esistono soluzioni, il sistema è detto compatibile, altrimenti è
+incompatibile.
+
+Se $$b_1=b_2=\ldots=b_m$$, il sistema è detto omogeneo.
+
+### Matrici
+
+Dati $$m,n \geq 1$$, $$m,n \in\mathbb{N}$$, una matrice di ordine $$m \times n$$
+a coefficienti reali è una tabella:
+
+$$
+A=\begin{bmatrix}
+a_{11} & a_{12} & \ldots & a_{1n} \\
+a_{21} & a_{22} & \ldots & a_{2n} \\
+\vdots \\
+a_{m1} & a_{m2} & \ldots & a_{mn} \\
+\end{bmatrix}
+=[a_{ij}]
+$$
+
+$$a_{ij}$$ è l'elemento sulla riga $$i$$ e colonna $$j$$.
+
+Al sistema lineare ($$*$$) possiamo associare 3 matrici:
+
+1. matrice dei coefficienti: solo i coefficienti a sinistra dell'uguale;
+2. matrice dei termini noti: solo i termini a destra dell'uguale (ha una sola
+   colonna);
+3. matrice completa: 1 e 2 affiancate;
+
+## Operazioni elementari di sistemi lineari
+
+Queste operazioni trasformano il sistema senza cambiarne il risultato.
+
+- scambiare 2 righe/equazioni ($$S_{ij}$$): scambio riga $$i$$ con $$j$$;
+- moltiplicazione a sinistra e destra per uno scalare ($$D_{i}(\lambda)$$);
+  dilazione della riga $$i$$ per $$\lambda$$;
+- aggiungere un'equazione ad un'altra moltiplicandola per uno scalare
+  ($$E_{ij}(\lambda)$$);
