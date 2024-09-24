@@ -1,10 +1,10 @@
 ---
-next:
-  link: /lessons/programmazione-1/2024-09-17
-  label: Lezione 1 (2024-09-17)
 prev:
   link: /
   label: ICE Notes
+sidebar:
+  label: Info sul corso
+  order: 1
 title: Programmazione 1
 ---
 
@@ -88,7 +88,7 @@ Basta fare corso di sicurezza generale su Moodle.
 
 <ul>
   {(await getCollection("docs"))
-    .filter((c) => c.slug.startsWith("lessons/programmazione-1/"))
+    .filter((c) => c.slug.startsWith("programmazione-1/lezioni/"))
     .map((c) => (
       <li>
         <a href={`/${c.slug}`}>{c.data.title}</a>

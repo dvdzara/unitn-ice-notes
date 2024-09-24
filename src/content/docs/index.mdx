@@ -1,4 +1,6 @@
 ---
+sidebar:
+  order: 0
 next: false
 prev: false
 tableOfContents: false
@@ -13,7 +15,7 @@ These notes should resume lessons taken at UniTn's ICE bachelor course.
 
 <ul>
   {(await getCollection("docs"))
-    .filter((c) => c.slug.startsWith("courses/"))
+    .filter((c) => c.data.sidebar.order == 1)
     .map((c) => (
       <li>
         <a href={`/${c.slug}`}>{c.data.title}</a>
