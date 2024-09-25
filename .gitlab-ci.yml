@@ -7,6 +7,9 @@
     - pnpm config set store-dir .pnpm
     - pnpm install
   cache:
+    key:
+      files:
+        - pnpm-lock.yaml
     paths:
       - .pnpm
 
