@@ -1,16 +1,18 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["local>renovate-bot/presets"],
-  "packageRules": {
-    "matchManagers": ["npm"],
-    "matchPackagenames": [
-      "eslint",
-      "@eslint/js",
-      "eslint-plugin-*",
-      "typescript-eslint",
-      "@types/eslint__js"
-    ],
-    "groupName": "eslint dependencies",
-    "groupSlug": "eslint-deps"
-  }
+  "packageRules": [
+    {
+      "matchManagers": ["npm"],
+      "matchPackagenames": [
+        "eslint",
+        "@eslint/js",
+        "eslint-plugin-*",
+        "typescript-eslint",
+        "@types/eslint__js"
+      ],
+      "groupName": "eslint dependencies",
+      "groupSlug": "eslint-deps"
+    }
+  ]
 }
