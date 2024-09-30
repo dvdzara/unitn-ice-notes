@@ -1,0 +1,130 @@
+---
+title: Lezione 6 (2024-09-30)
+---
+
+import { Details } from "../../../../components";
+
+## Diagonale principale di una matrice
+
+In una matrice quadrata di $$m$$ righe e $$n$$ colonne, gli elementi
+$$\{ a_11, a_22, \ldots, a_mn \}$$ formano la diagonale principale della
+matrice.
+
+## Matrici particolari
+
+### Matrice trasposta
+
+Data una matrice $$A = [a_{ij}]$$, allora $$A^T = [a_{ji}]$$ è detta matrice
+trasposta di A (in pratica si scambiano le righe con le colonne).
+
+### Matrice simmetrica
+
+Se $$A$$ è quadrata e se coincide con la sua trasposta, allora essa è detta una
+matrice simmetrica (rispetto alla diagonale principale).
+
+<Details summary="Esempio">
+
+$$
+A = \begin{bmatrix}
+1 & 2 & 3 \\
+2 & 3 & 4 \\
+3 & 4 & 5
+\end{bmatrix}
+$$
+
+</Details>
+
+### Matrice nulla
+
+La matrice nulla di ordine $$m \times n$$ è una matrice i cui coefficienti sono
+tutti $$0$$.
+
+Notazione: $$\VN{0}_{m \times n} = [0_{ij}]$$.
+
+### Matrice colonna/riga
+
+- colonna: $$A = [a_{1j}]$$ (ha una sola colonna);
+- riga: $$A = [a_{i1}]$$ (ha una sola riga);
+
+### Matrice opposta
+
+La matrice opposta di $$A = [a_{ij}]$$ è $$-A = [-a_{ij}]$$.
+
+## Operazioni tra matrici
+
+### Somma
+
+Prendo $$A,B$$ matrici di ordine uguale, siano $$[a_{ij}]$$ e $$[b_{ij}]$$ i
+corrispettivi coefficienti.
+
+La somma è data dalla matrice $$C = [c_{ij}] = [a_{ij} + b_{ij}]$$.
+
+**Proprietà**:
+
+- commutativa;
+- associativa;
+- $$A + \VN{0}_{m \times n} = A$$;
+
+### Prodotto per uno scalare
+
+Il prodotto tra la matrice $$A$$ e $$\lambda$$ è
+$$B = [b_{ij}] = [\lambda a_{ij}]$$.
+
+**Proprietà**:
+
+- associativa;
+- distributiva;
+- $$1 A = A$$;
+
+#### Combinazione lineare
+
+Date $$A$$ e $$B$$ matrici dello stesso ordine e $$\lambda$$ e $$\mu$$:
+
+$$\lambda a + \mu B$$ è detta combinazione lineare di $$A$$ e $$B$$ a
+coefficienti $$\lambda$$ e $$\mu$$.
+
+### Prodotto di matrici
+
+Una matrice $$A \in \mu_{m \times n}(\mathbb{R}) = [a_{ij}]$$ è detta
+conformabile a sinistra ad una matrice $$B \in \mu_{m' \times n'}(\mathbb{R})$$
+se il numero di colonne di $$A$$ è uguale al numero di righe di $$B$$, quindi
+$$n=m'$$.
+
+<Details summary="Esempio">
+
+$$
+A = \begin{bmatrix}
+* & * & * \\
+* & * & *
+\end{bmatrix}\
+B = \begin{bmatrix}
+* & * & * \\
+* & * & * \\
+* & * & *
+\end{bmatrix}
+$$
+
+- $$A$$ è conformabile a sinistra a $$B$$.
+- $$B$$ non è conformabile a sinistra ad $$A$$.
+
+</Details>
+
+Il prodotto righe per colonne $$AB$$ è definito:
+
+$$C = [c_{ik}] = \mu_{m \times n'} \C c_{ik} = \SUM{j = 1}{n} a_{ij} b_{jk}$$
+
+La matrice identità è una matrice quadrata
+$$A \in \mu_{m \times n}(\mathbb{R})$$ che ha coefficienti 1 sulla diagonale
+principale o 0 altrimenti.
+
+**Proprietà**:
+
+Date $$A_{m \times n} \C B_{n \times n'} \C C_{n' \times n''}$$:
+
+- $$\( AB \) C = A \( BC \)$$;
+- $$\( A + B \) C = AC + BC$$;
+- $$\lambda \( AB \) = \( \lambda A \) B = A \( \lambda B \)$$;
+- Se $$A$$ è conformabile a sinistra alla matrice identità, allora
+  $$A I_n = A$$;
+
+Non vale la proprietà commutativa.

@@ -4,45 +4,7 @@ import { dependencies } from "./package.json";
 
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
-
-const macros = {
-  // such that
-  "\\|": "\\ \\vert\\ ",
-
-  "\\{": "\\left\\lbrace\\ ",
-  "\\}": "\\ \\right\\rbrace",
-  "\\[": "\\left[",
-  "\\]": "\\right]",
-  "\\(": "\\left(",
-  "\\)": "\\right)",
-
-  "\\C": ",\\ ",
-
-  // vector name
-  "\\VN": "\\underline",
-  // vector
-  "\\V": "\\overrightarrow",
-
-  // Integer part of a number
-  "\\INT": "\\llcorner {#1} \\lrcorner",
-
-  // logical and
-  "\\AND": "\\ and \\ ",
-  // logical or
-  "\\OR": "\\ or \\ ",
-  // logical not
-  "\\NOT": "\\lnot",
-
-  // customized symbols
-  "\\EX": "\\exists\\ ",
-  "\\EXN": "\\not\\exists\\ ",
-  "\\EXS": "\\exists!\\ ",
-
-  // arrows
-  "\\ARR": "\\Rightarrow",
-  "\\AR": "\\rightarrow",
-  "\\ALRR": "\\Leftrightarrow",
-};
+import katexMacros from "./src/latex-macros";
 
 export default defineConfig({
   site: "https://ice-notes.zarantonello.dev",
@@ -54,7 +16,7 @@ export default defineConfig({
           output: "mathml",
           throwOnError: false,
           strict: true,
-          macros,
+          macros: katexMacros,
         },
       ],
     ],
