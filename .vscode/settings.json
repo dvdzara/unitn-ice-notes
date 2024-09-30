@@ -1,5 +1,12 @@
 {
   "cSpell.enableFiletypes": ["mdx", "md"],
-  "prettier.configPath": ".github/prettier.json",
-  "cSpell.words": ["biiettiva", "iniettiva", "Iniettività", "suriettività"]
+  "cSpell.words": [
+    "biiettiva",
+    "iniettiva",
+    "Iniettività",
+    "sottosuccessione",
+    "Sottosuccessioni",
+    "suriettività"
+  ],
+  "prettier.configPath": ".github/prettier.json"
 }
