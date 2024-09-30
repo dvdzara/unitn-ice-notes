@@ -3,51 +3,52 @@ title: Lezione 1 (2024-09-09)
 ---
 
 import { Details } from "../../../../components";
-import { LinkCard, CardGrid } from "@astrojs/starlight/components";
+import { LinkCard, Card, CardGrid } from "@astrojs/starlight/components";
 
 ## Insiemi numerici
 
 - non importa l'ordine degli elementi;
 - composti da simboli, numeri o altri insiemi;
 
-<Details summary="Esempio">
+<details>
+<summary>Esempi</summary>
 
-- $$A=\{a,b,c,d,e\}$$
-- $$B=\{proprietà\ che\ accomuna\ gli\ elementi\}$$
-- $$C=\{2k+1\ \vert\ k=0,1,2,...\}$$
+- $$A = \{ a,b,c,d,e \}$$;
+- $$B = \{ \text{proprietà che accomuna gli elementi} \}$$;
+- $$C = \{ 2k+1 \| k=0,1,2,\ldots \}$$;
 
-</Details>
+</details>
 
 Possono essere definiti come elenco ($$A$$) o indicando la proprietà che
 accomuna tutti gli elementi ($$B$$).
 
-- $$a \in{A}$$ ($$a$$ appartiene ad $$A$$);
-- $$a \notin{A}$$ ($$a$$ non appartiene ad $$A$$);
+- $$a \in A$$ ($$a$$ appartiene ad $$A$$);
+- $$a \notin A$$ ($$a$$ non appartiene ad $$A$$);
 
 Simbolo dell'insieme vuoto: $$\emptyset$$
 
 ### Operazioni tra insiemi
 
-- unione: $$A\cup B=\{x\ \vert\ x\in{A}\ o\ x\in{B}\}$$
-- intersezione: $$A\cap B=\{x\ \vert\ x\in{A}\ e\ x\in{B}\}$$
-- differenza: $$A\setminus B=\{x\ \vert\ x\in{A}\ e\ x\notin{B}\}$$
-- prodotto cartesiano: $$A\times B=\{(a,b)\ \vert\ a\in{A},\ b\in{B}\}$$
+- unione: $$A \cup B = \{ x \| x \in A \OR x \in B \}$$;
+- intersezione: $$A \cap B = \{x \| x \in A \AND x \in B \}$$;
+- differenza: $$A \setminus B = \{ x \| x \in A \AND x \notin B \}$$;
+- prodotto cartesiano: $$A \times B = \{ (a,b) \| a \in A \C b \in B \}$$;
 
 ### Sottoinsieme
 
 $$A$$ è sottoinsieme di $$B$$ solo se tutti gli elementi di $$A$$ sono anche in
 $$B$$.
 
-Simbolo di sottoinsieme: $$A\subseteq B$$
+Simbolo di sottoinsieme: $$A \subseteq B$$
 
-Sottoinsieme strettamente contenuto: $$A\subsetneqq B$$. A è un sottoinsieme
-strettamente contenuto in B: $$\exists x\ \vert\ x\in{B}\ e\ x\notin{A}$$
+Sottoinsieme strettamente contenuto: $$A \subsetneqq B$$,
+$$\EX x \| x \in B \AND x \notin A$$.
 
-:::tip[Osservazioni]
+:::note
 
-- $$A\cup B$$ è sottoinsieme di A e B;
-- $$A\cap B$$ non è sottoinsieme nè di A, nè di B;
-- $$A=B$$ se $$A\subseteq B$$ e $$B\subseteq{A}$$;
+- $$A \cup B$$ è sottoinsieme di $$A$$ e $$B$$;
+- $$A \cap B$$ non è sottoinsieme nè di $$A$$, nè di $$B$$;
+- $$A \subseteq B \AND B \subseteq A \ARR A = B$$;
 
 :::
 
@@ -57,78 +58,66 @@ strettamente contenuto in B: $$\exists x\ \vert\ x\in{B}\ e\ x\notin{A}$$
 
 Rappresentano qualcosa che può essere vero o falso.
 
-<Details summary="Esempio">
+**Esempio**: $$a \in A$$
 
-$$a\in{A}$$
+### Operatori logici ($$\AND$$, $$\OR$$, $$\NOT$$)
 
-</Details>
-
-### Operatori logici ($$e$$, $$o$$, $$\lnot$$)
-
-| $$P$$ | $$Q$$ | $$e$$ | $$o$$ | $$\lnot P$$ |
-| ----- | ----- | ----- | ----- | ----------- |
-| v     | v     | v     | v     | f           |
-| v     | f     | f     | v     | f           |
-| f     | v     | f     | v     | v           |
-| f     | f     | f     | f     | v           |
+| $$P$$ | $$Q$$ | $$\AND$$ | $$\OR$$ | $$\NOT P$$ |
+| ----- | ----- | -------- | ------- | ---------- |
+| v     | v     | v        | v       | f          |
+| v     | f     | f        | v       | f          |
+| f     | v     | f        | v       | v          |
+| f     | f     | f        | f       | v          |
 
 ---
 
 Leggi di De Morgan (negazioni degli operatori logici):
 
-- $$\lnot(A\ e\ B)=(\lnot A)\ o\ (\lnot B)$$
-- $$\lnot(A\ o\ B)=(\lnot A)\ e\ (\lnot B)$$
+- $$\NOT \( A \AND B \) = \( \NOT A \) \OR \( \NOT B \)$$;
+- $$\NOT \( A \OR B \) = \( \NOT A \) \AND \( \NOT B \)$$;
 
 ### Predicato
 
 Proposizione con variabili.
 
-<Details summary="Esempio">
-
-$$P(x)\ \vert\ x\ è\ pari$$
-
-</Details>
+**Esempio**: $$P(x) \| x \text{ è pari}$$
 
 Il risultato può dipendere o no dal valore della variabile.
 
 ### Implicazione e doppia implicazione
 
-- implicazione: $$P\Rightarrow Q$$ (se P allora Q, Q solo se P);
-- doppia implicazione: $$P\Leftrightarrow Q$$ (P se e solo se Q);
+- implicazione: $$P \ARR Q$$ (se $$P$$ allora $$Q$$, $$Q$$ solo se $$P$$);
+- doppia implicazione: $$P \ALRR Q$$ ($$P$$ se e solo se $$Q$$);
 
-| $$P$$ | $$Q$$ | $$P\Rightarrow Q$$ | $$P\Leftrightarrow Q$$ |
-| ----- | ----- | ------------------ | ---------------------- |
-| v     | v     | v                  | v                      |
-| v     | f     | f                  | f                      |
-| f     | v     | v                  | f                      |
-| f     | f     | v                  | v                      |
+| $$P$$ | $$Q$$ | $$P \ARR Q$$ | $$P \ALRR Q$$ |
+| ----- | ----- | ------------ | ------------- |
+| v     | v     | v            | v             |
+| v     | f     | f            | f             |
+| f     | v     | v            | f             |
+| f     | f     | v            | v             |
 
 Nell'implicazione, se la prima proposizione è falsa, il risultato della seconda
 non ha importanza.
 
-$$P\Leftrightarrow Q = (P\Rightarrow Q)\ e\ (Q\Rightarrow P)$$
+$$P \ALRR Q = \( P \ARR Q \) \AND \( Q \ARR P \)$$
 
 Negazione di una proposizione con implicazioni:
-$$P\Rightarrow Q\equiv(\lnot Q)\Rightarrow(\lnot P)$$
+$$P \ARR Q \equiv \( \NOT Q \) \ARR \( \NOT P \)$$
 
 ### Quantificatori
 
-- esistenziale: $$\exists$$
+- esistenziale: $$\EX$$
 
-  <Details summary="Esempio">
-    $$\exists\ a\in{A}$$: esiste $$a$$ appartenente ad $$A$$
-  </Details>
+  **Esempio**: $$\EX a \in A$$: esiste $$a$$ appartenente ad $$A$$
 
 - universale: $$\forall$$
 
-  <Details summary="Esempio">
-    $$\forall a\in{A}$$: ogni $$a$$ appartiene ad $$A$$
-  </Details>
+  **Esempio**: $$\forall a \in A$$: ogni $$a$$ appartiene ad $$A$$
 
 Negazione di una proposizione con quantificatori:
 
-- $$\lnot(\forall x,\ P(x))=\exists x\ \vert\ \lnot P(x)$$
-- $$\lnot(\exists x\ \vert\ P(x))=\forall x,\ \lnot P(x)$$
+- $$\NOT \( \forall x \C P(x) \) = \EX x \| \NOT P(x)$$;
+- $$\NOT \( \EX x \| P(x) \) = \forall x \C \NOT P(x)$$;
 
 :::note
 
