@@ -30,5 +30,9 @@
       "groupSlug": "eslint"
     }
   ],
-  "semanticCommits": "enabled"
+  "semanticCommits": "enabled",
+  "lockFileMaintenance": {
+    "enabled": true,
+    "schedule": ["before 6am on Monday"]
+  }
 }
