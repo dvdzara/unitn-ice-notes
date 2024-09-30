@@ -17,12 +17,3 @@ name: lint-js
   pull_request:
     branches:
       - main
-    paths:
-      - .github/workflows/lint-js.yml
-      - astro.config.ts
-      - eslint.config.js
-      - package.json
-      - pnpm-lock.yaml
-      - postcss.config.js
-      - src/**
-      - tsconfig.json
