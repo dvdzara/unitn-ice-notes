@@ -1,13 +1,8 @@
-mjx-container {
+/* When a <p> tag was inside a list, bullets were too spaced. */
+li > p {
+  margin-bottom: 0 !important;
+}
+
+.katex {
   color: var(--sl-color-accent-high);
-  display: inline-block;
-  margin: 0 !important;
-}
-
-mjx-container[display="true"] {
-  margin: 1rem auto !important;
-}
-
-iframe {
-  border: none;
 }

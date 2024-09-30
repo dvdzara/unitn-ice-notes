@@ -1,0 +1,28 @@
+jobs:
+  lint-js:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@d632683dd7b4114ad314bca15554477dd762a938 # v4.2.0
+      - uses: pnpm/action-setup@4.0.0
+      - uses: actions/setup-node@v4.0.4
+        with:
+          cache: pnpm
+      - run: pnpm install
+      - run: pnpm check
+      - run: pnpm build
+
+name: lint-js
+
+"on":
+  pull_request:
+    branches:
+      - main
+    paths:
+      - .github/workflows/lint-js.yml
+      - astro.config.ts
+      - eslint.config.js
+      - package.json
+      - pnpm-lock.yaml
+      - postcss.config.js
+      - src/**
+      - tsconfig.json

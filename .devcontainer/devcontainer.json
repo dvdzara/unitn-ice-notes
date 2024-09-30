@@ -3,12 +3,10 @@
     "vscode": {
       "extensions": [
         "astro-build.astro-vscode",
-        "christian-kohler.path-intellisense",
         "DavidAnson.vscode-markdownlint",
         "esbenp.prettier-vscode",
-        "GitLab.gitlab-workflow",
+        "ms-azuretools.vscode-docker",
         "redhat.vscode-yaml",
-        "stkb.rewrap",
         "streetsidesoftware.code-spell-checker-italian",
         "streetsidesoftware.code-spell-checker",
         "unifiedjs.vscode-mdx"

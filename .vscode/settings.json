@@ -1,30 +1,10 @@
 {
+  "cSpell.enableFiletypes": ["mdx", "md"],
+  "prettier.configPath": ".github/prettier.json",
   "cSpell.words": [
-    "arccos",
-    "arcsin",
-    "astrojs",
-    "BCPL",
     "biiettiva",
-    "binom",
-    "bmatrix",
-    "Desmos",
-    "infty",
-    "Iniettiva",
-    "iniettive",
+    "iniettiva",
     "Iniettività",
-    "Kerninghan",
-    "Mandrioli",
-    "mathbb",
-    "Moivre",
-    "Pinamonti",
-    "pseudocodice",
-    "Riscalamento",
-    "Ritchie",
-    "Rouché",
-    "rref",
-    "Sbattella",
-    "Stroustrup",
     "suriettività"
-  ],
-  "cSpell.enableFiletypes": ["mdx"]
+  ]
 }

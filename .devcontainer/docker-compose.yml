@@ -1,6 +1,6 @@
 services:
   devcontainer:
-    image: registry.zrnt.dev/oci/base:v1.1.9@sha256:56273b54431b31471aa67acdaa6d7c6a987c031e516e6928baa9cdfeea1b5f8d
+    build: .
     volumes:
       - ../:/srv:Z
       - pnpm-cache:/pnpm:z

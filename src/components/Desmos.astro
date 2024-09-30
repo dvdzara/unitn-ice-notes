@@ -28,7 +28,11 @@ if (!height) {
     src={`https://www.desmos.com/calculator/${graph}?embed`}
     style={`width: ${width}px; height: ${height}px;`}
     loading="lazy"
-    title={graph}
-  >
-  </iframe>
+    title={graph}></iframe>
 </Details>
+
+<style>
+  iframe {
+    border: none;
+  }
+</style>

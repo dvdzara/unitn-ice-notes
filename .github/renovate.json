@@ -1,0 +1,34 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "configMigration": true,
+  "dependencyDashboard": true,
+  "extends": ["config:best-practices", "customManagers:dockerfileVersions"],
+  "osvVulnerabilityAlerts": true,
+  "packageRules": [
+    {
+      "matchFileNames": [".devcontainer/**"],
+      "groupName": "devcontainer",
+      "groupSlug": "devcontainer",
+      "automerge": true
+    },
+    {
+      "matchManagers": ["github-actions"],
+      "groupName": "github-actions",
+      "groupSlug": "github-actions",
+      "automerge": true
+    },
+    {
+      "matchManagers": ["npm"],
+      "matchPackageNames": [
+        "eslint",
+        "@eslint/js",
+        "eslint-plugin-*",
+        "typescript-eslint",
+        "@types/eslint__js"
+      ],
+      "groupName": "eslint",
+      "groupSlug": "eslint"
+    }
+  ],
+  "semanticCommits": "enabled"
+}

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json.schemastore.org/prettierrc",
+  "overrides": [
+    {
+      "files": ["*.md", "*.mdx", "*.astro"],
+      "options": {
+        "proseWrap": "always"
+      }
+    },
+    {
+      "files": ["*.astro"],
+      "options": {
+        "parser": "astro"
+      }
+    }
+  ],
+  "plugins": ["prettier-plugin-astro"]
+}
