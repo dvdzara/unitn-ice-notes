@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "astro dev",
+    "dev": "astro dev --host",
     "build": "astro sync && astro build",
     "preview": "astro preview",
     "check": "astro check && eslint",
@@ -29,6 +29,7 @@
     "autoprefixer": "10.4.20",
     "katex": "0.16.11",
     "rehype-katex": "7.0.1",
+    "rehype-mermaid": "2.1.0",
     "remark-math": "6.0.0"
   },
   "packageManager": "pnpm@9.11.0+sha512.0a203ffaed5a3f63242cd064c8fb5892366c103e328079318f78062f24ea8c9d50bc6a47aa3567cabefd824d170e78fa2745ed1f16b132e16436146b7688f19b"
