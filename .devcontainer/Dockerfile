@@ -10,9 +10,7 @@ RUN corepack enable && \
 ENV PNPM_HOME="/pnpm/bin"
 ENV PATH="/pnpm/bin:$PATH"
 
-
-RUN pnpx playwright-core install-deps && \
-    apt-get clean && \
-    pnpx playwright-core install
+RUN pnpx playwright install --with-deps && \
+    apt-get clean
 
 ENTRYPOINT []
