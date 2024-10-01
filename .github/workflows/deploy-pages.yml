@@ -5,8 +5,8 @@ jobs:
     steps:
       - uses: actions/checkout@d632683dd7b4114ad314bca15554477dd762a938 # v4.2.0
       - uses: pnpm/action-setup@fe02b34f77f8bc703788d5817da081398fad5dd2 # v4.0.0
-      - run: pnpx playwright install-deps
-      - run: pnpx playwright install
+      - run: pnpx playwright-core install-deps
+      - run: pnpx playwright-core install
       - uses: withastro/action@44cbafd43567733e3b007918c6e0711480560516 # v3.0.0
   deploy:
     container: docker.io/library/node:22.9.0-bookworm
