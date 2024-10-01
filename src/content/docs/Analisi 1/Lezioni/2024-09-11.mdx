@@ -9,15 +9,11 @@ import { Steps, Card, LinkCard, CardGrid } from "@astrojs/starlight/components";
 
 ### Insiemi numerici
 
-<Details summary="Esempio">
+- $$\mathbb{N} = \{ 0,1,2,3,\ldots \}$$
+- $$\mathbb{Z} = \{ 2,1,-2,\ldots \}$$
+- $$\mathbb{Q} = \{ \frac{p}{q} \| p,q \in \mathbb{Z}, q \neq 0 \}$$
 
-- $$\mathbb{N}=\{0,1,2,3,\ldots\}$$
-- $$\mathbb{Z}=\{2,1,-2,\ldots\}$$
-- $$\mathbb{Q}=\left\{\frac{p}{q}\ \vert\ p,q\in{Z}, q\neq 0 \right\}$$
-
-$$\mathbb{N}\subsetneqq \mathbb{Z}$$, $$\mathbb{Z}\subsetneqq \mathbb{Q}$$
-
-</Details>
+$$\mathbb{N} \subsetneqq \mathbb{Z}$$, $$\mathbb{Z} \subsetneqq \mathbb{Q}$$
 
 Sono insiemi ordinati.
 
@@ -25,7 +21,7 @@ Sono definite le operazioni di somma e prodotto.
 
 ---
 
-Non esiste nessun numero razionale $$x\ \vert\ x^2=2$$.
+Non esiste nessun numero razionale $$x \| x^{2} = 2$$.
 
 Ogni numero razionale si può rappresentare in forma decimale limitata o
 periodica e viceversa.
@@ -36,28 +32,23 @@ razionalmente.
 
 ### Intervalli
 
-- $$(a,b)=\{x\in\mathbb{R}\ \vert\ a < x < b\}$$: intervallo aperto.
-- $$[a,b]=\{x\in\mathbb{R}\ \vert\ a\leq x\leq b\}$$: intervallo chiuso.
+- $$\( a,b \) = \{ x \in \mathbb{R} \| a < x < b \}$$: intervallo aperto;
+- $$\[ a,b \] = \{ x \in \mathbb{R} \| a \leq x \leq b \}$$: intervallo chiuso;
 
 Gli intervalli possono essere aperti da una parte e chiusi dall'altra.
 
 Intervalli illimitati: un intervallo che ha un lato aperto e che tende ad
 infinito.
 
-$$\pm\infty$$ non sono numeri $$\in\mathbb{R}$$, sono solo simboli, quindi un
+$$\pm\infty$$ non sono numeri $$\in \mathbb{R}$$, sono solo simboli, quindi un
 intervallo non può essere chiuso in $$\pm\infty$$.
 
 #### Maggioranti/minoranti
 
-<Details summary="Dati">
+Dato $$A \in \mathbb{R} \C A \neq 0$$:
 
-- $$A\in\mathbb{R}$$
-- $$A\neq0$$
-
-</Details>
-
-- maggiorante: $$\exists M\ \vert\ \forall x\in{A},x\leq M$$
-- minorante: $$\exists m\ \vert\ \forall x\in{A},x\geq m$$
+- maggiorante: $$\EX M \| \forall x \in A \C x \leq M$$
+- minorante: $$\EX m \| \forall x \in A \C x \geq m$$
 
 $$M$$ o $$m$$ non devono necessariamente far parte di $$A$$.
 
@@ -75,80 +66,69 @@ $$M$$/$$m$$ è massimo/minimo di $$A$$ se:
 
 Più piccolo/grande di maggioranti/minoranti di $$A$$.
 
-Si scrive come $$\bar{x}$$/$$\underline{x}$$ o $$\sup{A}$$/$$\inf{A}$$.
+Si scrive come $$\overline{x}$$/$$\underline{x}$$ o $$\sup{A}$$/$$\inf{A}$$.
 
 ### Assioma di completezza dei numeri reali
 
-<Details summary="Dati">
+Dati:
 
-- $$A\subseteq\mathbb{R}$$
-- $$A\neq 0$$, $$\exists\sup{A}$$
+- $$A \subseteq \mathbb{R}$$
+- $$A \neq 0$$, $$\EX \sup{A}$$
 
-</Details>
-
-$$\exists\sup{A}\in\mathbb{R}$$
+$$\EX \sup{A} \in \mathbb{R}$$
 
 Questa proprietà non vale per i numeri razionali.
 
 ### Parte intera di un numero reale
 
-<Details summary="Dati">
+Dato $$x \in \mathbb{R}$$.
 
-- $$x\in\mathbb{R}$$
+$$\INT{x} = \sup \{y \in \mathbb{Z} \| y < x \}$$
 
-</Details>
-
-$$\llcorner x\lrcorner=\sup{y \in\mathbb{Z}\ \vert\ y < x}$$
-
-$$\llcorner x\lrcorner$$ è l'estremo superiore dell'insieme dei numeri interi
-$$\leq x$$.
+$$\INT{x}$$ è l'estremo superiore dell'insieme dei numeri interi $$\leq x$$.
 
 :::caution
 
 Per i numeri negativi la parte intera è data dal numero intero minore
-($$\llcorner -3.5\lrcorner =-4$$)
+($$\INT{-3.5} = -4$$)
 
 :::
 
 ### Proprietà di Archimede
 
-$$\sup{N}=+\infty$$
+$$\sup{N} =+ \infty$$
 
 L'insieme dei numeri naturali non è limitato superiormente.
 
 ### Densità di Q in R
 
-<Details summary="Dati">
+Dati:
 
-- $$\forall a,b\in\mathbb{R}$$
-- $$a<b$$
+- $$\forall a,b \in \mathbb{R}$$;
+- $$a < b$$;
 
-</Details>
-
-$$\exists x\in\mathbb{Q}\ \vert\ a<q<b$$
+$$\EX x \in \mathbb{Q} \| a < q < b$$
 
 <Card title="Dimostrazione">
 
-<Details summary="Dati">
+Dati:
 
-- $$(a<b)\equiv(b-a>0)$$
-- $$\exists n\in\mathbb{N}\ \vert\ (n>\frac{1}{b-a})\equiv(b-a=\frac{1}{n}), n>0$$
-- $$m=\frac{\llcorner na\lrcorner+1}{n}, m\in\mathbb{Z}$$
+- $$\( a < b \) \equiv \( b - a > 0\)$$;
+- $$\EX n \in \mathbb{N} \| \( n > \frac{1}{b - a} \) \equiv \( b - a = \frac{1}{n} \) \C n > 0$$;
+- $$m = \frac{\INT{na} + 1}{n} \C m \in \mathbb{Z}$$;
 
-</Details>
-
-Dimostro che q è minore di b.
+Dimostro che $$q$$ è minore di $$b$$.
 
 <Steps>
 
-1. $$q=\frac{m}{n}=\frac{\llcorner na\lrcorner+1}{n}=\frac{\llcorner na\lrcorner}{n}+\frac{1}{n}\leq\frac{na}{n}+\frac{1}{n}=a+\frac{1}{n}$$
-2. $$q\leq a+\frac{1}{n}<a+(b-a)=b\rightarrow q<b$$
+1. $$q = \frac{m}{n} = \frac{\INT{na} + 1}{n} = \frac{\INT{na}}{n} + \frac{1}{n} \leq \frac{na}{n} + \frac{1}{n} = a + \frac{1}{n}$$
+2. $$q \leq a + \frac{1}{n} < a + \( b - a \) = b \rightarrow q < b$$
 
 </Steps>
 
-Dimostro che q è maggiore di a.
+Dimostro che $$q$$ è maggiore di $$a$$.
 
-$$q=\frac{m}{n}=\frac{\llcorner na\lrcorner+1}{n}>\frac{(na-1)+1}{n}=\frac{na}{n}\rightarrow q>a$$
+$$q = \frac{m}{n} = \frac{\INT{na} + 1}{n} > \frac{ \( na - 1 \) + 1 }{n} = \frac{na}{n} \rightarrow q > a$$
 
 </Card>
 
