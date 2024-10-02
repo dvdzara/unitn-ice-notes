@@ -1,0 +1,102 @@
+---
+title: Lezione 10 (2024-10-02)
+---
+
+import { Steps, Card, Details } from "../../../../components";
+
+## Limiti di sottosuccessioni
+
+Se $$a_n \to l$$, allora esiste il limite e vale $$a_{n_k} \to l$$.
+
+Se una sottosuccessione $$a_n \to l, \; l \in \mathbb{R}$$, allora
+$$\exists \; a_n \to l.$$
+
+---
+
+$$
+a_n = \begin{cases}
+n & \text{se } n \leq 100 \\
+3 & \text{se } n > 100
+\end{cases}
+$$
+
+Il limite è $$3$$ perché conta il comportamento a $$+\infty$$.
+
+## Successioni monotone
+
+- Crescente: $$a_n \leq a_{n + 1}$$;
+- Strettamente crescente: $$a_n < a_{n + 1}$$;
+
+Viceversa, esistono anche successioni decrescenti e strettamente decrescenti.
+
+## Teorema dei limiti di successioni monotone
+
+Sia $$a_n$$ una successione monotona crescente o decrescente, allora
+$$\exists \; a_n \to \sup \{ a_n \} \text{ o } \inf \{ a_n \}$$.
+
+Se la successione è superiormente o inferiormente limitata, allora il limite è
+finito.
+
+## Numero di Nepero
+
+Data una successione $$a_n = \left( 1 + \frac{1}{n} \right)^n$$, che è
+strettamente crescente e limitata, il numero di Nepero ($$e$$) è il limite di
+$$a_n$$:
+
+$$
+\lim_{n \to \infty} a_n = e
+$$
+
+Inoltre, si ha:
+
+$$
+\lim_{n \to \infty} |a_n| = +\infty \Rightarrow \lim_{n \to \infty} \left( 1 + \frac{1}{a_n} \right)^{a_n} = e
+$$
+
+## Teorema di permanenza del segno
+
+Sapendo che $$a_n \to l$$ e che
+$$\exists n \; | \; \forall n' > n \; \Rightarrow a_n \geq 0 \Rightarrow l > 0$$.
+
+Se dopo un certo $$n$$ una successione ha sempre membri positivi o negativi,
+allora il suo limite (se esiste) è positivo o negativo.
+
+## Teorema del confronto
+
+Sapendo che $$a_n \to l_a$$ e $$b_n \to l_b$$,
+$$\exists n \; | \; \forall n' > n \; \Rightarrow a_n \leq b_n \Rightarrow l_a \leq l_b$$.
+
+Non posso affermare che $$l_a < l_b$$, anche se
+$$\forall n \in \mathbb{N} \; a_n < b_n$$.
+
+## Teorema dei carabinieri
+
+Dati
+$$a_n, b_n, c_n \; | \; \forall n \in \mathbb{N} \; a_n \leq c_n \leq b_n, \; a_n \to l_c, \; b_n \to l_c$$,
+allora $$\exists c_n \to l_c$$.
+
+Se $$l_c = -\infty$$, allora $$a_n$$ è irrilevante, e viceversa, se
+$$l_c = +\infty$$, allora $$b_n$$ è irrilevante.
+
+Una successione limitata da un'infinitesima (che tende a zero) è anch'essa
+infinitesima.
+
+<Details summary="Esempio">
+
+Dire se $$a_n = \frac{(-1)^n}{n}$$ ammette limite e calcolarlo:
+
+- $$(-1)^n$$ è una successione limitata;
+- $$\frac{1}{n}$$ tende a $$0$$;
+
+Quindi, secondo il teorema dei carabinieri, $$a_n$$ è una successione
+infinitesima.
+
+</Details>
+
+## Operazioni con i limiti
+
+Date $$a_n \to l_a$$ e $$b_n \to l_b$$:
+
+- $$\lim_{n} (a_n \pm b_n) = l_a \pm l_b$$;
+- $$\lim_{n} a_n b_n = l_a l_b$$;
+- $$\lim_{n} \frac{a_n}{b_n} = \frac{l_a}{l_b}$$ solo se $$l_b \neq 0$$;
