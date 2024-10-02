@@ -10,7 +10,10 @@ RUN corepack enable && \
 ENV PNPM_HOME="/pnpm/bin"
 ENV PATH="/pnpm/bin:$PATH"
 
-RUN pnpx playwright install --with-deps && \
+# renovate: datasource=npm depName=playwright versioning=npm
+ENV PLAYWRIGHT_VERSION="1.47.2"
+
+RUN pnpm dlx "playwright@$PLAYWRIGHT_VERSION" install --with-deps && \
     apt-get clean
 
 ENTRYPOINT []

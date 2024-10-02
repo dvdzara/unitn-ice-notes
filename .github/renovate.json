@@ -2,7 +2,11 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "configMigration": true,
   "dependencyDashboard": true,
-  "extends": ["config:best-practices", "customManagers:dockerfileVersions"],
+  "extends": [
+    "config:best-practices",
+    "customManagers:dockerfileVersions",
+    "customManagers:githubActionsVersions"
+  ],
   "osvVulnerabilityAlerts": true,
   "packageRules": [
     {
