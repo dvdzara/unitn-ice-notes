@@ -2,53 +2,58 @@
 title: Lezione 1 (2024-09-09)
 ---
 
-import { Details } from "../../../../components";
 import { LinkCard, Card, CardGrid } from "@astrojs/starlight/components";
 
 ## Insiemi numerici
 
-- non importa l'ordine degli elementi;
-- composti da simboli, numeri o altri insiemi;
+- Non importa l'ordine degli elementi.
+- Gli insiemi sono composti da simboli, numeri o altri insiemi.
 
 <details>
 <summary>Esempi</summary>
 
-- $$A = \{ a,b,c,d,e \}$$;
-- $$B = \{ \text{proprietà che accomuna gli elementi} \}$$;
-- $$C = \{ 2k+1 \| k=0,1,2,\ldots \}$$;
+- $$A = \{ a, b, c, d, e \}$$
+- $$B = \{ \text{proprietà che accomuna gli elementi} \}$$
+- $$C = \{ 2k + 1 \mid k = 0, 1, 2, \ldots \}$$
 
 </details>
 
-Possono essere definiti come elenco ($$A$$) o indicando la proprietà che
-accomuna tutti gli elementi ($$B$$).
+Gli insiemi possono essere definiti in due modi:
 
-- $$a \in A$$ ($$a$$ appartiene ad $$A$$);
-- $$a \notin A$$ ($$a$$ non appartiene ad $$A$$);
+1. **Elenco di elementi**: $$A$$.
+2. **Proprietà comune**: $$B$$.
 
-Simbolo dell'insieme vuoto: $$\emptyset$$
+### Appartenenza agli insiemi
 
-### Operazioni tra insiemi
+- $$a \in A$$ ($$a$$ appartiene ad $$A$$).
+- $$a \notin A$$ ($$a$$ non appartiene ad $$A$$).
 
-- unione: $$A \cup B = \{ x \| x \in A \OR x \in B \}$$;
-- intersezione: $$A \cap B = \{x \| x \in A \AND x \in B \}$$;
-- differenza: $$A \setminus B = \{ x \| x \in A \AND x \notin B \}$$;
-- prodotto cartesiano: $$A \times B = \{ (a,b) \| a \in A \C b \in B \}$$;
+### Simbolo dell'insieme vuoto
+
+- L'insieme vuoto è rappresentato da $$\emptyset$$.
+
+## Operazioni tra insiemi
+
+- **Unione**: $$A \cup B = \{ x \mid x \in A \lor x \in B \}$$
+- **Intersezione**: $$A \cap B = \{ x \mid x \in A \land x \in B \}$$
+- **Differenza**: $$A \setminus B = \{ x \mid x \in A \land x \notin B \}$$
+- **Prodotto cartesiano**:
+  $$A \times B = \{ (a, b) \mid a \in A \land b \in B \}$$
 
 ### Sottoinsieme
 
-$$A$$ è sottoinsieme di $$B$$ solo se tutti gli elementi di $$A$$ sono anche in
-$$B$$.
+Un insieme $$A$$ è un sottoinsieme di $$B$$ se tutti gli elementi di $$A$$ sono
+anche in $$B$$.
 
-Simbolo di sottoinsieme: $$A \subseteq B$$
-
-Sottoinsieme strettamente contenuto: $$A \subsetneqq B$$,
-$$\EX x \| x \in B \AND x \notin A$$.
+- **Simbolo di sottoinsieme**: $$A \subseteq B$$.
+- **Sottoinsieme stretto**: $$A \subsetneqq B$$, se esiste almeno un elemento
+  $$x$$ tale che $$x \in B$$ e $$x \notin A$$.
 
 :::note
 
-- $$A \cup B$$ è sottoinsieme di $$A$$ e $$B$$;
-- $$A \cap B$$ non è sottoinsieme nè di $$A$$, nè di $$B$$;
-- $$A \subseteq B \AND B \subseteq A \ARR A = B$$;
+- $$A \cup B$$ non è un sottoinsieme di $$A$$ né di $$B$$.
+- $$A \cap B$$ è un sottoinsieme sia di $$A$$ sia di $$B$$.
+- Se $$A \subseteq B$$ e $$B \subseteq A$$, allora $$A = B$$.
 
 :::
 
@@ -56,73 +61,72 @@ $$\EX x \| x \in B \AND x \notin A$$.
 
 ### Proposizioni
 
-Rappresentano qualcosa che può essere vero o falso.
+Le proposizioni rappresentano qualcosa che può essere vero o falso.  
+**Esempio**: $$a \in A$$.
 
-**Esempio**: $$a \in A$$
+### Operatori logici
 
-### Operatori logici ($$\AND$$, $$\OR$$, $$\NOT$$)
+| $$P$$ | $$Q$$ | $$P \land Q$$ | $$P \lor Q$$ | $$\neg P$$ |
+| ----- | ----- | ------------- | ------------ | ---------- |
+| V     | V     | V             | V            | F          |
+| V     | F     | F             | V            | F          |
+| F     | V     | F             | V            | V          |
+| F     | F     | F             | F            | V          |
 
-| $$P$$ | $$Q$$ | $$\AND$$ | $$\OR$$ | $$\NOT P$$ |
-| ----- | ----- | -------- | ------- | ---------- |
-| v     | v     | v        | v       | f          |
-| v     | f     | f        | v       | f          |
-| f     | v     | f        | v       | v          |
-| f     | f     | f        | f       | v          |
+#### Leggi di De Morgan
 
----
+Le leggi di De Morgan descrivono le negazioni degli operatori logici:
 
-Leggi di De Morgan (negazioni degli operatori logici):
+- $$\neg (A \land B) = (\neg A) \lor (\neg B)$$
+- $$\neg (A \lor B) = (\neg A) \land (\neg B)$$
 
-- $$\NOT \( A \AND B \) = \( \NOT A \) \OR \( \NOT B \)$$;
-- $$\NOT \( A \OR B \) = \( \NOT A \) \AND \( \NOT B \)$$;
+### Predicati
 
-### Predicato
+Un predicato è una proposizione con variabili.
 
-Proposizione con variabili.
+**Esempio**: $$P(x) \mid x \text{ è pari}$$.
 
-**Esempio**: $$P(x) \| x \text{ è pari}$$
-
-Il risultato può dipendere o no dal valore della variabile.
+Il risultato può dipendere o meno dal valore della variabile.
 
 ### Implicazione e doppia implicazione
 
-- implicazione: $$P \ARR Q$$ (se $$P$$ allora $$Q$$, $$Q$$ solo se $$P$$);
-- doppia implicazione: $$P \ALRR Q$$ ($$P$$ se e solo se $$Q$$);
+- **Implicazione**: $$P \Rightarrow Q$$ (se $$P$$ allora $$Q$$; $$Q$$ solo se
+  $$P$$).
+- **Doppia implicazione**: $$P \Leftrightarrow Q$$ ($$P$$ se e solo se $$Q$$).
 
-| $$P$$ | $$Q$$ | $$P \ARR Q$$ | $$P \ALRR Q$$ |
-| ----- | ----- | ------------ | ------------- |
-| v     | v     | v            | v             |
-| v     | f     | f            | f             |
-| f     | v     | v            | f             |
-| f     | f     | v            | v             |
+| $$P$$ | $$Q$$ | $$P \Rightarrow Q$$ | $$P \Leftrightarrow Q$$ |
+| ----- | ----- | ------------------- | ----------------------- |
+| V     | V     | V                   | V                       |
+| V     | F     | F                   | F                       |
+| F     | V     | V                   | F                       |
+| F     | F     | V                   | V                       |
 
 Nell'implicazione, se la prima proposizione è falsa, il risultato della seconda
 non ha importanza.
 
-$$P \ALRR Q = \( P \ARR Q \) \AND \( Q \ARR P \)$$
+$$P \Leftrightarrow Q = (P \Rightarrow Q) \land (Q \Rightarrow P)$$
 
-Negazione di una proposizione con implicazioni:
-$$P \ARR Q \equiv \( \NOT Q \) \ARR \( \NOT P \)$$
+**Negazione di una proposizione con implicazioni**:
+
+$$P \Rightarrow Q \equiv (\neg Q) \Rightarrow (\neg P)$$
 
 ### Quantificatori
 
-- esistenziale: $$\EX$$
+- **Quantificatore esistenziale**: $$\exists$$  
+  **Esempio**: $$\exists a \in A$$: esiste $$a$$ appartenente ad $$A$$.
 
-  **Esempio**: $$\EX a \in A$$: esiste $$a$$ appartenente ad $$A$$
+- **Quantificatore universale**: $$\forall$$  
+  **Esempio**: $$\forall a \in A$$: ogni $$a$$ appartiene ad $$A$$.
 
-- universale: $$\forall$$
+**Negazione di una proposizione con quantificatori**:
 
-  **Esempio**: $$\forall a \in A$$: ogni $$a$$ appartiene ad $$A$$
-
-Negazione di una proposizione con quantificatori:
-
-- $$\NOT \( \forall x \C P(x) \) = \EX x \| \NOT P(x)$$;
-- $$\NOT \( \EX x \| P(x) \) = \forall x \C \NOT P(x)$$;
+- $$\neg (\forall x \mid P(x)) = \exists x \mid \neg P(x)$$
+- $$\neg (\exists x \mid P(x)) = \forall x \mid \neg P(x)$$
 
 :::note
 
-Con $$\forall$$ non si usa il simbolo $$\vert$$ (tale che): si indica soltanto
-la proprietà che è soddisfatta da tutti gli elementi.
+Con $$\forall$$ non si usa il simbolo $$\mid$$ (tale che); si indica soltanto la
+proprietà che è soddisfatta da tutti gli elementi.
 
 :::
 
