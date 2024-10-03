@@ -7,17 +7,16 @@ import { LinkCard, CardGrid, Steps } from "@astrojs/starlight/components";
 
 ## Funzioni definite a tratti
 
-Il dominio è diviso in parti e per ogni parte il grafico è dato da un funzione
-diversa.
+Il dominio è diviso in parti, e per ogni parte il grafico è descritto da una
+funzione diversa.
 
 <Details summary="Esempio">
 
 $$
-f(x)=|x|=
-\begin{cases}\begin{align}
-x \geq 0 &\Rightarrow x \\
-x < 0 &\Rightarrow -x
-\end{align}\end{cases}
+f(x) = |x| = \begin{cases}
+x &\text{se} \ x \geq 0 \\
+-x &\text{se} \ x < 0
+\end{cases}
 $$
 
 </Details>
@@ -26,26 +25,26 @@ $$
 
 ### Riflessione
 
-- asse x: $$f(x) \rightarrow -f(x)$$;
-- asse y: $$f(x) \rightarrow f(-x)$$;
+- asse $$x$$: $$f(x) \to -f(x)$$;
+- asse $$y$$: $$f(x) \to f(-x)$$;
 
 ### Traslazione
 
-- verticale: $$f(x)+a$$:
-  - $$a > 0$$: il grafico si muove verso l'alto;
-  - $$a < 0$$: il grafico si muove verso il basso;
-- orizzontale: $$f(x+a)$$:
-  - $$a > 0$$: il grafico si muove verso sinistra;
-  - $$a < 0$$: il grafico si muove verso destra;
+- verticale: $$f(x) + a$$:
+  - se $$a > 0$$: il grafico si sposta verso l'alto;
+  - se $$a < 0$$: il grafico si sposta verso il basso;
+- orizzontale: $$f(x + a)$$:
+  - se $$a > 0$$: il grafico si sposta verso sinistra;
+  - se $$a < 0$$: il grafico si sposta verso destra;
 
 ### Riscalamento
 
-- verticale: $$kf(x)$$:
-  - $$k > 1$$: il grafico si espande;
-  - $$k < 1$$: il grafico si comprime;
+- verticale: $$k f(x)$$:
+  - se $$k > 1$$: il grafico si espande;
+  - se $$k < 1$$: il grafico si comprime;
 - orizzontale: $$f(kx)$$:
-  - $$k > 1$$: il grafico si comprime;
-  - $$k < 1$$: il grafico si espande;
+  - se $$k > 1$$: il grafico si comprime;
+  - se $$k < 1$$: il grafico si espande;
 
 ## Esercizi
 
@@ -53,8 +52,8 @@ $$
 
 <Details summary="Dati">
 
-- $$f(x)=1-|x|$$;
-- $$g(x)=\sin^{-1}{(x)}$$
+- $$f(x) = 1 - |x|$$;
+- $$g(x) = \sin^{-1}(x)$$;
 
 </Details>
 
@@ -62,19 +61,19 @@ $$f \circ g(x)$$:
 
 <Steps>
 
-1. $$\sin^{-1}{(x)}$$:
+1. $$g(x) = \sin^{-1}(x)$$:
 
    <Desmos graph="bfdqd7px55" />
 
-2. $$|\sin^{-1}{(x)}|$$:
+2. $$|\sin^{-1}(x)|$$:
 
    <Desmos graph="b0owsso02j" />
 
-3. $$-|\sin^{-1}{(x)}|$$:
+3. $$-|\sin^{-1}(x)|$$:
 
    <Desmos graph="31wu1ceydl" />
 
-4. $$-|\sin^{-1}{(x)}|+1$$:
+4. $$-|\sin^{-1}(x)| + 1$$:
 
    <Desmos graph="zo27edijbs" />
 
@@ -86,19 +85,19 @@ $$g \circ f(x)$$:
 
 <Steps>
 
-1. $$\sin^{-1}{(x)}$$:
+1. $$f(x) = \sin^{-1}(x)$$:
 
    <Desmos graph="bfdqd7px55" />
 
-2. $$\sin^{-1}{(-x)}$$:
+2. $$\sin^{-1}(-x)$$:
 
    <Desmos graph="lrg3j1i45l" />
 
-3. $$\sin^{-1}{(-x+1)}$$:
+3. $$\sin^{-1}(-x + 1)$$:
 
    <Desmos graph="vti12ozocm" />
 
-4. $$\sin^{-1}{(-|x|+1)}$$:
+4. $$\sin^{-1}(-|x| + 1)$$:
 
    <Desmos graph="xkcwabn5vi" />
 
@@ -108,8 +107,8 @@ $$g \circ f(x)$$:
 
 <Details summary="Dati">
 
-- $$f: [\frac{1}{2}, +\infty) \rightarrow \mathbb{R}$$;
-- $$f(x)=x^2-x+1$$;
+- $$f: \left[\frac{1}{2}, +\infty\right) \rightarrow \mathbb{R}$$;
+- $$f(x) = x^2 - x + 1$$;
 
 </Details>
 
@@ -117,18 +116,18 @@ $$g \circ f(x)$$:
 
 Il dominio di $$f^{-1}(x)$$ è dato dal codominio di $$f(x)$$:
 
-$$f^{-1}(x): [\frac{3}{4}, +\infty) \rightarrow [\frac{1}{2}, +\infty)$$
+$$f^{-1}(x): \left[\frac{3}{4}, +\infty\right) \rightarrow \left[\frac{1}{2}, +\infty\right)$$
 
 <Steps>
 
 1. Trovo l'inversa:
 
-   $$x^2-x+1-y=0$$
+   $$x^2 - x + 1 - y = 0$$
 
-2. Risolvo l'equazione di 2° grado.
+2. Risolvo l'equazione di 2° grado:
 
-   $$\frac{-1\pm\sqrt{4y-3}}{2}$$, tengo solo quella con il $$+$$ perché le
-   soluzioni dell'altra sono fuori dal dominio di $$f^{-1}{(x)}$$.
+   $$\frac{-1 \pm \sqrt{4y - 3}}{2}$$, tengo solo la soluzione con il $$+$$
+   perché l'altra è fuori dal dominio di $$f^{-1}(x)$$.
 
 3. Poi scambio $$x$$ e $$y$$ e trovo il valore di $$x$$.
 

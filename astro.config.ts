@@ -4,7 +4,6 @@ import { dependencies } from "./package.json";
 
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
-import katexMacros from "./src/latex-macros";
 import rehypeMermaid from "rehype-mermaid";
 
 export default defineConfig({
@@ -17,7 +16,6 @@ export default defineConfig({
           output: "mathml",
           throwOnError: false,
           strict: true,
-          macros: katexMacros,
         },
       ],
       [
