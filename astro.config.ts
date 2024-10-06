@@ -10,21 +10,8 @@ export default defineConfig({
   site: "https://ice-notes.zarantonello.dev",
   markdown: {
     rehypePlugins: [
-      [
-        rehypeKatex,
-        {
-          output: "mathml",
-          throwOnError: false,
-          strict: true,
-        },
-      ],
-      [
-        rehypeMermaid,
-        {
-          dark: true,
-          strategy: "img-png",
-        },
-      ],
+      [rehypeKatex, { output: "mathml", strict: true }],
+      [rehypeMermaid, { dark: true, strategy: "img-png" }],
     ],
     remarkPlugins: [remarkMath],
   },
