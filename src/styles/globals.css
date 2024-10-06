@@ -1,16 +1,16 @@
-/* Remove spacing when a <p> tag is inside a list. */
-li > p {
-  margin-bottom: 0 !important;
-}
-
 /* Display all math blocks in the starlight accent color. */
 .katex {
-  color: var(--sl-color-accent-high);
+  /* color: var(--sl-color-accent-high); */
+  color: lime;
+}
+
+/* Remove margins added by starlight inside math expressions. */
+.katex * {
+  margin: 0 !important;
 }
 
 /* Display standalone math blocks on the left and add padding. */
 math[display="block"] {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin: 1rem 0;
   text-align: left;
 }

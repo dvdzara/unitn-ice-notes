@@ -2,6 +2,7 @@
 title: Lezione 1 (2024-09-09)
 ---
 
+import { Details } from "../../../../components";
 import { LinkCard, Card, CardGrid } from "@astrojs/starlight/components";
 
 ## Insiemi numerici
@@ -9,14 +10,13 @@ import { LinkCard, Card, CardGrid } from "@astrojs/starlight/components";
 - Non importa l'ordine degli elementi.
 - Gli insiemi sono composti da simboli, numeri o altri insiemi.
 
-<details>
-<summary>Esempi</summary>
+<Details summary="Esempi">
 
-- $$A = \{ a, b, c, d, e \}$$
-- $$B = \{ \text{proprietà che accomuna gli elementi} \}$$
-- $$C = \{ 2k + 1 \mid k = 0, 1, 2, \ldots \}$$
+- $$A = \{ \ a, b, c, d, e \ \}$$
+- $$B = \{ \ \text{proprietà che accomuna gli elementi} \ \}$$
+- $$C = \{ \ 2k + 1 \mid k = 0,1,2,\ldots \ \}$$
 
-</details>
+</Details>
 
 Gli insiemi possono essere definiti in due modi:
 
@@ -34,11 +34,11 @@ Gli insiemi possono essere definiti in due modi:
 
 ## Operazioni tra insiemi
 
-- **Unione**: $$A \cup B = \{ x \mid x \in A \lor x \in B \}$$
-- **Intersezione**: $$A \cap B = \{ x \mid x \in A \land x \in B \}$$
-- **Differenza**: $$A \setminus B = \{ x \mid x \in A \land x \notin B \}$$
+- **Unione**: $$A \cup B = \{ \ x \mid x \in A \lor x \in B \ \}$$
+- **Intersezione**: $$A \cap B = \{ \ x \mid x \in A \land x \in B \ \}$$
+- **Differenza**: $$A \setminus B = \{ \ x \mid x \in A \land x \notin B \ \}$$
 - **Prodotto cartesiano**:
-  $$A \times B = \{ (a, b) \mid a \in A \land b \in B \}$$
+  $$A \times B = \{ \ (a, b) \mid a \in A \land b \in B \ \}$$
 
 ### Sottoinsieme
 
@@ -66,19 +66,19 @@ Le proposizioni rappresentano qualcosa che può essere vero o falso.
 
 ### Operatori logici
 
-| $$P$$ | $$Q$$ | $$P \land Q$$ | $$P \lor Q$$ | $$\neg P$$ |
-| ----- | ----- | ------------- | ------------ | ---------- |
-| V     | V     | V             | V            | F          |
-| V     | F     | F             | V            | F          |
-| F     | V     | F             | V            | V          |
-| F     | F     | F             | F            | V          |
+| $$P$$ | $$Q$$ | $$P \land Q$$ | $$P \lor Q$$ | $$\lnot P$$ |
+| ----- | ----- | ------------- | ------------ | ----------- |
+| V     | V     | V             | V            | F           |
+| V     | F     | F             | V            | F           |
+| F     | V     | F             | V            | V           |
+| F     | F     | F             | F            | V           |
 
 #### Leggi di De Morgan
 
-Le leggi di De Morgan descrivono le negazioni degli operatori logici:
+Le leggi di De Morgan descrivono le lnotazioni degli operatori logici:
 
-- $$\neg (A \land B) = (\neg A) \lor (\neg B)$$
-- $$\neg (A \lor B) = (\neg A) \land (\neg B)$$
+- $$\lnot (A \land B) = (\lnot A) \lor (\lnot B)$$
+- $$\lnot (A \lor B) = (\lnot A) \land (\lnot B)$$
 
 ### Predicati
 
@@ -108,7 +108,7 @@ $$P \Leftrightarrow Q = (P \Rightarrow Q) \land (Q \Rightarrow P)$$
 
 **Negazione di una proposizione con implicazioni**:
 
-$$P \Rightarrow Q \equiv (\neg Q) \Rightarrow (\neg P)$$
+$$P \Rightarrow Q \equiv (\lnot Q) \Rightarrow (\lnot P)$$
 
 ### Quantificatori
 
@@ -120,8 +120,8 @@ $$P \Rightarrow Q \equiv (\neg Q) \Rightarrow (\neg P)$$
 
 **Negazione di una proposizione con quantificatori**:
 
-- $$\neg (\forall x \mid P(x)) = \exists x \mid \neg P(x)$$
-- $$\neg (\exists x \mid P(x)) = \forall x \mid \neg P(x)$$
+- $$\lnot (\forall x \mid P(x)) = \exists x \mid \lnot P(x)$$
+- $$\lnot (\exists x \mid P(x)) = \forall x \mid \lnot P(x)$$
 
 :::note
 
