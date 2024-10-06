@@ -1,7 +1,6 @@
 /* Display all math blocks in the starlight accent color. */
 .katex {
-  /* color: var(--sl-color-accent-high); */
-  color: lime;
+  color: var(--sl-color-accent-high);
 }
 
 /* Remove margins added by starlight inside math expressions. */
@@ -11,6 +10,6 @@
 
 /* Display standalone math blocks on the left and add padding. */
 math[display="block"] {
-  margin: 1rem 0;
+  padding: 1rem 0;
   text-align: left;
 }
