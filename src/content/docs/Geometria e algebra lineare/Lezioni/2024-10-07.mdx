@@ -1,0 +1,154 @@
+---
+title: Lezione 7 (2024-10-07)
+---
+
+import { Details } from "../../../../components";
+
+## Insieme delle soluzioni di un sistema lineare
+
+Sia $$A \underline{x} = \underline{0}$$ un sistema lineare omogeneo, $$A$$ è
+matrice dei coefficienti, $$\underline{x}$$ è vettore colonna delle soluzioni e
+$$\underline{0}$$ è vettore colonna con tutte le componenti che hanno valore
+$$0$$.
+
+$$\underline{v}$$ e $$\underline{w}$$ sono vettori colonna delle soluzioni,
+ossia $$A \underline{v} = \underline{0}$$ e $$A \underline{w} = \underline{0}$$.
+
+Osservazione: se $$\lambda$$ e $$\mu$$ sono scalari, allora anche la
+combinazione lineare $$\lambda \underline{v} + \mu \underline{w}$$ è soluzione
+del sistema $$A \underline{x} = \underline{0}$$.
+
+<Details summary="Dimostrazione">
+
+$$A (\lambda \underline{v} + \mu \underline{w}) = A \lambda \underline{v} + A \mu \underline{w} = \lambda A \underline{v} + \mu A \underline{w} = \lambda \underline{0} + \mu \underline{0} = \underline{0}$$
+
+</Details>
+
+---
+
+Dato $$A \underline{x} = \underline{b}$$, sistema lineare compatibile, allora:
+
+- Se $$b = 0$$, l'insieme delle soluzioni è chiaro rispetto alla somma e al
+  prodotto di uno scalare.
+- Se $$b \neq 0$$ e se $$\underline{x_0}$$ è una soluzione di
+  $$A \underline{x} = \underline{b}$$, allora tutte le soluzioni di
+  $$A \underline{x} = \underline{b}$$ sono della forma
+  $$\underline{x_0} + \underline{v}$$ dove $$\underline{v}$$ è una soluzione di
+  $$A \underline{x} = \underline{0}$$.
+
+Dimostrazione:
+$$A (\underline{x_0} + \underline{v}) = A \underline{x_0} + A \underline{v}$$.
+
+### Nucleo di una matrice
+
+Data una matrice $$A$$, il suo nucleo è l'insieme delle soluzioni del sistema
+omogeneo $$A \underline{x} = \underline{0}$$.
+
+Si indica con $$N(A)$$.
+
+### Nullità di una funzione
+
+Data una matrice $$A_{m \times n}$$, la nullità è il numero di colonne di
+$$rref(A)$$ che non contengono pivot (tutti i coefficienti in quella colonna
+sono $$0$$).
+
+Si indica con $$null(A)$$.
+
+$$null(A) + rg(A) = n$$
+
+## Matrici delle operazioni elementari
+
+Le operazioni elementare possono essere realizzate tramite la moltiplicazione a
+sinistra per delle matrici quadrate.
+
+- $$S_{ij} = I_n \xRightarrow{S_{ij}} S_{ij}$$
+- $$D_{i}(\lambda) = I_n \xRightarrow{D_{i}(\lambda)} D_{i}(\lambda)$$
+- $$E_{ij}(\lambda) = I_n \xRightarrow{R_{ij}(\lambda)} E_{ij}(\lambda)$$
+
+:::note
+
+$$I_n$$ è la matrice identità (pivot sulla diagonale hanno valore $$1$$, gli
+altri $$0$$).
+
+:::
+
+## Matrici invertibili e inverse
+
+l'invertibilità è una proprietà delle matrici quadrate.
+
+$$A_n$$ è invertibile se $$\exists B_n \ : \ AB = BA = I_n$$.
+
+In tale caso $$B$$ è l'inversa di $$A$$ e si scrive $$A^{-1}$$.
+
+:::caution
+
+Non è detto che $$AB$$ dia lo stesso risultato di $$BA$$.
+
+:::
+
+<Details summary="Esempio">
+
+$$
+A = \begin{bmatrix}
+1 & 1 \\
+0 & 0
+\end{bmatrix} \quad
+B = \begin{bmatrix}
+b_{11} & b_{12} \\
+b_{21} & b_{22}
+\end{bmatrix}
+$$
+
+Devo trovare $$B \ : \ AB = BA = I_n$$.
+
+$$
+AB = \begin{bmatrix}
+a_{11} b_{11} + a_{12} b_{21} & a_{11} b_{12} + a_{12} b_{22} \\
+a_{21} b_{11} + a_{22} b_{21} & a_{21} b_{12} + a_{22} b_{22}
+\end{bmatrix} =
+\begin{bmatrix}
+1 & 1 \\
+0 & 0
+\end{bmatrix} \neq I_n
+$$
+
+Qualsiasi matrice che ha una riga o una colonna con solo $$0$$ non è
+invertibile.
+
+</Details>
+
+Siano $$A,B$$ matrici invertibili, allora $$AB$$ è invertibile e l'inversa
+$$AB^{-1}$$ è $$B^{-1} A^{-1}$$.
+
+Una matrice $$A_n$$ è invertibile se e solo se $$rg(A) = n$$.
+
+### Matrici inverse elementari
+
+- $$I_{n}^{-1} = I_n$$
+- matrici delle operazioni elementari:
+  - $$S_{ij}^{-1} = S_{ij}$$
+  - $$D_{i}(\lambda)^{-1} = D_{i}(\lambda^{-1})$$
+  - $$E_{ij}(\lambda)^{-1} = E_{ij}(\lambda)^{-1}$$
+
+## Come calcolare la matrice inversa
+
+Sia $$A_n$$ una matrice quadrata, consideriamo $$B = (A | I_n)$$ che ha
+dimensioni $$n \times 2n$$.
+
+$$A$$ è invertibile $$\Leftrightarrow$$ $$rref(B) = (I_n | P)$$, allora
+$$A^{-1} = P$$.
+
+$$
+rref(B) = PB = (P A | P I_n) = (I_n | P) = (I_n | A^{-1})
+$$
+
+$$P$$ è la matrice opportunità di B, ovvero l'insieme delle operazioni
+elementari che permettono di trovare $$rref(B)$$.
+
+## Matrici inverse e sistemi lineari
+
+Posso usare una matrice inversa per trovare le soluzioni dei sistemi lineari:
+
+$$
+A \underline{x} = \underline{b} \rightarrow \underline{x} = A^{-1} \underline{b}
+$$

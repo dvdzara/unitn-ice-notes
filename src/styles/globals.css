@@ -1,17 +1,22 @@
 @import "../../node_modules/katex/dist/katex.css";
 
 /* Display all math blocks in the starlight accent color. */
-.katex {
+.math-container {
   color: var(--sl-color-accent-high);
+
+  /* Remove margins added by starlight inside math expressions. */
+  * {
+    margin: 0 !important;
+  }
 }
 
-/* Remove margins added by starlight inside math expressions. */
-.katex * {
-  margin: 0 !important;
-}
+/* Make block math expressions horizontally scrollable on small screens. */
+div.math-container {
+  overflow-x: scroll;
+  overflow-y: hidden;
 
-/* Display standalone math blocks on the left and add padding. */
-math[display="block"] {
-  padding: 1rem 0;
-  text-align: left;
+  /* Align block math expressions to the left. */
+  math {
+    text-align: left;
+  }
 }

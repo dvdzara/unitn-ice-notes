@@ -86,9 +86,9 @@ coefficienti $$\lambda$$ e $$\mu$$.
 ### Prodotto di matrici
 
 Una matrice $$A \in \mu_{m \times n}(\mathbb{R}) = [a_{ij}]$$ è detta
-conformabile a sinistra ad una matrice $$B \in \mu_{m' \times n'}(\mathbb{R})$$
-se il numero di colonne di $$A$$ è uguale al numero di righe di $$B$$, quindi
-$$n=m'$$.
+conformabile a sinistra ad una matrice
+$$B \in \mu_{m_1 \times n_1}(\mathbb{R})$$ se il numero di colonne di $$A$$ è
+uguale al numero di righe di $$B$$, quindi $$n=n_1$$.
 
 <Details summary="Esempio">
 
@@ -109,9 +109,9 @@ $$
 
 </Details>
 
-Il prodotto righe per colonne $$AB$$ è definito:
+Il prodotto righe per colonne $$AB$$ è definito:11
 
-$$C = [c_{ik}] = \mu_{m \times n'} \C c_{ik} = \SUM{j = 1}{n} a_{ij} b_{jk}$$
+$$C = [c_{ik}] = \mu_{m \times n_1}, \ c_{ik} = \sum_{j = 1}^{n} a_{ij} b_{jk}$$
 
 La matrice identità è una matrice quadrata
 $$A \in \mu_{m \times n}(\mathbb{R})$$ che ha coefficienti 1 sulla diagonale
@@ -119,11 +119,11 @@ principale o 0 altrimenti.
 
 **Proprietà**:
 
-Date $$A_{m \times n} \C B_{n \times n'} \C C_{n' \times n''}$$:
+Date $$A_{m \times n}, \ B_{n \times n_1}, \ C_{n_1 \times n_2}$$:
 
-- $$\( AB \) C = A \( BC \)$$;
-- $$\( A + B \) C = AC + BC$$;
-- $$\lambda \( AB \) = \( \lambda A \) B = A \( \lambda B \)$$;
+- $$(AB) C = A (BC)$$;
+- $$(A + B) C = AC + BC$$;
+- $$\lambda (AB) = (\lambda A) B = A (\lambda B)$$;
 - Se $$A$$ è conformabile a sinistra alla matrice identità, allora
   $$A I_n = A$$;
 

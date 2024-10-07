@@ -14,24 +14,25 @@ import { Steps, Card } from "@astrojs/starlight/components";
 1 4 6 4 1   n=5,k=1,2,3,4,5
 ```
 
-Rappresenta i risultati dati dal coefficiente binomiale per un certo n e k.
+Rappresenta i risultati dati dal coefficiente binomiale per un certo $$n$$ e
+$$k$$.
 
 ## Binomio di Newton
 
-Dato un binomio $$\( a + b \)^n$$, i coefficienti del suo sviluppo sono dati
+Dato un binomio $$(a + b)^{n}$$, i coefficienti del suo sviluppo sono dati
 dall'n-esima riga del triangolo di Tartaglia.
 
 Il polinomio ottenuto si può esprimere anche come:
 
 $$
-\SUM{k = 0}{n} a^{n - k} b^k
+\sum_{k = 0}^{n} a^{n - k} b^{k}
 $$
 
 Sommatoria: somma delle espressioni date da $$k=0,1,2,\ldots,n$$.
 
 ## Successione geometrica
 
-Dato $$q \in \mathbb{R} \C q \neq 0$$, la successione geometrica $$a_n$$ è
+Dato $$q \in \mathbb{R}, \ q \neq 0$$, la successione geometrica $$a_n$$ è
 $$q^n$$.
 
 Il rapporto tra il termine di una successione e il suo successivo è
@@ -41,15 +42,15 @@ $$\frac{a_{n + 1}}{a_n} = q$$.
 
 Somma dei primi n termini:
 
-$$S_n = \SUM{k = 0}{n} q^k = 1 + q + q^2 + \ldots + q^n$$
+$$S_n = \sum_{k = 0}^{n} q^{k} = 1 + q + q^{2} + \ldots + q^n$$
 
-$$q S_n = q + q^2 + \ldots + q^{n + 1}$$
+$$q S_n = q + q^{2} + \ldots + q^{n + 1}$$
 
 <Steps>
 
 1. $$q S_n - S_n = -1 + q^{n + 1}$$
-2. $$S_n \( q - 1 \) = q^{n + 1} - 1$$
-3. $$S_n = \frac{q^{n + 1}}{q - 1} se q \neq  1$$
+2. $$S_n (q - 1) = q^{n + 1} - 1$$
+3. $$q \neq 1 \Rightarrow S_n = \frac{q^{n + 1}}{q - 1}$$
 
 </Steps>
 
@@ -57,24 +58,24 @@ Se $$q = 1$$ allora $$S_n = 1 (n + 1)$$.
 
 ## Limiti
 
-### Limite tendente a 0
-
 Servono a capire l'andamento di una successione quando $$n$$ tende a
 $$+ \infty$$.
 
-<Card title="Esempio">
+### Limite tendente a 0
 
-La successione $$a_n = \frac{1}{n}$$ con $$n = + \infty$$ tende a $$0$$:
-$$a_n \to 0$$ o $$\LIM{n \to + \infty} a_n = 0$$.
+Esempio: la successione $$a_n = \frac{1}{n}$$ con $$n = + \infty$$ tende a
+$$0$$: $$a_n \to 0$$ o $$\lim_{n \to + \infty} a_n = 0$$.
 
-</Card>
+<Card>
 
-$$a_n \to 0$$ se per ogni numero $$\epsilon > 0 \C \epsilon \in \mathbb{R}$$ è
+$$a_n \to 0$$ se per ogni numero $$\epsilon > 0, \ \epsilon \in \mathbb{R}$$ è
 possibile determinare un numero
-$$\nu_\epsilon \in \mathbb{R} \| \forall n > \nu_\epsilon \C -\epsilon < a_n < \epsilon$$.
+$$\nu_{\epsilon} \in \mathbb{R} \ : \ \forall n > \nu_\epsilon, \ -\epsilon < a_n < \epsilon$$.
 
 Quindi il limite è verificato tutti i valori della successione con
 $$n > \nu_\epsilon$$ sono compresi tra $$-\epsilon$$ e $$\epsilon$$.
+
+</Card>
 
 #### Interpretazione grafica
 
@@ -87,8 +88,8 @@ Diminuendo il valore di $$\epsilon$$, la fascia si restringe e $$\nu_\epsilon$$
 aumenta.
 
 Il limite esiste solo se per ogni $$\epsilon$$ (che diventa sempre più piccolo),
-tutti i valori della successione dopo $$\nu_\epsilon$$ stanno dentro alla fascia
-$$2\epsilon$$.
+tutti i valori della successione dopo $$\nu_{\epsilon}$$ stanno dentro alla
+fascia $$2 \epsilon$$.
 
 ### Limiti tendenti a $$\pm \infty$$
 
@@ -108,11 +109,11 @@ Non serve dimostrazione per questi limiti.
 
 - $$n^b \to +\infty$$
 - $$a^n \to +\infty$$
-- $$\LOG{a}{n} \to +\infty$$
+- $$\log_{a}(n) \to +\infty$$
 
 ## Successioni senza limiti
 
-Per alcuni tipi di successione ($$a_n = \SIN{n}$$), non esiste un limite.
+Per alcuni tipi di successione ($$a_n = \sin(n)$$), non esiste un limite.
 
 ## Proprietà dei limiti di successione
 
@@ -120,12 +121,12 @@ Per alcuni tipi di successione ($$a_n = \SIN{n}$$), non esiste un limite.
 
 Se una succession ammette un limite, esso è unico.
 
-$$x = y \ARR a_n \to x = a_n \to y$$
+$$x = y \Rightarrow a_n \to x = a_n \to y$$
 
 ### Limitatezza delle successioni convergenti
 
 Se $$a_n \to l$$, allora
-$$\EX M \in \mathbb{R} \| \forall n \in \mathbb{N} \C \MOD{a_n} \leq M$$.
+$$\exists M \in \mathbb{R} \ : \ \forall n \in \mathbb{N}, \ |a_n| \leq M$$.
 
 ## Sottosuccessioni
 
@@ -136,7 +137,7 @@ degli elementi di $$a_n$$ accomunati da una qualche proprietà di $$n$$. Questi
 elementi rappresentano una nuova successione.
 
 Una successione è detta sottosuccessione se
-$$\EX f: N \to N \| b_n = a_{f(n)}$$.
+$$\exists f: N \to N \ : \ b_n = a_{f(n)}$$.
 
 Se 2 sottosuccessioni di $$a_n$$ hanno limiti diversi, allora $$a_n$$ non ha un
 limite.
