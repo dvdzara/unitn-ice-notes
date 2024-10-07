@@ -14,7 +14,7 @@ export default function rehypeKatex(options?: Options) {
         : [];
 
       // This class is used by `remark-math` for flow math (block, `$$\nmath\n$$`).
-      let mathDisplay = classes.includes("math-display");
+      const mathDisplay = classes.includes("math-display");
       // This class is used by `remark-math` for text math (inline, `$math$`).
       const mathInline = classes.includes("math-inline");
 
