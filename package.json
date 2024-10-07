@@ -15,7 +15,6 @@
     "@astrojs/check": "0.9.4",
     "@eslint/js": "9.12.0",
     "@types/hast": "3.0.4",
-    "@types/katex": "0.16.7",
     "eslint": "9.12.0",
     "eslint-config-prettier": "9.1.0",
     "eslint-plugin-astro": "1.2.4",
@@ -31,9 +30,9 @@
     "autoprefixer": "10.4.20",
     "hast-util-from-html-isomorphic": "2.0.0",
     "hast-util-to-string": "3.0.1",
-    "katex": "0.16.11",
     "rehype-mermaid": "2.1.0",
     "remark-math": "6.0.0",
+    "temml": "0.10.29",
     "unist-util-visit-parents": "6.0.1"
   },
   "packageManager": "pnpm@9.12.1+sha512.e5a7e52a4183a02d5931057f7a0dbff9d5e9ce3161e33fa68ae392125b79282a8a8a470a51dfc8a0ed86221442eb2fb57019b0990ed24fab519bf0e1bc5ccfc4"
