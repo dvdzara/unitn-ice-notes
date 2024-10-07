@@ -1,0 +1,108 @@
+---
+title: Lezione 12 (2024-10-07)
+---
+
+## Gerarchia degli infiniti
+
+Date $$a_n \to +\infty$$ e $$b_n \to +intfy$$ tali che
+$$\forall n \in \mathbb{N}, \ a_n > b_n$$.
+
+### Teorema del rapporto
+
+Data
+$$a_n \mid \forall n \in \mathbb{N}, \ a_n > 0 \land \frac{a_{n + 1}}{a_n} = L$$,
+allora:
+
+$$
+\begin{cases}
+\ L > 1 \Rightarrow a_n \to +\infty \\
+\ L < 1 \Rightarrow a_n \to 0
+\end{cases}
+$$
+
+Il teorema non è utilizzabile se $$L = 1$$.
+
+---
+
+Per $$\alpha > 0$$ e $$a > 1$$, queste successioni sono ordinate in maniera
+crescente di infinito.
+
+1. $$log_{a}(n)$$
+2. $$n^{\alpha}$$
+3. $$a^{n}$$
+4. $$n!$$
+5. $$n^{n}$$
+
+Quindi:
+
+$$
+lim_{n \to +\infty} \frac{log_{a}(n)}{n^{\alpha}} =
+lim_{n \to +\infty} \frac{n^{\alpha}}{a^{n}} =
+lim_{n \to +\infty} \frac{a^{n}}{n!} =
+lim_{n \to +\infty} \frac{n!}{n^{n}} = 0
+$$
+
+## Limiti di funzioni
+
+### Intorni
+
+Dati $$x_0 \in \mathbb{R}$$ e $$r > 0$$:
+
+$$
+\begin{split}
+(x_0 - 1, x_0 + r) & = \\
+& = \{ x \in \mathbb{R} \mid x_0 - r < x < x_0 + r \} = \\
+& = \{ x \in \mathbb{R} \mid -r < x - x_0 < r \} = \\
+& = \{ x \in \mathbb{R} \mid |x - x_0| < r \}
+\end{split}
+$$
+
+Un intorno è l'insieme di tutti i punti che distano meno di $$r$$ da $$x_0$$.
+
+Intorno di $$\pm\infty$$: $$(a, +\infty)$$ o $$(-\infty, a)$$ con
+$$a \in \mathbb{R}$$.
+
+### Punti di accumulazione
+
+Dato $$D \subset \mathbb{R}$$, un punto $$x_0$$ si dice punto di accumulazione
+se:
+
+$$
+\forall r > 0, \ (x_0 - r, x_0 + r) \cap D \setminus \{ x_0 \} \neq \emptyset
+$$
+
+Per ogni intorno di qualsiasi raggio $$r$$ di $$x_0$$ esistono punti che fanno
+parte di $$D$$. Quindi, preso un punto in $$D$$ sarà sempre possibile trovarne
+un altro più vicino a $$D$$.
+
+- Un punto di accumulazione esiste anche se esiste solo il suo intorno destro o
+  sinistro.
+- Non è detto che i punti di accumulazione di un insieme facciano parte
+  dell'insieme.
+- Non tutti i punti dell'insieme sono punti di accumulazione.
+- Non è vero che se un insieme è infinito, allora i suoi punti di accumulazione
+  sono infiniti.
+
+## Limite finito di una funzione in un punto
+
+Dati:
+
+- $$D \subset \mathbb{R}$$
+- $$f: D \to \mathbb{R}$$
+- $$x_0 \in D$$, punto di accumulazione
+
+$$
+\forall \epsilon > 0, \ \exists r > 0, \ x \in \{ \ (x_0 - r, x_0 + r) \cap D \setminus \{ x_0 \} \ \} \mid |f(x) - l| < \epsilon
+$$
+
+$$x_0$$ non deve far parte del dominio della funzione.
+
+Il limite con valore $$l$$ si può scrivere anche come
+$$\lim_{x \to x_0} f(x) = l$$.
+
+Il valore di $$f(x)$$ in $$x_0$$ non ha importanza per il calcolo del limite.
+
+## Funzioni continue
+
+Una funzione è continua solo se
+$$\forall x_0, \ \exists f(x_0) \land f(x_0) = \lim_{x \to x_0} f(x)$$.
