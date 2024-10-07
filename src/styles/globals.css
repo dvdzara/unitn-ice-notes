@@ -1,5 +1,3 @@
-@import "../../node_modules/katex/dist/katex.css";
-
 /* Display all math blocks in the starlight accent color. */
 .math-container {
   color: var(--sl-color-accent-high);
