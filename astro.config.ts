@@ -2,7 +2,7 @@ import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
 
 import remarkMath from "remark-math";
-import rehypeKatex from "rehype-katex";
+import rehypeKatex from "./src/lib/rehype-katex";
 import rehypeMermaid from "rehype-mermaid";
 
 export default defineConfig({
