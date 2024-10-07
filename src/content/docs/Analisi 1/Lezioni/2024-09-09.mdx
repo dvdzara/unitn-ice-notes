@@ -14,7 +14,7 @@ import { LinkCard, Card, CardGrid } from "@astrojs/starlight/components";
 
 - $$A = \{ \ a, b, c, d, e \ \}$$
 - $$B = \{ \ \text{proprietà che accomuna gli elementi} \ \}$$
-- $$C = \{ \ 2k + 1 \mid k = 0,1,2,\ldots \ \}$$
+- $$C = \{ \ 2k + 1 \ : \ k = 0,1,2,\ldots \ \}$$
 
 </Details>
 
@@ -34,11 +34,11 @@ Gli insiemi possono essere definiti in due modi:
 
 ## Operazioni tra insiemi
 
-- **Unione**: $$A \cup B = \{ \ x \mid x \in A \lor x \in B \ \}$$
-- **Intersezione**: $$A \cap B = \{ \ x \mid x \in A \land x \in B \ \}$$
-- **Differenza**: $$A \setminus B = \{ \ x \mid x \in A \land x \notin B \ \}$$
+- **Unione**: $$A \cup B = \{ \ x \ : \ x \in A \lor x \in B \ \}$$
+- **Intersezione**: $$A \cap B = \{ \ x \ : \ x \in A \land x \in B \ \}$$
+- **Differenza**: $$A \setminus B = \{ \ x \ : \ x \in A \land x \notin B \ \}$$
 - **Prodotto cartesiano**:
-  $$A \times B = \{ \ (a, b) \mid a \in A \land b \in B \ \}$$
+  $$A \times B = \{ \ (a, b) \ : \ a \in A \land b \in B \ \}$$
 
 ### Sottoinsieme
 
@@ -84,7 +84,7 @@ Le leggi di De Morgan descrivono le lnotazioni degli operatori logici:
 
 Un predicato è una proposizione con variabili.
 
-**Esempio**: $$P(x) \mid x \text{ è pari}$$.
+**Esempio**: $$P(x) \ : \ x \text{ è pari}$$.
 
 Il risultato può dipendere o meno dal valore della variabile.
 
@@ -120,12 +120,12 @@ $$P \Rightarrow Q \equiv (\lnot Q) \Rightarrow (\lnot P)$$
 
 **Negazione di una proposizione con quantificatori**:
 
-- $$\lnot (\forall x \mid P(x)) = \exists x \mid \lnot P(x)$$
-- $$\lnot (\exists x \mid P(x)) = \forall x \mid \lnot P(x)$$
+- $$\lnot (\forall x \ : \ P(x)) = \exists x \ : \ \lnot P(x)$$
+- $$\lnot (\exists x \ : \ P(x)) = \forall x \ : \ \lnot P(x)$$
 
 :::note
 
-Con $$\forall$$ non si usa il simbolo $$\mid$$ (tale che); si indica soltanto la
+Con $$\forall$$ non si usa il simbolo $$:$$ (tale che); si indica soltanto la
 proprietà che è soddisfatta da tutti gli elementi.
 
 :::

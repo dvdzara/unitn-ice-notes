@@ -10,8 +10,13 @@
   }
 }
 
-/* Make block expressions horizontally scrollable on small screens. */
+/* Make block math expressions horizontally scrollable on small screens. */
 div.math-container {
   overflow-x: scroll;
   overflow-y: hidden;
+
+  /* Align block math expressions to the left. */
+  math {
+    text-align: left;
+  }
 }

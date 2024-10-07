@@ -6,37 +6,37 @@ import { Details, Desmos } from "../../../../components";
 
 ## Identità dei numeri complessi
 
-$$e^{i\pi} = \cos(\pi) + i\sin(\pi) = -1$$
+$$e^{i \pi} = \cos(\pi) + i \sin(\pi) = -1$$
 
 Contiene tutti i simboli usati nell'algebra moderna.
 
 ## Risoluzione di equazioni in $$\mathbb{C}$$
 
 $$
-z_1=z_2
+z_1 = z_2
 \Leftrightarrow
 \begin{cases}
 |z_1| = |z_2| \\
-Arg(z_1) = Arg(z_2) + 2k\pi,\ k \in\mathbb{N}
+Arg(z_1) = Arg(z_2) + 2k \pi,\ k \in \mathbb{N}
 \end{cases}
 $$
 
 ## Radici di un numero complesso
 
-$$z \in\mathbb{C}$$ è la radice n-esima di $$w$$ se $$z^n=w$$.
+$$z \in \mathbb{C}$$ è la radice n-esima di $$w$$ se $$z^{n} = w$$.
 
 <Details summary="Dati">
 
-- $$z = |z| e^{i\alpha}$$;
-- $$w = |w| e^{i\theta}$$;
+- $$z = |z| e^{i \alpha}$$;
+- $$w = |w| e^{i \theta}$$;
 
 </Details>
 
 $$
-|z|^n e^{in\alpha} = |w| e^{i\theta}
+|z|^{n} e^{in\alpha} = |w| e^{i\theta}
 \Leftrightarrow
 \begin{cases}
-|z|^n = |w| \\
+|z|^{n} = |w| \\
 n\alpha = \theta + 2k\pi
 \end{cases}
 =
@@ -52,10 +52,10 @@ Problema: **quante** sono le radici che lo verificano?
 
 $$
 \begin{matrix}
-k=0    & \beta = \frac{\theta}{n} \\
-k=1    & \beta = \frac{\theta + 2\pi}{n} \\
-k=n-1  & \beta = \frac{\theta + 2\pi(n-1)}{n} \\
-k=n    & \beta = \frac{\theta}{n} + 2\pi
+k=0   & \beta = \frac{\theta}{n} \\
+k=1   & \beta = \frac{\theta + 2\pi}{n} \\
+k=n-1 & \beta = \frac{\theta + 2\pi(n-1)}{n} \\
+k=n   & \beta = \frac{\theta}{n} + 2\pi
 \end{matrix}
 $$
 
@@ -70,32 +70,32 @@ Le soluzioni saranno $$z_k$$ con $$k=1,2,\ldots,n-1$$.
 
 ## Teorema fondamentale dell'algebra
 
-Un polinomio $$P(x)=0$$ di grado $$n \geq 1$$ ha esattamente $$n$$ soluzioni in
-$$\mathbb{C}$$.
+Un polinomio $$P(x) = 0$$ di grado $$n \geq 1$$ ha esattamente $$n$$ soluzioni
+in $$\mathbb{C}$$.
 
 ## Successioni di numeri
 
 Una successione di numeri è una funzione
 $$f: \mathbb{N} \rightarrow \mathbb{R}$$.
 
-Notazione: $$a_n=f(n)$$, $$a_n$$ è l'n-esimo elemento della successione.
+Notazione: $$a_n = f(n)$$, $$a_n$$ è l'n-esimo elemento della successione.
 
 L'indice $$n$$ può anche partire da un numero maggiore di 0.
 
-$$(a_n)_{n\in\mathbb{N}} = Im(f)$$ è l'insieme di tutti i valori della
+$$(a_n)_{n \in \mathbb{N}} = Im(f)$$ è l'insieme di tutti i valori della
 successione.
 
-Rappresentazione del grafico di una successione ($$f(n)=n$$):
+Rappresentazione del grafico di una successione ($$f(n) = n$$):
 
 <Desmos graph="3q85sbk8ek" />
 
-$$graf(f) = \{(n,f(n)),\ n\in\mathbb{N}\}$$
+$$graf(f) = \{ (n, f(n)), \ n \in \mathbb{N} \}$$
 
 Il grafico è presente solo in corrispondenza dei numeri naturali sull'asse x.
 
 ### Fattoriale
 
-$$f(n)=1 \cdot 2 \cdot 3 \cdot 4 \cdot \ldots \cdot n$$
+$$f(n) = 1 \cdot 2 \cdot 3 \cdot 4 \cdot \ldots \cdot n$$
 
 Si scrive anche $$n! = f(n)$$.
 
@@ -106,15 +106,15 @@ distinti.
 
 **Proprietà**:
 
-- $$n! = n \cdot (n-1)!$$;
-- $$\frac{n!}{(n-k)!} = n(n-1)(n-2)\ldots(n-k+1)$$;
+- $$n! = n \cdot (n - 1)!$$;
+- $$\frac{n!}{(n - k)!} = n (n - 1) (n - 2) \ldots (n - k + 1)$$;
 
 ### Coefficiente binomiale
 
-$$\binom{n}{k} = \frac{n!}{k!(n-k)!}$$
+$$\binom{n}{k} = \frac{n!}{k!(n - k)!}$$
 
 **Proprietà**:
 
 - $$\binom{n}{0} = \binom{n}{n} = 1$$;
-- $$\binom{n}{k} = \binom{n}{n-k}$$;
-- $$\binom{n}{k} = \binom{n-1}{k-1} + \binom{n-1}{k}$$;
+- $$\binom{n}{k} = \binom{n}{n - k}$$;
+- $$\binom{n}{k} = \binom{n - 1}{k - 1} + \binom{n - 1}{k}$$;

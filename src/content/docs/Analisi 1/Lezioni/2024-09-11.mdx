@@ -11,7 +11,7 @@ import { Steps, Card, LinkCard, CardGrid } from "@astrojs/starlight/components";
 
 - $$\mathbb{N} = \{ \ 0,1,2,3,\ldots \ \}$$
 - $$\mathbb{Z} = \{ \ 2,1,-2,\ldots \ \}$$
-- $$\mathbb{Q} = \left\{\ \frac{p}{q} \mid p,q \in \mathbb{Z}, q \neq 0 \ \right\}$$
+- $$\mathbb{Q} = \left\{\ \frac{p}{q} \ : \ p,q \in \mathbb{Z}, q \neq 0 \ \right\}$$
 
 $$\mathbb{N} \subsetneqq \mathbb{Z}$$, $$\mathbb{Z} \subsetneqq \mathbb{Q}$$
 
@@ -21,7 +21,7 @@ Sono definite le operazioni di somma e prodotto.
 
 ---
 
-Non esiste nessun numero razionale $$x \mid x^{2} = 2$$.
+Non esiste nessun numero razionale $$x \ : \ x^{2} = 2$$.
 
 Ogni numero razionale si può rappresentare in forma decimale limitata o
 periodica e viceversa.
@@ -32,8 +32,8 @@ razionalmente.
 
 ### Intervalli
 
-- $$(a,b) = \{ \ x \in \mathbb{R} \mid a < x < b \ \}$$: intervallo aperto;
-- $$[a,b] = \{ \ x \in \mathbb{R} \mid a \leq x \leq b \ \}$$: intervallo
+- $$(a,b) = \{ \ x \in \mathbb{R} \ : \ a < x < b \ \}$$: intervallo aperto;
+- $$[a,b] = \{ \ x \in \mathbb{R} \ : \ a \leq x \leq b \ \}$$: intervallo
   chiuso;
 
 Gli intervalli possono essere aperti da una parte e chiusi dall'altra.
@@ -48,8 +48,8 @@ intervallo non può essere chiuso in $$\pm\infty$$.
 
 Dato $$A \in \mathbb{R}, \ A \neq 0$$:
 
-- maggiorante: $$\exists M \mid \forall x \in A, \ x \leq M$$
-- minorante: $$\exists m \mid \forall x \in A, \ x \geq m$$
+- maggiorante: $$\exists M \ : \ \forall x \in A, \ x \leq M$$
+- minorante: $$\exists m \ : \ \forall x \in A, \ x \geq m$$
 
 $$M$$ o $$m$$ non devono necessariamente far parte di $$A$$.
 
@@ -84,7 +84,7 @@ Questa proprietà non vale per i numeri razionali.
 
 Dato $$x \in \mathbb{R}$$.
 
-$$\llcorner x \lrcorner = \sup( \{ \ y \in \mathbb{Z} \mid y < x \ \} )$$
+$$\llcorner x \lrcorner = \sup( \{ \ y \in \mathbb{Z} \ : \ y < x \ \} )$$
 
 $$\llcorner x \lrcorner$$ è l'estremo superiore dell'insieme dei numeri interi
 $$\leq x$$.
@@ -109,14 +109,14 @@ Dati:
 - $$\forall a,b \in \mathbb{R}$$
 - $$a < b$$
 
-$$\exists x \in \mathbb{Q} \mid a < q < b$$
+$$\exists x \in \mathbb{Q} \ : \ a < q < b$$
 
 <Card title="Dimostrazione">
 
 Dati:
 
 - $$(a < b) \equiv (b - a > 0)$$
-- $$\exists n \in \mathbb{N} \mid \left( n > \frac{1}{b - a} \right) \equiv \left( b - a = \frac{1}{n} \right), \ n > 0$$
+- $$\exists n \in \mathbb{N} \ : \ \left( n > \frac{1}{b - a} \right) \equiv \left( b - a = \frac{1}{n} \right), \ n > 0$$
 - $$m = \frac{\llcorner{na}\lrcorner + 1}{n}, \ m \in \mathbb{Z}$$
 
 Dimostro che $$q$$ è minore di $$b$$.
