@@ -21,6 +21,9 @@ export default defineConfig({
       favicon: "/favicon.svg",
       lastUpdated: true,
       title: "ICE Notes",
+      social: {
+        github: "https://github.com/dvdzara/unitn-ice-notes",
+      },
     }),
   ],
 });
