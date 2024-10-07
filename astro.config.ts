@@ -2,14 +2,14 @@ import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
 
 import remarkMath from "remark-math";
-import rehypeKatex from "./src/lib/rehype-katex";
+import rehypeTemml from "./src/lib/rehype-temml";
 import rehypeMermaid from "rehype-mermaid";
 
 export default defineConfig({
   site: "https://ice-notes.zarantonello.dev",
   markdown: {
     rehypePlugins: [
-      [rehypeKatex, { output: "mathml", strict: true }],
+      rehypeTemml,
       [rehypeMermaid, { dark: true, strategy: "img-png" }],
     ],
     remarkPlugins: [remarkMath],

@@ -1,12 +1,10 @@
 import type { Root } from "hast";
 import { fromHtmlIsomorphic } from "hast-util-from-html-isomorphic";
 import { toString } from "hast-util-to-string";
-import katex, { type KatexOptions } from "katex";
+import temml from "temml";
 import { SKIP, visitParents } from "unist-util-visit-parents";
 
-type Options = Omit<KatexOptions, "displayMode" | "throwOnError">;
-
-export default function rehypeKatex(options?: Options) {
+export default function rehypeKatex() {
   return (tree: Root) => {
     visitParents(tree, "element", function (element, parents) {
       const classes = Array.isArray(element.properties.className)
@@ -44,8 +42,9 @@ export default function rehypeKatex(options?: Options) {
       const spanClasses = "math-container";
       const mathRenderedString =
         `<${containerTag} class="${spanClasses}">` +
-        katex.renderToString(toString(element), {
-          ...options,
+        temml.renderToString(toString(element), {
+          strict: true,
+          throwOnError: true,
           displayMode: mathDisplay,
         }) +
         `</${containerTag}>`;
