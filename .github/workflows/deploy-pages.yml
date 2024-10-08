@@ -13,7 +13,7 @@ jobs:
       - uses: actions/setup-node@0a44ba7841725637a19e28fa30b79a866c81b0a6 # v4.0.4
         with:
           cache: pnpm
-      - run: pnpm dlx "playwright@$PLAYWRIGHT_VERSION" install --with-deps
+      - run: pnpm dlx "playwright@$PLAYWRIGHT_VERSION" install --with-deps chromium
       - uses: withastro/action@44cbafd43567733e3b007918c6e0711480560516 # v3.0.0
   deploy:
     container: docker.io/library/node:22.9.0-bookworm@sha256:69e667a79aa41ec0db50bc452a60e705ca16f35285eaf037ebe627a65a5cdf52

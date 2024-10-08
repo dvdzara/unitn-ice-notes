@@ -13,7 +13,7 @@ ENV PATH="/pnpm/bin:$PATH"
 # renovate: datasource=npm depName=playwright versioning=npm
 ENV PLAYWRIGHT_VERSION="1.48.0"
 
-RUN pnpm dlx "playwright@$PLAYWRIGHT_VERSION" install --with-deps && \
+RUN pnpm dlx "playwright@$PLAYWRIGHT_VERSION" install --with-deps chromium && \
     apt-get clean
 
 USER node
