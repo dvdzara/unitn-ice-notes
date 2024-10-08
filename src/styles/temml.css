@@ -25,8 +25,16 @@ math {
 
   /* Prevent Firefox from omitting the dot on i or j. */
   font-feature-settings: "dtls" off;
+  font-family: "Fira Math", math, sans-serif;
 
-  font-family: "Fira Math", math;
+  /* flex-wrap for line-breaking in Chromium */
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+
+  mrow {
+    padding: 0.5ex 0;
+  }
 
   * {
     border-color: currentcolor;
@@ -40,23 +48,26 @@ math {
 }
 
 *.mathscr {
-  font-family: "Temml";
+  font-family: Temml, math, sans-serif;
 }
 
-/* Chromium prime alignment */
-mo.tml-prime {
-  font-family: Temml;
-}
+mo {
+  /* Chromium prime alignment */
+  .tml-prime {
+    font-family: Temml, math, sans-serif;
+  }
 
-/* Prevent f' from overlapping in Chromium */
-mo.prime-pad {
-  padding-left: 0.08em;
+  /* Prevent f' from overlapping in Chromium */
+  .prime-pad {
+    padding-left: 0.08em;
+  }
 }
 
 /* Array cell justification in Firefox & WebKit */
 .tml-right {
   text-align: right;
 }
+
 .tml-left {
   text-align: left;
 }
@@ -65,19 +76,20 @@ mo.prime-pad {
 @supports (not (-webkit-backdrop-filter: blur(1px))) and
   (not (-moz-appearance: none)) {
   /* MathML Core & Chromium do not support the MathML 3.0 element <menclose> attributes. */
+
   /* So use styles. */
   menclose {
     position: relative;
-    padding: 0.5ex 0ex;
+    padding: 0.5ex 0;
   }
 
   .tml-overline {
-    padding: 0.1em 0 0 0;
+    padding: 0.1em 0 0;
     border-top: 0.065em solid;
   }
 
   .tml-underline {
-    padding: 0 0 0.1em 0;
+    padding: 0 0 0.1em;
     border-bottom: 0.065em solid;
   }
 
@@ -88,48 +100,52 @@ mo.prime-pad {
     bottom: 0;
     width: 100%;
     height: 100%;
-    background-color: currentColor;
+    background-color: currentcolor;
   }
+
   .upstrike {
     clip-path: polygon(
       0.05em 100%,
-      0em calc(100% - 0.05em),
-      calc(100% - 0.05em) 0em,
+      0 calc(100% - 0.05em),
+      calc(100% - 0.05em) 0,
       100% 0.05em
     );
   }
+
   .downstrike {
     clip-path: polygon(
-      0em 0.05em,
-      0.05em 0em,
+      0 0.05em,
+      0.05em 0,
       100% calc(100% - 0.05em),
       calc(100% - 0.05em) 100%
     );
   }
+
   .sout {
     clip-path: polygon(
-      0em calc(55% + 0.0333em),
-      0em calc(55% - 0.0333em),
+      0 calc(55% + 0.0333em),
+      0 calc(55% - 0.0333em),
       100% calc(55% - 0.0333em),
       100% calc(55% + 0.0333em)
     );
   }
+
   .tml-xcancel {
     background: linear-gradient(
         to top left,
-        rgba(0, 0, 0, 0) 0%,
-        rgba(0, 0, 0, 0) calc(50% - 0.06em),
-        rgba(0, 0, 0, 1) 50%,
-        rgba(0, 0, 0, 0) calc(50% + 0.06em),
-        rgba(0, 0, 0, 0) 100%
+        rgb(0 0 0 / 0%) 0%,
+        rgb(0 0 0 / 0%) calc(50% - 0.06em),
+        rgb(0 0 0 / 100%) 50%,
+        rgb(0 0 0 / 0%) calc(50% + 0.06em),
+        rgb(0 0 0 / 0%) 100%
       ),
       linear-gradient(
         to top right,
-        rgba(0, 0, 0, 0) 0%,
-        rgba(0, 0, 0, 0) calc(50% - 0.06em),
-        rgba(0, 0, 0, 1) 50%,
-        rgba(0, 0, 0, 0) calc(50% + 0.06em),
-        rgba(0, 0, 0, 0) 100%
+        rgb(0 0 0 / 0%) 0%,
+        rgb(0 0 0 / 0%) calc(50% - 0.06em),
+        rgb(0 0 0 / 100%) 50%,
+        rgb(0 0 0 / 0%) calc(50% + 0.06em),
+        rgb(0 0 0 / 0%) 100%
       );
   }
 
@@ -137,6 +153,7 @@ mo.prime-pad {
     border-top: 0.067em solid;
     padding: 0.1em 0.2em 0.2em 0.433em;
   }
+
   .longdiv-arc {
     position: absolute;
     top: 0;
@@ -149,6 +166,7 @@ mo.prime-pad {
     clip-path: inset(0 0 0 0.4em);
     box-sizing: border-box;
   }
+
   .menclose {
     display: inline-block;
     text-align: left;
@@ -159,6 +177,7 @@ mo.prime-pad {
     border-bottom: 0.067em solid;
     padding: 0.2em 0.2em 0.1em 0.6em;
   }
+
   .phasor-angle {
     display: inline-block;
     position: absolute;
@@ -166,19 +185,20 @@ mo.prime-pad {
     bottom: -0.04em;
     height: 100%;
     aspect-ratio: 0.5;
-    background-color: currentColor;
+    background-color: currentcolor;
     clip-path: polygon(
       0.05em 100%,
-      0em calc(100% - 0.05em),
-      calc(100% - 0.05em) 0em,
+      0 calc(100% - 0.05em),
+      calc(100% - 0.05em) 0,
       100% 0.05em
     );
   }
 
   .tml-box {
-    padding: 3pt 0 3pt 0;
+    padding: 3pt 0;
     border: 1px solid;
   }
+
   .tml-fbox {
     padding: 3pt;
     border: 1px solid;
@@ -187,37 +207,39 @@ mo.prime-pad {
   .circle-pad {
     padding: 0.267em;
   }
+
   .textcircle {
     position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
+    inset: 0;
     border: 0.067em solid;
     border-radius: 50%;
   }
 
   .actuarial {
-    padding: 0.03889em 0.03889em 0 0.03889em;
-    border-width: 0.08em 0.08em 0em 0em;
+    padding: 0.0389em 0.0389em 0;
+    border-width: 0.08em 0.08em 0 0;
     border-style: solid;
-    margin-right: 0.03889em;
+    margin-right: 0.0389em;
   }
 
   /* Stretch \widetilde */
   .tml-crooked-2 {
     transform: scale(2, 1.1);
   }
+
   .tml-crooked-3 {
     transform: scale(3, 1.3);
   }
+
   .tml-crooked-4 {
     transform: scale(4, 1.4);
   }
+
   /* set array cell justification */
   .tml-right {
     text-align: -webkit-right;
   }
+
   .tml-left {
     text-align: -webkit-left;
   }
@@ -226,30 +248,22 @@ mo.prime-pad {
 /* Adjust WebKit accents */
 @supports (-webkit-backdrop-filter: blur(1px)) {
   .tml-xshift {
-    transform: translate(0px, 0.45em);
+    transform: translate(0, 0.45em);
   }
-  .tml-capshift {
-    transform: translate(0px, 0.35em);
-  }
-}
 
-/* flex-wrap for line-breaking in Chromium */
-math {
-  display: inline-flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-}
-math > mrow {
-  padding: 0.5ex 0ex;
+  .tml-capshift {
+    transform: translate(0, 0.35em);
+  }
 }
 
 /* Avoid flex-wrap in Firefox */
-@-moz-document url-prefix() {
+@document url-prefix() {
   math {
     display: inline;
-  }
-  math > mrow {
-    padding: 0;
+
+    mrow {
+      padding: 0;
+    }
   }
 }
 
