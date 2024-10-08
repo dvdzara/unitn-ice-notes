@@ -11,7 +11,7 @@ ENV PNPM_HOME="/pnpm/bin"
 ENV PATH="/pnpm/bin:$PATH"
 
 # renovate: datasource=npm depName=playwright versioning=npm
-ENV PLAYWRIGHT_VERSION="1.47.2"
+ENV PLAYWRIGHT_VERSION="1.48.0"
 
 RUN pnpm dlx "playwright@$PLAYWRIGHT_VERSION" install --with-deps && \
     apt-get clean
