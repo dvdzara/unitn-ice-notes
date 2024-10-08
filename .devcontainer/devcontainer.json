@@ -5,7 +5,6 @@
         "astro-build.astro-vscode",
         "DavidAnson.vscode-markdownlint",
         "esbenp.prettier-vscode",
-        "ms-azuretools.vscode-docker",
         "redhat.vscode-yaml",
         "streetsidesoftware.code-spell-checker-italian",
         "streetsidesoftware.code-spell-checker",

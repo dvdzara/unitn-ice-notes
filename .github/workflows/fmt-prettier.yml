@@ -10,11 +10,6 @@ jobs:
           cache: pnpm
       - run: pnpm install
       - run: pnpm format
-      # Prevents git dubious ownership warning.
-      - run: chown -R 0:0 .
-      - uses: stefanzweifel/git-auto-commit-action@8621497c8c39c72f3e2a999a26b4ca1b5058a842 # v5.0.1
-        with:
-          commit_message: "chore: format files"
 
 name: fmt-prettier
 
@@ -23,5 +18,4 @@ name: fmt-prettier
     branches:
       - main
 
-permissions:
-  contents: write
+permissions: read-all

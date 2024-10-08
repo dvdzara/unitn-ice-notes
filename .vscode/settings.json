@@ -3,6 +3,9 @@
   "cSpell.words": [
     "astrojs",
     "biiettiva",
+    "bmatrix",
+    "ennupla",
+    "ennuple",
     "infty",
     "iniettiva",
     "Iniettività",
@@ -12,5 +15,4 @@
     "Sottosuccessioni",
     "suriettività"
   ],
-  "prettier.configPath": ".github/prettier.json"
 }

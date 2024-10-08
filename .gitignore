@@ -2,3 +2,5 @@
 .pnpm/
 dist/
 node_modules/
+
+megalinter-reports/
