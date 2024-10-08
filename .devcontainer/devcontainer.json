@@ -1,10 +1,15 @@
 {
+  "name": "unitn-ice-notes",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
   "customizations": {
     "vscode": {
       "extensions": [
         "astro-build.astro-vscode",
         "DavidAnson.vscode-markdownlint",
         "esbenp.prettier-vscode",
+        "github.vscode-github-actions",
         "redhat.vscode-yaml",
         "streetsidesoftware.code-spell-checker-italian",
         "streetsidesoftware.code-spell-checker",
@@ -12,7 +17,7 @@
       ]
     }
   },
-  "dockerComposeFile": "docker-compose.yml",
-  "service": "devcontainer",
-  "workspaceFolder": "/srv"
+  "features": {
+    "ghcr.io/devcontainers/features/common-utils": {}
+  }
 }
