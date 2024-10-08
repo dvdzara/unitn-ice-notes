@@ -8,7 +8,7 @@
     "build": "astro sync && astro build",
     "preview": "astro preview --host",
     "check": "astro check && eslint",
-    "format": "prettier --config .github/prettier.json -w .",
+    "format": "prettier -w .",
     "clean": "rm -rf dist .astro node_modules"
   },
   "devDependencies": {

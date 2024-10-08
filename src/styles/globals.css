@@ -10,8 +10,7 @@
 
 /* Make block math expressions horizontally scrollable on small screens. */
 div.math-container {
-  overflow-x: scroll;
-  overflow-y: hidden;
+  overflow: scroll hidden;
 
   /* Align block math expressions to the left. */
   math {

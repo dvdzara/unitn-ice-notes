@@ -1,4 +1,4 @@
-FROM docker.io/library/node:22.9.0-bookworm@sha256:69e667a79aa41ec0db50bc452a60e705ca16f35285eaf037ebe627a65a5cdf52
+FROM mcr.microsoft.com/devcontainers/javascript-node:1.1.5-22-bookworm
 
 # renovate: datasource=npm depName=pnpm versioning=npm
 ENV PNPM_VERSION="9.12.1"
@@ -16,4 +16,5 @@ ENV PLAYWRIGHT_VERSION="1.48.0"
 RUN pnpm dlx "playwright@$PLAYWRIGHT_VERSION" install --with-deps && \
     apt-get clean
 
-ENTRYPOINT []
+USER vscode
+HEALTHCHECK NONE

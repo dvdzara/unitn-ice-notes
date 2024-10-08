@@ -1,6 +1,6 @@
 extends: default
-ignore:
-  - pnpm-lock.yaml
+ignore: |
+  pnpm-lock.yaml
 rules:
   braces:
     forbid: non-empty
