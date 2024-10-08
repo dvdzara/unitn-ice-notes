@@ -1,7 +1,7 @@
 /* Credits: https://github.com/ronkok/Temml */
 
 @font-face {
-  font-family: "Temml";
+  font-family: Temml;
   src: url("/fonts/Temml.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
@@ -22,22 +22,21 @@ math {
   letter-spacing: normal;
   word-wrap: normal;
   direction: ltr;
+
   /* Prevent Firefox from omitting the dot on i or j. */
   font-feature-settings: "dtls" off;
-}
 
-math * {
-  border-color: currentColor;
-}
-
-math {
   font-family: "Fira Math", math;
-}
 
-/* Next line is active in Firefox and Safari.
- * Not in Chromium, which recognizes display: "block math" written inline. */
-math.tml-display {
-  display: block;
+  * {
+    border-color: currentcolor;
+  }
+
+  /* Next line is active in Firefox and Safari.
+   * Not in Chromium, which recognizes display: "block math" written inline. */
+  .tml-display {
+    display: block;
+  }
 }
 
 *.mathscr {

@@ -16,5 +16,5 @@ ENV PLAYWRIGHT_VERSION="1.48.0"
 RUN pnpm dlx "playwright@$PLAYWRIGHT_VERSION" install --with-deps && \
     apt-get clean
 
-USER vscode
+USER node
 HEALTHCHECK NONE
