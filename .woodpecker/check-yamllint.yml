@@ -6,8 +6,6 @@ steps:
       - yamllint .
     image: docker.io/library/alpine:3.20.3
     name: check-yamllint
-    volumes:
-      - pnpm-cache:$CI_WORKSPACE/.pnpm-store
 
 when:
   - event: pull_request

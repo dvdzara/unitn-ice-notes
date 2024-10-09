@@ -1,0 +1,13 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/woodpecker-ci/woodpecker/main/pipeline/frontend/yaml/linter/schema/schema.json
+
+steps:
+  - commands:
+      - npm install -g v8r
+      - git ls-tree --name-only HEAD | grep -e ".*\.json" | while read f ; do v8r "$f" ; done
+      - git ls-tree --name-only HEAD | grep -e ".*\.yaml" | while read f ; do v8r "$f" ; done
+      - git ls-tree --name-only HEAD | grep -e ".*\.yml" | while read f ; do v8r "$f" ; done
+    image: docker.io/library/node:22.9.1-bookworm
+    name: check-v8r
+
+when:
+  - event: pull_request

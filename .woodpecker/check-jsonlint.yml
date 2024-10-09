@@ -1,0 +1,11 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/woodpecker-ci/woodpecker/main/pipeline/frontend/yaml/linter/schema/schema.json
+
+steps:
+  - commands:
+      - npm install -g jsonlint
+      - git ls-tree --name-only HEAD | grep -e ".*\.json" | while read f ; do jsonlint -q "$f" ; done
+    image: docker.io/library/node:22.9.1-bookworm
+    name: check-jsonlint
+
+when:
+  - event: pull_request

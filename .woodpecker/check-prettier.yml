@@ -9,7 +9,7 @@ steps:
     image: docker.io/library/node:22.9.0-bookworm
     name: check-prettier
     volumes:
-      - pnpm-cache:$CI_WORKSPACE/.pnpm-store
+      - pnpm-cache:${CI_WORKSPACE}/.pnpm-store
 
 when:
   - event: pull_request
