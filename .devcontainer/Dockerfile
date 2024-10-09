@@ -2,7 +2,7 @@ FROM docker.io/library/node:22.9.0-bookworm@sha256:69e667a79aa41ec0db50bc452a60e
 
 RUN corepack enable
 
-RUN usermod -aG wheel 1000
+RUN userdel node
 
-USER 1000
+USER vscode
 HEALTHCHECK NONE
