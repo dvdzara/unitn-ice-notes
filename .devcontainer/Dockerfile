@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/devcontainers/javascript-node:1.1.5-22-bookworm
+FROM mcr.microsoft.com/devcontainers/javascript-node:1.1.5-22-bookworm@sha256:61c3428ca51d3e899b4d2850e0395fd72d67c7e7de5139c9a9d7d6e2843e3284
 
 # renovate: datasource=npm depName=pnpm versioning=npm
 ENV PNPM_VERSION="9.12.1"
