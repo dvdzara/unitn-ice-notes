@@ -1,6 +1,7 @@
 {
+  "$schema": "https://json.schemastore.org/stylelintrc.json",
   "extends": ["stylelint-config-standard"],
-  "overrrides": [
+  "overrides": [
     {
       "files": ["**/*.astro"],
       "customSyntax": "postcss-html"

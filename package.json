@@ -4,14 +4,15 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "astro dev --host",
     "build": "astro sync && astro build",
-    "preview": "astro preview --host",
     "check:astro": "astro check",
     "check:eslint": "eslint",
     "check:prettier": "prettier --check .",
+    "check:stylelint": "stylelint **/*.{css,astro}",
+    "clean": "rm -rf dist .astro node_modules",
+    "dev": "astro dev --host",
     "format": "prettier --write .",
-    "clean": "rm -rf dist .astro node_modules"
+    "preview": "astro preview --host"
   },
   "devDependencies": {
     "@astrojs/check": "0.9.4",

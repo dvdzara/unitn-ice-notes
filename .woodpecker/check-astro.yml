@@ -1,8 +1,9 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/woodpecker-ci/woodpecker/main/pipeline/frontend/yaml/linter/schema/schema.json
 
 steps:
-  - name: check-eslint
-    image: docker.io/library/node:22.9.0-alpine
+  - name: check-astro
+    image: docker.io/library/node:22.9.0-bookworm
+    
     commands:
       - corepack enable
       - corepack prepare pnpm

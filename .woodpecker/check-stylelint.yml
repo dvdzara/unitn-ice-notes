@@ -2,7 +2,9 @@
 
 steps:
   - name: check-stylelint
-    image: docker.io/library/node:22.9.0-alpine
+    image: docker.io/library/node:22.9.0-bookworm
+    volumes:
+      - pnpm-cache:$CI_WORKSPACE/.pnpm-store
     commands:
       - corepack enable
       - corepack prepare pnpm
