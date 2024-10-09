@@ -3,13 +3,13 @@
 steps:
   - commands:
       - corepack enable
-      - corepack prepare pnpm
+      - pnpm config set store-dir /pnpm
       - pnpm install
       - pnpm check:eslint
     image: docker.io/library/node:22.9.0-bookworm
     name: check-eslint
     volumes:
-      - pnpm-cache:${CI_WORKSPACE}/.pnpm-store
+      - woodpecker-${CI_REPO_REMOTE_ID}-pnpm:/pnpm
 
 when:
   - event: pull_request

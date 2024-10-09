@@ -6,7 +6,7 @@ steps:
       - git ls-tree --name-only HEAD | grep -e ".*\.json" | while read f ; do v8r "$f" ; done
       - git ls-tree --name-only HEAD | grep -e ".*\.yaml" | while read f ; do v8r "$f" ; done
       - git ls-tree --name-only HEAD | grep -e ".*\.yml" | while read f ; do v8r "$f" ; done
-    image: docker.io/library/node:22.9.1-bookworm
+    image: docker.io/library/node:22.9.0-bookworm
     name: check-v8r
 
 when:

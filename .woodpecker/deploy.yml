@@ -3,13 +3,14 @@
 steps:
   - commands:
       - corepack enable
+      - pnpm config set store-dir /pnpm
       - pnpm install
       - pnpm exec playwright install chromium --with-deps
       - pnpm build
     image: docker.io/library/node:22.9.0-bookworm
     name: build
     volumes:
-      - pnpm-cache:${CI_WORKSPACE}/.pnpm-store
+      - woodpecker-${CI_REPO_REMOTE_ID}-pnpm:/pnpm
   - commands:
       - npx wrangler pages deploy dist
     image: docker.io/library/node:22.9.0-bookworm
