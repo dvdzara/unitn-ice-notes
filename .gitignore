@@ -1,4 +1,6 @@
 .astro/
+.pnpm-store/
 .pnpm/
 dist/
+megalinter-reports/
 node_modules/

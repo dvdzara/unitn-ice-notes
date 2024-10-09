@@ -1,0 +1,142 @@
+---
+title: Lezione 8 (2024-10-08)
+---
+
+import { Details } from "../../../../components";
+
+## Spazi vettoriali
+
+Uno spazio vettoriale reale è un insieme $$V$$ (i cui elementi sono detti
+vettori) su cui sono definite 2 operazioni:
+
+- somma tra elementi;
+- prodotto di un elemento per uno scalare;
+
+Queste operazioni devono soddisfare le seguenti proprietà per la somma:
+
+- $$\forall \underline{v},\underline{w} \in V, \ \underline{v} + \underline{w} = \underline{w} + \underline{v}$$
+- $$\forall \underline{v},\underline{w},\underline{u} \in V, \ (\underline{v} + \underline{u}) + \underline{w} = \underline{v} + (\underline{w} + \underline{u})$$
+- $$\exists \underline{0} \in V \ : \ \forall \underline{v} \in V, \ \underline{0} \underline{v} = \underline{v}$$
+- $$\forall \underline{v} \in V, \ \exists - \underline{v} \ : \ \underline{v} + (- \underline{v}) = \underline{0}$$
+
+e per il prodotto:
+
+- $$\forall \lambda,\mu \in \mathbb{R}, \ \forall \underline{v} \in V, \ \lambda (\mu \underline{v}) = (\lambda \mu) \underline{v}$$
+- $$\forall \underline{v} \in V, \ 1 \underline{v} = \underline{v}$$
+- $$\forall \lambda,\mu \in \mathbb{R}, \ \forall \underline{v} \in V, \ (\lambda + \mu) \underline{v} = \lambda \underline{v} + \mu \underline{v}$$
+- $$\forall \lambda \in \mathbb{R}, \ \forall \underline{v},\underline{w} \in V, \ \lambda (\underline{v} + \underline{w}) = \lambda \underline{v} + \lambda \underline{w}$$
+
+:::caution
+
+Non confondere:
+
+- vettore (elemento di uno spazio vettoriale);
+- vettore geometrico (classe di equivalenza di segmenti orientati);
+- vettori riga, vettori colonna (matrici);
+- ennuple (elementi di $$\mathbb{R}^{n}$$);
+
+Gli ultimi 3 sono casi particolari di spazi vettoriali.
+
+:::
+
+<Details summary="Esempio: spazio delle ennuple">
+
+Ricordiamo che $$\mathbb{R}^{n}$$ è lo spazio delle ennuple di numeri reali con
+$$n$$ elementi.
+
+$$
+\mathbb{R}^{n} = \{ \underline{v} = (v_1, \ldots, v_n) \in \mathbb{R} \}
+$$
+
+$$\mathbb{R}^{n}$$ è uno spazio vettoriale con le seguenti operazioni:
+
+- somma:
+  $$\underline{v} = (v_1, \ldots, v_n), \ \underline{w} = (w_1, \ldots, w_n), \ \underline{v} + \underline{w} = (v_1 + w_1, \ldots, v_n + w_n)$$
+- prodotto per uno scalare:
+  $$\underline{v} = (v_1, \ldots, v_n), \ \lambda \in \mathbb{R}, \ \lambda \underline{v} = (\lambda v_1, \ldots, \lambda v_n)$$
+
+</Details>
+
+## Combinazioni lineari
+
+Dato $$V$$, spazio lineare reale e $$v_1, \ldots, v_k$$ vettori e
+$$\lambda_1, \ldots, \lambda_k$$ scalari, il vettore
+$$\underline{v} = \sum_{i = 1}^{k} \lambda_i \underline{v}_i \in V$$ è detto
+combinazione lineare dei vettori $$v_1, \ldots, v_k$$ con coefficienti
+$$\lambda_1, \ldots, \lambda_k$$.
+
+$$\underline{v}$$ è un elemento di $$V$$.
+
+:::note
+
+Interpretazione geometrica: la combinazione lineare è la somma di 2 vettori su
+uno stesso piano. Questi vettori possono variare di lunghezza a seconda del
+valore dello scalare, quindi la punta del vettore $$\underline{v}$$, risultato
+della combinazione, può essere in un punto qualsiasi del piano.
+
+:::
+
+### Forma matriciale
+
+La combinazione lineare
+$$\underline{v} = \sum_{i = 1}^{k} \lambda_i \underline{v}_i$$ si può scrivere
+sotto forma di matrice.
+
+La matrice è ottenuta come segue:
+
+Per ogni ennupla $$v_1, \ldots, v_k$$, consideriamo i vettori colonna
+$$v_i = \begin{bmatrix} v_1 \\ \vdots \\ v_n \end{bmatrix}$$ e disponiamoli
+affiancati, poi la matrice $$n \times k$$ che si forma va moltiplicata per
+$$\underline{\lambda} = \begin{bmatrix} \lambda_1 \\ \vdots \\ \lambda_n \end{bmatrix}$$.
+
+## Sottospazi vettoriali
+
+Un sottoinsieme dello spazio vettoriale $$V$$, $$U \subseteq V$$ è detto
+sottospazio di $$V$$ se è chiuso rispetto alle 2 operazioni di $$V$$:
+
+- $$\forall \underline{u_1},\underline{u_2} \in U, \ \underline{u_1} + \underline{u_2} \in U$$
+- $$\forall \underline{u} \in U, \ \forall \lambda \in \mathbb{R}, \ \lambda \underline{u} \in U$$
+
+Quindi:
+
+$$
+\forall \underline{u_1},\underline{u_2}, \ \forall \lambda_1,\lambda_2 \in \mathbb{R}, \ \lambda_1 \underline{u_1} + \lambda_2 + \underline{u_2} \in U
+$$
+
+Osservazioni:
+
+- Se $$U \subseteq V$$ allora $$\underline{0} \in U$$.
+- Se $$\exists \underline{u} \in U \ : \ \underline{u} \neq 0$$, allora $$U$$
+  contiene infiniti elementi.
+
+Esempi di sottospazi di $$\mathbb{R}^{n}$$:
+
+- $$\{ \underline{0} \}$$
+- $$\mathbb{R}^{n}$$: uno spazio è sottospazio di se stesso;
+- soluzioni di un sistema omogeneo ($$A \underline{x} = \underline{0}$$);
+- $$U = \{ \underline{v} = (v_1, \ldots, v_n), \ v_1 = 0 \}$$
+
+## Generatori
+
+Sia $$V$$ uno spazio vettoriale reale, con $$v_1, \ldots, v_k \in V$$.
+
+L'insieme di tutte le combinazioni lineari di $$v_1, \ldots, v_k$$ è detto
+sottospazio generato da $$v_1, \ldots, v_k$$.
+
+Notazione: $$<v_1, \ldots, v_k>$$ o $$span(v_1, \ldots, v_k)$$.
+
+$$
+span(v_1, \ldots, v_k) = \{ v_1 \lambda_1, \ldots, v_k \lambda_k \ : \ \lambda_1, \ldots, \lambda_k \in \mathbb{R} \}
+$$
+
+Se $$V$$ è tale che $$V = span(v_1, \ldots, v_k)$$, allora diciamo che
+$$\underline{v}$$ è finitamente generato e $$\{ v_1, \ldots, v_k \}$$ è detto l'insieme
+dei generatori o sistema di generatori di $$V$$.
+
+### Come stabilire se un insieme di ennuple è un sistema di generatori di $$\mathbb{R}^{n}$$
+
+L'insieme $$\{ v_1, \ldots, v_k \} \subseteq \mathbb{R}^{n}$$ è un insieme di
+generatori di $$\mathbb{R}^{n}$$ se e solo se $$rg(A) = n$$ dove
+$$A = \begin{bmatrix} v_1 | \ldots | v_k \end{bmatrix}$$.
+
+Per avere rango $$n$$, $$k$$ deve essere $$\geq n$$.

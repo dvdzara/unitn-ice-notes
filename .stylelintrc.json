@@ -1,0 +1,9 @@
+{
+  "extends": ["stylelint-config-standard"],
+  "overrrides": [
+    {
+      "files": ["**/*.astro"],
+      "customSyntax": "postcss-html"
+    }
+  ]
+}

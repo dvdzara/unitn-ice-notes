@@ -8,7 +8,7 @@
     "build": "astro sync && astro build",
     "preview": "astro preview --host",
     "check": "astro check && eslint",
-    "format": "prettier --config .github/prettier.json -w .",
+    "format": "prettier -w .",
     "clean": "rm -rf dist .astro node_modules"
   },
   "devDependencies": {
@@ -19,8 +19,12 @@
     "eslint-config-prettier": "9.1.0",
     "eslint-plugin-astro": "1.2.4",
     "eslint-plugin-jsx-a11y": "6.10.0",
+    "postcss": "8.4.47",
+    "postcss-html": "1.7.0",
     "prettier": "3.3.3",
     "prettier-plugin-astro": "0.14.1",
+    "stylelint": "16.9.0",
+    "stylelint-config-standard": "36.0.1",
     "typescript": "5.6.2",
     "typescript-eslint": "8.8.1"
   },

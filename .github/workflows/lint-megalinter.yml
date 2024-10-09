@@ -3,11 +3,10 @@ concurrency:
   group: ${{ github.ref }}-${{ github.workflow }}
 
 jobs:
-  lint-js:
-    container: docker.io/library/node:22.9.0-bookworm@sha256:69e667a79aa41ec0db50bc452a60e705ca16f35285eaf037ebe627a65a5cdf52
-    env:
-      # renovate: datasource=npm depName=playwright versioning=npm
-      PLAYWRIGHT_VERSION: 1.47.2
+  megalinter:
+    permissions:
+      contents: write
+      pull-requests: write
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@eef61447b9ff4aafe5dcd4e0bbf5d482be7e7871 # v4.2.1
@@ -15,12 +14,12 @@ jobs:
       - uses: actions/setup-node@0a44ba7841725637a19e28fa30b79a866c81b0a6 # v4.0.4
         with:
           cache: pnpm
-      - run: pnpm dlx "playwright@$PLAYWRIGHT_VERSION" install --with-deps chromium
       - run: pnpm install
-      - run: pnpm check
-      - run: pnpm build
+      - env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        uses: oxsecurity/megalinter@c217fe8f7bc9207062a084e989bd97efd56e7b9a # v8.0.0
 
-name: lint-js
+name: megalinter
 
 "on":
   pull_request:

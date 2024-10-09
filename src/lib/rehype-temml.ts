@@ -44,7 +44,6 @@ export default function rehypeKatex() {
         `<${containerTag} class="${spanClasses}">` +
         temml.renderToString(toString(element), {
           strict: true,
-          throwOnError: true,
           displayMode: mathDisplay,
         }) +
         `</${containerTag}>`;
