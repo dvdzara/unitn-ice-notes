@@ -6,7 +6,7 @@ steps:
       - pnpm config set store-dir /pnpm
       - pnpm install
       - pnpm check:eslint
-    image: docker.io/library/node:22.9.0-bookworm
+    image: docker.io/library/node:22.9.0-bookworm@sha256:69e667a79aa41ec0db50bc452a60e705ca16f35285eaf037ebe627a65a5cdf52
     name: check-eslint
     volumes:
       - woodpecker-repo-${CI_REPO_REMOTE_ID}-pnpm:/pnpm
