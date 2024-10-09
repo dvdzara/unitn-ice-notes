@@ -1,0 +1,11 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/woodpecker-ci/woodpecker/main/pipeline/frontend/yaml/linter/schema/schema.json
+
+steps:
+  - name: check-yamllint
+    image: docker.io/library/alpine:3.20.3
+    commands:
+      - apk add --no-cache yamllint
+      - yamllint .
+
+when:
+  - event: pull_request
