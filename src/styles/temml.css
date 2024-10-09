@@ -266,13 +266,3 @@ mo {
     }
   }
 }
-
-/* AMS environment auto-numbering via CSS counter. */
-.tml-eqn::before {
-  counter-increment: tmlEqnNo;
-  content: "(" counter(tmlEqnNo) ")";
-}
-
-body {
-  counter-reset: tmlEqnNo;
-}
