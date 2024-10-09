@@ -9,7 +9,7 @@ steps:
     image: docker.io/library/node:22.9.0-bookworm
     name: check-eslint
     volumes:
-      - woodpecker-${CI_REPO_REMOTE_ID}-pnpm:/pnpm
+      - woodpecker-repo-${CI_REPO_REMOTE_ID}-pnpm:/pnpm
 
 when:
   - event: pull_request

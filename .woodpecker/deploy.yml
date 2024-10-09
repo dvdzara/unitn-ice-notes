@@ -10,7 +10,8 @@ steps:
     image: docker.io/library/node:22.9.0-bookworm
     name: build
     volumes:
-      - woodpecker-${CI_REPO_REMOTE_ID}-pnpm:/pnpm
+      - woodpecker-repo-${CI_REPO_REMOTE_ID}-pnpm:/pnpm
+      - woodpecker-repo-${CI_REPO_REMOTE_ID}-apt:/var/cache/apt
   - commands:
       - npx wrangler pages deploy dist
     image: docker.io/library/node:22.9.0-bookworm

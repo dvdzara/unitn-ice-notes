@@ -2,10 +2,12 @@
 
 steps:
   - commands:
-      - apk add --no-cache yamllint
+      - apk add yamllint
       - yamllint .
     image: docker.io/library/alpine:3.20.3
     name: check-yamllint
+    volumes:
+      - woodpecker-repo-${CI_REPO_REMOTE_ID}-apk:/etc/apk/cache
 
 when:
   - event: pull_request
