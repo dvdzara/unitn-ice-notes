@@ -5,11 +5,14 @@ steps:
       - corepack enable
       - pnpm config set store-dir /pnpm
       - pnpm install
+    image: docker.io/library/node:22.9.0-bookworm
+    name: setup-pnpm
+    volumes:
+      - woodpecker-repo-${CI_REPO_REMOTE_ID}-pnpm:/pnpm
+  - commands:
       - trivy repository --scanners vuln,secret,misconfig --dependency-tree --skip-dirs node_modules .
     image: docker.io/aquasec/trivy:0.56.1
     name: check-trivy
-    volumes:
-      - woodpecker-repo-${CI_REPO_REMOTE_ID}-pnpm:/pnpm
 
 when:
   - event: pull_request
