@@ -11,7 +11,9 @@ steps:
     name: check-eslint
     volumes:
       - woodpecker-repo-${CI_REPO_REMOTE_ID}-pnpm:/pnpm
-      - woodpecker-repo-${CI_REPO_REMOTE_ID}-apt:/var/cache/apt
+      - woodpecker-repo-${CI_REPO_REMOTE_ID}-apt-lists:/var/lib/apt
+      - woodpecker-repo-${CI_REPO_REMOTE_ID}-apt-cache:/var/cache/apt
+      - woodpecker-repo-${CI_REPO_REMOTE_ID}-playwright:/root/.cache/ms-playwright
 
 when:
   - event: pull_request
