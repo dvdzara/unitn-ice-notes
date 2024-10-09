@@ -18,6 +18,8 @@ steps:
       - npx wrangler pages deploy dist
     image: docker.io/library/node:22.9.0-bookworm
     name: deploy
+    secrets:
+      - CLOUDFLARE_API_TOKEN
 
 when:
   - branch: main
