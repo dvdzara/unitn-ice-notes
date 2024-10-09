@@ -1,0 +1,13 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/woodpecker-ci/woodpecker/main/pipeline/frontend/yaml/linter/schema/schema.json
+
+steps:
+  - commands:
+      - apk add yamllint
+      - yamllint .
+    image: docker.io/library/alpine:3.20.3
+    name: check-yamllint
+    volumes:
+      - woodpecker-repo-${CI_REPO_REMOTE_ID}-apk:/etc/apk/cache
+
+when:
+  - event: pull_request

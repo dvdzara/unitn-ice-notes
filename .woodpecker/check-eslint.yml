@@ -5,9 +5,9 @@ steps:
       - corepack enable
       - pnpm config set store-dir /pnpm
       - pnpm install
-      - pnpm check:prettier
+      - pnpm check:eslint
     image: docker.io/library/node:22.9.0-bookworm
-    name: check-prettier
+    name: check-eslint
     volumes:
       - woodpecker-repo-${CI_REPO_REMOTE_ID}-pnpm:/pnpm
 

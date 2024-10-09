@@ -2,14 +2,10 @@
 
 steps:
   - commands:
-      - corepack enable
-      - pnpm config set store-dir /pnpm
-      - pnpm install
-      - pnpm check:prettier
+      - npm install -g jsonlint
+      - git ls-tree --name-only -r HEAD | grep -e ".*\.json" | while read f ; do jsonlint -q "$f" ; done
     image: docker.io/library/node:22.9.0-bookworm
-    name: check-prettier
-    volumes:
-      - woodpecker-repo-${CI_REPO_REMOTE_ID}-pnpm:/pnpm
+    name: check-jsonlint
 
 when:
   - event: pull_request

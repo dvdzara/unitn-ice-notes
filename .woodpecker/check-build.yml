@@ -5,11 +5,15 @@ steps:
       - corepack enable
       - pnpm config set store-dir /pnpm
       - pnpm install
-      - pnpm check:prettier
+      - pnpm exec playwright install chromium --with-deps
+      - pnpm build
     image: docker.io/library/node:22.9.0-bookworm
-    name: check-prettier
+    name: check-build
     volumes:
       - woodpecker-repo-${CI_REPO_REMOTE_ID}-pnpm:/pnpm
+      - woodpecker-repo-${CI_REPO_REMOTE_ID}-apt-lists:/var/lib/apt
+      - woodpecker-repo-${CI_REPO_REMOTE_ID}-apt-cache:/var/cache/apt
+      - woodpecker-repo-${CI_REPO_REMOTE_ID}-playwright:/root/.cache/ms-playwright
 
 when:
   - event: pull_request

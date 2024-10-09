@@ -1,0 +1,12 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/woodpecker-ci/woodpecker/main/pipeline/frontend/yaml/linter/schema/schema.json
+
+steps:
+  - commands:
+      - checkov -d .
+    image: ghcr.io/bridgecrewio/checkov:3.2.257
+    name: check-checkov
+    volumes:
+      - woodpecker-repo-${CI_REPO_REMOTE_ID}-apk:/etc/apk/cache
+
+when:
+  - event: pull_request
