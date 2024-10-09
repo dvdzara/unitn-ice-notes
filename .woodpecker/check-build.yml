@@ -1,14 +1,16 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/woodpecker-ci/woodpecker/main/pipeline/frontend/yaml/linter/schema/schema.json
 
 steps:
-  - name: check-eslint
-    image: docker.io/library/node:22.9.0-bookworm
-    commands:
+  - commands:
       - corepack enable
       - corepack prepare pnpm
       - pnpm install
       - pnpm exec playwright install chromium --with-deps
       - pnpm build
+    image: docker.io/library/node:22.9.0-bookworm
+    name: check-eslint
+    volumes:
+      - pnpm-cache:$CI_WORKSPACE/.pnpm-store
 
 when:
   - event: pull_request

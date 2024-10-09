@@ -1,18 +1,20 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/woodpecker-ci/woodpecker/main/pipeline/frontend/yaml/linter/schema/schema.json
 
 steps:
-  - name: build
-    image: docker.io/library/node:22.9.0-bookworm
-    commands:
+  - commands:
       - corepack enable
       - pnpm install
       - pnpm exec playwright install chromium --with-deps
       - pnpm build
-  - name: deploy
     image: docker.io/library/node:22.9.0-bookworm
-    commands:
+    name: build
+    volumes:
+      - pnpm-cache:$CI_WORKSPACE/.pnpm-store
+  - commands:
       - npx wrangler pages deploy dist
+    image: docker.io/library/node:22.9.0-bookworm
+    name: deploy
 
 when:
-  - event: push
-    branch: main
+  - branch: main
+    event: push

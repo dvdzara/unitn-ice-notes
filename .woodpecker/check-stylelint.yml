@@ -1,15 +1,15 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/woodpecker-ci/woodpecker/main/pipeline/frontend/yaml/linter/schema/schema.json
 
 steps:
-  - name: check-stylelint
-    image: docker.io/library/node:22.9.0-bookworm
-    volumes:
-      - pnpm-cache:$CI_WORKSPACE/.pnpm-store
-    commands:
+  - commands:
       - corepack enable
       - corepack prepare pnpm
       - pnpm install
       - pnpm check:stylelint
+    image: docker.io/library/node:22.9.0-bookworm
+    name: check-stylelint
+    volumes:
+      - pnpm-cache:$CI_WORKSPACE/.pnpm-store
 
 when:
   - event: pull_request
