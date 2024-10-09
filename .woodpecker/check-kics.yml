@@ -2,7 +2,7 @@
 
 steps:
   - commands:
-      - kics --ci scan .
+      - kics --ci scan --path .
     image: docker.io/checkmarx/kics:v2.1.3-debian
     name: check-kics
 
