@@ -7,8 +7,10 @@
     "dev": "astro dev --host",
     "build": "astro sync && astro build",
     "preview": "astro preview --host",
-    "check": "astro check && eslint",
-    "format": "prettier -w .",
+    "check:astro": "astro check",
+    "check:eslint": "eslint",
+    "check:prettier": "prettier --check .",
+    "format": "prettier --write .",
     "clean": "rm -rf dist .astro node_modules"
   },
   "devDependencies": {
@@ -34,7 +36,8 @@
     "autoprefixer": "10.4.20",
     "hast-util-from-html-isomorphic": "2.0.0",
     "hast-util-to-string": "3.0.1",
-    "rehype-mermaid": "2.1.0",
+    "playwright": "1.48.0",
+    "rehype-mermaid": "3.0.0",
     "remark-math": "6.0.0",
     "temml": "0.10.29",
     "unist-util-visit-parents": "6.0.1"

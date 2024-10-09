@@ -4,8 +4,7 @@ FROM mcr.microsoft.com/devcontainers/javascript-node:1.1.5-22-bookworm@sha256:61
 ENV PNPM_VERSION="9.12.1"
 
 RUN corepack enable && \
-    corepack prepare "pnpm@$PNPM_VERSION" && \
-    pnpm config set store-dir /pnpm/store
+    corepack prepare "pnpm@$PNPM_VERSION"
 
 ENV PNPM_HOME="/pnpm/bin"
 ENV PATH="/pnpm/bin:$PATH"
@@ -13,7 +12,7 @@ ENV PATH="/pnpm/bin:$PATH"
 # renovate: datasource=npm depName=playwright versioning=npm
 ENV PLAYWRIGHT_VERSION="1.48.0"
 
-RUN pnpm dlx "playwright@$PLAYWRIGHT_VERSION" install --with-deps chromium && \
+RUN pnpm dlx "playwright@$PLAYWRIGHT_VERSION" install-deps && \
     apt-get clean
 
 USER node

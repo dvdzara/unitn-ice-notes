@@ -4,7 +4,9 @@ steps:
   - name: check-prettier
     image: docker.io/library/node:22.9.0-alpine
     commands:
-      - npx prettier -w .
+      - corepack install pnpm
+      - pnpm install
+      - pnpm check:prettier
 
 when:
   - event: pull_request
