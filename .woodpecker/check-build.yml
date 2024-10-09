@@ -8,7 +8,7 @@ steps:
       - pnpm exec playwright install chromium --with-deps
       - pnpm build
     image: docker.io/library/node:22.9.0-bookworm
-    name: check-eslint
+    name: check-build
     volumes:
       - woodpecker-repo-${CI_REPO_REMOTE_ID}-pnpm:/pnpm
       - woodpecker-repo-${CI_REPO_REMOTE_ID}-apt-lists:/var/lib/apt
