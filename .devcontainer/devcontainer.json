@@ -17,11 +17,7 @@
     }
   },
   "features": {
-    "ghcr.io/devcontainers/features/common-utils": {
-      "username": "vscode",
-      "userGid": 1000,
-      "userUid": 1000
-    },
+    "ghcr.io/devcontainers/features/common-utils": {},
     "ghcr.io/devcontainers/features/git": {}
   }
 }
