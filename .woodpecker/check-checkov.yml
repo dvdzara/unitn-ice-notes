@@ -3,7 +3,7 @@
 steps:
   - commands:
       - checkov -d .
-    image: ghcr.io/bridgecrewio/checkov:3.2.257
+    image: ghcr.io/bridgecrewio/checkov:3.2.257@sha256:dceeed0d91273f734fbd2ae79593d1f2fe7b281080f4c2e0142cf90149cad826
     name: check-checkov
     volumes:
       - woodpecker-repo-${CI_REPO_REMOTE_ID}-apk:/etc/apk/cache
