@@ -5,8 +5,8 @@ steps:
       - apk add git
       - |
         git ls-tree --name-only -r HEAD | grep -E "^(.+\/)?(.*[^\/\s]\.)?Dockerfile$" | while read f ; do
-          echo "checking "$f" && hadolint "$f"
-        ; done
+          echo "checking $f" && hadolint "$f"
+        done
     image: docker.io/pipelinecomponents/hadolint:0.26.4
     name: check-hadolint
 
