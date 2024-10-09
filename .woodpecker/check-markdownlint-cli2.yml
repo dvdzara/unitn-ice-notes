@@ -1,0 +1,12 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/woodpecker-ci/woodpecker/main/pipeline/frontend/yaml/linter/schema/schema.json
+
+steps:
+  - commands:
+      - npm install -g markdownlint-cli2
+      - git ls-tree --name-only HEAD | grep -e ".*\.md" | while read f ; do markdownlint-cli2 "$f" ; done
+      - git ls-tree --name-only HEAD | grep -e ".*\.mdx" | while read f ; do markdownlint-cli2 "$f" ; done
+    image: docker.io/library/node:22.9.0-bookworm
+    name: check-markdownlint-cli2
+
+when:
+  - event: pull_request
