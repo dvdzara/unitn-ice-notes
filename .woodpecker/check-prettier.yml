@@ -8,4 +8,3 @@ steps:
 
 when:
   - event: pull_request
-    branch: $CI_REPO_DEFAULT_BRANCH
