@@ -2,7 +2,7 @@
 
 steps:
   - commands:
-      - trivy repository .
+      - trivy repository --scanners vuln,secret,misconfig --dependency-tree .
     image: docker.io/aquasec/trivy:0.56.1
     name: check-trivy
     volumes:
