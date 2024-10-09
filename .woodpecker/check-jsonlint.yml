@@ -3,7 +3,10 @@
 steps:
   - commands:
       - npm install -g jsonlint
-      - git ls-tree --name-only -r HEAD | grep -e ".*\.json" | while read f ; do jsonlint -q "$f" ; done
+      - |
+        git ls-tree --name-only -r HEAD | grep -E "^(.+\/)?.*[^\/\s]\.json$" | while read f ; do
+          echo "checking: $f" && jsonlint -q "$f"
+        done
     image: docker.io/library/node:22.9.0-bookworm@sha256:69e667a79aa41ec0db50bc452a60e705ca16f35285eaf037ebe627a65a5cdf52
     name: check-jsonlint
 

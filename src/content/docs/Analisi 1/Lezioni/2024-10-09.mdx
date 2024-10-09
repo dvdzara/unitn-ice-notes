@@ -1,0 +1,88 @@
+---
+title: Lezione 13 (2024-10-09)
+---
+
+## Limite destro e sinistro
+
+- destro:
+  $$\lim_{x \to l^{+}} = \forall \epsilon > 0, \ \exists \delta > 0 \ : \ \forall x \in (x_0, x_0 + \delta) \cap D, \ |f(x) - l| < \epsilon$$
+- sinistro:
+  $$\lim_{x \to l^{-}} = \forall \epsilon > 0, \ \exists \delta > 0 \ : \ \forall x \in (x_0 - \delta, x_0) \cap D, \ |f(x) - l| < \epsilon$$
+
+L'idea di limite destro o sinistro serve per quantificare il comportamento di
+una funzione data, quando ci avvicianiamo ad un dato punto da destra o da
+sinitra.
+
+Se e solo se il limite destro e sinistro in un punto hanno lo stesso valore
+$$l$$ allora $$\lim_{x \to x_0} f(x) = l$$ (vale anche il contrario).
+
+## Continuità a destra e sinistra
+
+Una funzione è continua a destra o sinistra se
+$$\lim_{x \to x_0^{\pm}} f(x) = x_0$$.
+
+Una funzione è continua se e solo se è continua sia a destra che a sinistra.
+
+## Limite infinito in un punto
+
+$$
+\lim_{x \to x_0} f(x) = + \infty
+$$
+
+$$
+\forall M > 0, \ \exists \delta > 0 \ : \ \forall x \in (x_0 - \delta, x_0 + \delta) \cap D \setminus \{ x_0 \}, \ f(x) > M
+$$
+
+Se $$\lim{x \to x_0} = -\infty$$, allora $$f(x) < -M$$
+
+Con un limite infinito in un punto $$x_0$$, la retta verticale che passa per
+quel punto $$x = x_0$$ è detta **asintoto verticale**.
+
+## Limite all'infinito ($$\lim_{x \to +\infty} = l$$)
+
+Data $$f: D \to \mathbb{R}$$, con $$D$$ illimitato superiormente,
+$$\forall \epsilon > 0, \ \exists K > 0 \ : \ \forall x \in (K, +\infty) \cap D, \ |f(x) - l| < \epsilon$$.
+
+La retta $$y = l$$ è detta **asintoto orizzontale**.
+
+## Limite all'infinito che tende ad infinito
+
+$$
+\lim_{x \to +\infty} = \pm \infty
+$$
+
+## Legame tra limiti di successioni e funzioni
+
+Un limite di successione può essere pensato come il limite di una funzione
+$$f: N \to R$$.
+
+Dati $$f: D \to R$$, $$\forall x_0 \in \mathbb{R}$$ e
+$$\forall l \in \mathbb{R}$$:
+
+$$
+\lim_{x \to x_0} f(x) = l
+\Leftrightarrow
+\forall a_n \in D, a_n \neq x_0, a_n \to x_0, lim_{n \to + \infty} f(x) = l
+$$
+
+Il limite di una funzione esiste se tutte le successioni i cui valori fanno
+parte del codominio della funzione hanno lo stesso limite per $$n$$ che tende a
+$$+ \infty$$.
+
+Esempio:
+
+$$
+lim_{x \to + \infty} sin(x)
+$$
+
+Posso trovare 2 successioni che hanno limiti diversi:
+
+- $$a_n$$ dove $$\sin(x) = 1$$, $$a_n \to 1$$
+- $$a_m$$ dove $$\sin(x) = 0$$, $$a_m \to 0$$
+
+Quindi non esiste il limite.
+
+## Teoremi di limiti di successioni applicati alle funzioni
+
+Il teorema dell'unicità del limite, quello della permanenza del segno e quello
+dei 2 carabinieri sono equivalenti a quelli studiati con le successioni.

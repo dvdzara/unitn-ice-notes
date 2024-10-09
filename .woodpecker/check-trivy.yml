@@ -2,9 +2,9 @@
 
 steps:
   - commands:
-      - checkov -d .
-    image: ghcr.io/bridgecrewio/checkov:3.2.257@sha256:dceeed0d91273f734fbd2ae79593d1f2fe7b281080f4c2e0142cf90149cad826
-    name: check-checkov
+      - trivy filesystem --scanners vuln,secret,misconfig .
+    image: docker.io/aquasec/trivy:0.56.1
+    name: check-trivy
 
 when:
   - event: pull_request
