@@ -1,0 +1,11 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/woodpecker-ci/woodpecker/main/pipeline/frontend/yaml/linter/schema/schema.json
+
+steps:
+  - name: check-prettier
+    image: docker.io/library/node:22.9.0-alpine
+    commands:
+      - npx prettier -w .
+
+when:
+  - event: pull_request
+    branch: $CI_REPO_DEFAULT_BRANCH
