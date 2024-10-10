@@ -2,10 +2,9 @@
 
 steps:
   - commands:
-      - pip install --root-user-action=ignore yamllint
-      - yamllint .
-    image: docker.io/library/python:3.13.0-alpine
-    name: check-yamllint
+      - woodpecker-cli lint
+    image: docker.io/woodpeckerci/woodpecker-cli:v2.7.1-alpine
+    name: check-woodpecker-cli
 
 when:
   - event: pull_request
