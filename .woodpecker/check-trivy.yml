@@ -2,9 +2,11 @@
 
 steps:
   - commands:
-      - trivy repo --scanners vuln,secret,misconfig .
+      - trivy repo --cache-dir=/cache --no-progress --scanners=vuln,secret,misconfig .
     image: docker.io/aquasec/trivy:0.56.1@sha256:c42bb3221509b0a9fa2291cd79a3a818b30a172ab87e9aac8a43997a5b56f293
     name: check-trivy
+    volumes:
+      - woodpecker-repo-${CI_REPO_REMOTE_ID}-trivy:/cache
 
 when:
   - event: pull_request
