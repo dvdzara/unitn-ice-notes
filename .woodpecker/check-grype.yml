@@ -1,0 +1,14 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/woodpecker-ci/woodpecker/main/pipeline/frontend/yaml/linter/schema/schema.json
+
+steps:
+  - commands:
+      - /syft scan . -o json=$CI_COMMIT_SHA-sbom
+    image: docker.io/anchore/syft:v1.14.0-debug
+    name: create-sbom
+  - commands:
+      - /grype sbom:$CI_COMMIT_SHA-sbom
+    image: docker.io/anchore/grype:v0.82.0-debug
+    name: check-grype
+
+when:
+  - event: pull_request
