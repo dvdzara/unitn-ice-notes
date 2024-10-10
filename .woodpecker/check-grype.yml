@@ -2,16 +2,9 @@
 
 steps:
   - entrypoint:
-      - /syft
-      - scan
-      - --output=json=$CI_COMMIT_SHA-sbom
-      - --verbose
-      - .
-    image: docker.io/anchore/syft:v1.14.0
-    name: create-sbom
-  - entrypoint:
       - /grype
-      - sbom:$CI_COMMIT_SHA-sbom
+      - --verbose
+      - dir:.
     image: docker.io/anchore/grype:v0.82.0
     name: check-grype
 
