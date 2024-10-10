@@ -2,10 +2,9 @@
 
 steps:
   - commands:
-      - pip install --root-user-action=ignore yamllint
-      - yamllint .
-    image: docker.io/library/python:3.13.0-alpine
-    name: check-yamllint
+      - semgrep ci
+    image: docker.io/semgrep/semgrep:1.90.0
+    name: check-semgrep
 
 when:
   - event: pull_request
