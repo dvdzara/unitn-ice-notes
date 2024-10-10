@@ -1,8 +1,11 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/woodpecker-ci/woodpecker/main/pipeline/frontend/yaml/linter/schema/schema.json
 
+labels:
+  platform: linux/amd64
+
 steps:
   - commands:
-      - /syft scan . -o json=$CI_COMMIT_SHA-sbom
+      - /syft scan . -o json > $CI_COMMIT_SHA-sbom
     entrypoint: /busybox/sh
     image: docker.io/anchore/syft:v1.14.0-debug
     name: create-sbom
