@@ -15,7 +15,7 @@ steps:
       - woodpecker-repo-${CI_REPO_REMOTE_ID}-apt-cache:/var/cache/apt
       - woodpecker-repo-${CI_REPO_REMOTE_ID}-playwright:/root/.cache/ms-playwright
   - commands:
-      - npx "wrangler@WRANGLER_VERSION" pages deploy dist --project-name $CI_REPO_NAME
+      - npx "wrangler@$WRANGLER_VERSION" pages deploy dist --project-name $CI_REPO_NAME
     environment:
       # renovate: datasource=npm depName=wrangler versioning=npm
       WRANGLER_VERSION: 3.80.2
