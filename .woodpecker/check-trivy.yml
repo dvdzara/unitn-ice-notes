@@ -2,7 +2,7 @@
 
 steps:
   - commands:
-      - trivy repo --cache-dir=/cache --no-progress --scanners=vuln,secret,misconfig .
+      - trivy repo --exit-code=1 --cache-dir=/cache --no-progress --scanners=vuln,secret,misconfig .
     image: docker.io/aquasec/trivy:0.56.2@sha256:26245f364b6f5d223003dc344ec1eb5eb8439052bfecb31d79aeba0c74344b3a
     name: check-trivy
     volumes:
