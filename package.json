@@ -34,7 +34,7 @@
   },
   "dependencies": {
     "@astrojs/starlight": "0.28.3",
-    "astro": "4.16.2",
+    "astro": "4.16.3",
     "autoprefixer": "10.4.20",
     "hast-util-from-html-isomorphic": "2.0.0",
     "hast-util-to-string": "3.0.1",
