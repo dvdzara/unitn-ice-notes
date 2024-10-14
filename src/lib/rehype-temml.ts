@@ -2,7 +2,7 @@ import type { Root } from "hast";
 import { fromHtmlIsomorphic } from "hast-util-from-html-isomorphic";
 import { toString } from "hast-util-to-string";
 import temml from "temml";
-import { SKIP, EXIT, visitParents } from "unist-util-visit-parents";
+import { SKIP, visitParents } from "unist-util-visit-parents";
 
 export default function rehypeKatex() {
   return (tree: Root) => {
@@ -52,6 +52,7 @@ export default function rehypeKatex() {
           }) +
           `</${containerTag}>`;
       } catch (e) {
+        // Re-throw e to make a build fail when invalid math blocks are found.
         throw e;
       }
 
