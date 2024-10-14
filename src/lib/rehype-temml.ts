@@ -41,20 +41,15 @@ export default function rehypeKatex() {
       const containerTag = mathDisplay ? "div" : "span";
       const spanClasses = "math-container";
 
-      let mathRenderedString;
-      try {
-        mathRenderedString =
-          `<${containerTag} class="${spanClasses}">` +
-          temml.renderToString(toString(element), {
-            strict: true,
-            displayMode: mathDisplay,
-            throwOnError: true,
-          }) +
-          `</${containerTag}>`;
-      } catch (e) {
-        // Re-throw e to make a build fail when invalid math blocks are found.
-        throw e;
-      }
+      const mathRenderedString =
+        `<${containerTag} class="${spanClasses}">` +
+        temml.renderToString(toString(element), {
+          strict: true,
+          displayMode: mathDisplay,
+          // Makes the build fail when an invalid math block is found.
+          throwOnError: true,
+        }) +
+        `</${containerTag}>`;
 
       const mathRenderedElement = fromHtmlIsomorphic(mathRenderedString, {
         fragment: true,
