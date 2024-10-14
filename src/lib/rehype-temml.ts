@@ -40,11 +40,14 @@ export default function rehypeKatex() {
 
       const containerTag = mathDisplay ? "div" : "span";
       const spanClasses = "math-container";
+
       const mathRenderedString =
         `<${containerTag} class="${spanClasses}">` +
         temml.renderToString(toString(element), {
           strict: true,
           displayMode: mathDisplay,
+          // Makes the build fail when an invalid math block is found.
+          throwOnError: true,
         }) +
         `</${containerTag}>`;
 
