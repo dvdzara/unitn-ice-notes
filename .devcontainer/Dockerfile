@@ -6,5 +6,6 @@ RUN corepack enable
 # hadolint ignore=DL3059
 RUN userdel node
 
+ENTRYPOINT []
 USER vscode
 HEALTHCHECK NONE

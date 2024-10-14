@@ -2,7 +2,7 @@ import type { Root } from "hast";
 import { fromHtmlIsomorphic } from "hast-util-from-html-isomorphic";
 import { toString } from "hast-util-to-string";
 import temml from "temml";
-import { SKIP, visitParents } from "unist-util-visit-parents";
+import { SKIP, EXIT, visitParents } from "unist-util-visit-parents";
 
 export default function rehypeKatex() {
   return (tree: Root) => {
@@ -40,13 +40,20 @@ export default function rehypeKatex() {
 
       const containerTag = mathDisplay ? "div" : "span";
       const spanClasses = "math-container";
-      const mathRenderedString =
-        `<${containerTag} class="${spanClasses}">` +
-        temml.renderToString(toString(element), {
-          strict: true,
-          displayMode: mathDisplay,
-        }) +
-        `</${containerTag}>`;
+
+      let mathRenderedString;
+      try {
+        mathRenderedString =
+          `<${containerTag} class="${spanClasses}">` +
+          temml.renderToString(toString(element), {
+            strict: true,
+            displayMode: mathDisplay,
+            throwOnError: true,
+          }) +
+          `</${containerTag}>`;
+      } catch (e) {
+        throw e;
+      }
 
       const mathRenderedElement = fromHtmlIsomorphic(mathRenderedString, {
         fragment: true,
