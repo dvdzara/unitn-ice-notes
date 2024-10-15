@@ -2,8 +2,11 @@
 
 steps:
   - commands:
-      - markdownlint-cli2 **/*.md **/*.mdx
-    image: docker.io/davidanson/markdownlint-cli2:v0.14.0@sha256:9ae6011b3d978315ad283bf2af997ef08687a797b9e55086c94a90bf620f0783
+      - npx "markdownlint-cli2@$MARKDOWNLINT_CLI2_VERSION" **/*.md
+    environment:
+      # renovate: datasource=npm depName=markdownlint-cli2 versioning=npm
+      MARKDOWNLINT_CLI2_VERSION: 0.14.0
+    image: docker.io/library/node:22.9.0-bookworm@sha256:69e667a79aa41ec0db50bc452a60e705ca16f35285eaf037ebe627a65a5cdf52
     name: check-markdownlint-cli2
 
 when:
