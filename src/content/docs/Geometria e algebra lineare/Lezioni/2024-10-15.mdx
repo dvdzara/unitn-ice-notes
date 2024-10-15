@@ -1,0 +1,229 @@
+---
+title: Lezione 9 (2024-10-15)
+---
+
+import { Details } from "../../../../components";
+
+## Sottospazio di righe e colonne di una matrice
+
+Sia $$A \in M_{m \times n}(\R)$$ una matrice:
+
+$$
+A = \begin{bmatrix}
+a_{11} & \ldots & a_{1n} \\
+\vdots & & \vdots \\
+a_{m1} & \ldots & a_{mn}
+\end{bmatrix}
+$$
+
+Le righe di $$A$$ sono elementi di $$\R^{n}$$, $$r_1, \ldots, r_n \in \R^{n}$$.
+
+Le colonne di $$A$$ sono elementi di $$\R^{n}$$,
+$$c_1, \ldots, c_m \in \R^{n}$$.
+
+Il sottospazio di $$\R^{n}$$ generato dalle righe di $$A$$ è detto spazio delle
+righe di $$A$$ (notazione: $$R(A) = \span(r_1, \ldots, r_n) \in \R^{n}$$).
+
+Il sottospazio di $$\R^{n}$$ generato dalle colonne di $$A$$ è detto spazio
+delle colonne di $$A$$ (notazione:
+$$C(A) = \span(r_1, \ldots, r_n) \in \R^{n}$$).
+
+<Details summary="Esempio">
+
+$$
+A = \begin{bmatrix}
+1 & 2 & -2 & -1 \\
+2 & 1 & 0  & 6
+\end{bmatrix}
+$$
+
+$$R(A) = \span((1, 2, -2, 1), (2, 1, 0, 6)) \in \R^{4}$$
+
+$$C(A) = \span((1, 2), (2, 1), (-2, 0), (1, 6)) \in \R^{2}$$
+
+</Details>
+
+## Sistemi lineari e sottospazi
+
+L'insieme delle soluzioni di $$A \v{x} = \v{0}$$ è un sottospazio vettoriale di
+$$\R^{n}$$.
+
+Questa proprietà è anche invertibile (ogni sottospazio di $$\R^{n}$$) può essere
+interpretato come l'insieme delle soluzioni di un opportuno sistema lineare
+omogeneo).
+
+Procedura per passare da un sottospazio ad un sistema omogeneo:
+
+$$
+\begin{align}
+& x \in \span(\v{v_1}, \ldots, \v{v_k}) \subseteq \R^{n} \\
+& \Updownarrow \\
+& A \v{\lambda} = \v{x} \text{ è compatibile}, A = \begin{bmatrix} \v{v_1} & | & \ldots & | & \v{v_n} \end{bmatrix} \\
+& \Updownarrow \\
+& rg(A) = rg(A | \v{x}) \quad (\text{Rouché-Capelli})
+\end{align}
+$$
+
+Questa caratterizzazione ci fornira il sistema lineare il cui spazio delle
+soluzioni è $$\span(\v{v_1}, \ldots, \v{v_k})$$.
+
+<Details summary="Esempio">
+
+$$\v{v_1} = (-1, 1, 0, -3), \ \v{v_2} = (1, -1, 2, 1) \in \R^{4}$$
+
+$$
+A | \v{x} = \begin{bmatrix}
+-1 & 1  & | & x_1 \\
+1  & -1 & | & x_2 \\
+0  & 2  & | & x_3 \\
+-3 & 1  & | & x_4
+\end{bmatrix}
+$$
+
+Calcolo $$rg(A)$$:
+
+$$
+A | \v{x} = \begin{bmatrix}
+-1 & 1  & | & x_1               \\
+0  & -2 & | & x_4 - 3 x_1       \\
+0  & 0  & | & x_3 + x_4 - 3 x_1 \\
+0  & 0  & | & x_1 + x_2
+\end{bmatrix}
+$$
+
+Per avere $$rg(A) = rg(A | \v{x})$$:
+
+$$
+\begin{cases}
+x_3 + x_4 - 3 x_1 = 0 \\
+x_1 + x_2 = 0
+\end{cases}
+$$
+
+Ecco il sistema lineare cercato.
+
+</Details>
+
+## Altri esempi
+
+### Spazi vettoriali
+
+- $$V^{3}$$, insieme dei vettori geometrici.
+
+- $$M_{m \times n}(\R)$$, insieme delle matrici.
+
+- $$\R_{[x]} = \left\{ \sum_{i=0}^{\delta} a_{i} x^{i} \st \delta \in \N, \ a_{i} \in \R \right\}$$,
+  insieme dei polinomi in $$x$$ a coefficienti reali.
+
+  $$\delta$$ è il grado del polinomio.
+
+  $$\R_{[x]}$$ non è finitamente generato: dato $$M$$ come massimo grado di
+  $$p(x) \in \R_{[x]}$$,
+  $$\exists q(x) \text{di grado superiore a M} \in \span(p_1, \ldots, p_k)$$
+
+- $$\R_{d [x]}$$, polinomi di grado massimo $$d$$.
+
+  È finitamente generato, un sistema di generatori è
+  $$\{ 1, x, x^{2}, \ldots, x^{d} \}$$.
+
+- $$\theta(\R) = \left\{ f: \R \to \R, f \in C^{0}(\R) \right\}$$, insieme delle
+  funzioni continue.
+
+## Sottospazi vettoriali
+
+Dato $$V = M_{2}(\R)$$ spazio vettoriale:
+
+- $$
+  U = \left\{\begin{bmatrix}
+  a_{11} & a_{12} \\
+  a_{21} & a_{22}
+  \end{bmatrix}
+  \in V \st a_{11} + a_{22} = 0 \right\}
+  $$
+
+  Matrici a traccia nulla: somma degli elementi sulla diagonale $$= 0$$.
+
+  <Details summary="Dimostrazione">
+
+  Per verificare basta dimostrare che la combinazione lineare tra 2 matrici
+  $$\in U$$ sia anch'essa una matrice nulla.
+
+  </Details>
+
+- $$U = \{ A \in M_{2}(\R) \st A \text{ è invertibile} \} \subseteq V$$
+
+  Non è un sottospazio.
+
+  La matrice nulla $$\v{0}$$ non ha $$rg(A) = n$$.
+
+---
+
+Dato $$V = \R_{[x]}$$:
+
+- $$U = \{ p(x) \in V \st p(1) = 0 \}$$
+
+  È un sottospazio.
+
+- $$U = \{ p(x) \in V \st \text{grado di p(x) è d} \}$$
+
+  Non è un sottospazio:
+
+  - Non contiene l'elemento nullo.
+  - Non è chiuso rispetto alla somma.
+
+## Dipendenza e indipendenza lineare
+
+Definizione:
+
+Dato $$C$$ spazio vettoriale:
+
+- L'insieme $$\{ \v{v_1}, \ldots, \v{v_k} \}$$ è linearmente dipendente se
+  esistono $$\lambda_1, \ldots, \lambda_k$$ non tutti nulli, tali che la
+  $$\sum_{i=1}^{k} \lambda_i \v{v_i} = \v{0}$$.
+
+- In caso contrario, ossia se $$\sum_{i=1}^{k} \lambda_i \v{v_i} = \v{0}$$ con
+  $$\lambda_1, \ldots, \lambda_k = 0$$, allora
+  $$\{ \v{v_1}, \ldots, \v{v_k} \}$$ è linearmente dipendente.
+
+Osservazione: Se $$\{ \v{v_1}, \ldots, \v{v_k} \}$$ è linearmente dipendente e
+se $$k \geq 2$$, allora almeno uno dei vettori può essere scritto come
+combinazione lineare degli altri 2 rimanenti.
+
+<Details summary="Esempio">
+
+$$\v{v_1} = (1, 2, 0, -1), \v{v_2} = (0, -1, 1, 2), \v{v_3} = (2, 1, 3, 4)$$
+
+Mostriamo che $$\{ \v{v_1} \v{v_2} \v{v_3} \}$$ è linearmente dipendente,
+infatti scegliendo $$\lambda_1 = 2, \lambda_2 = 3, \lambda_3 = -1$$ abbiamo:
+
+$$
+\lambda_1 \v{v_1} + \lambda_2 \v{v_2} + \lambda_3 \v{v_3} = \v{0}
+$$
+
+$$
+\v{v_3} = \frac{- \lambda_1 \v{v_1} - \lambda_2 \v{v_2}}{\lambda_3}
+$$
+
+</Details>
+
+Come si fa a verificare che dei vettori di $$\R^{n}$$ sono linearmente
+dipendenti/indipendenti?
+
+Ricordiamo:
+
+$$
+\sum_{i=1}^{k} \lambda_i \v{v_i} = A \v{\lambda}, \ A = \begin{bmatrix} \v{v_1} & | & \ldots & | & \v{v_k} \end{bmatrix}, \ \v{lambda} = \begin{bmatrix} \lambda_1 \\ \vdots \\ \lambda_k \end{bmatrix}
+$$
+
+Quindi se $$A \v{\lambda} = \v{0}$$ i vettori sono linearmente dipendenti.
+
+### Dipendenza e indipendenza lineare con le ennuple
+
+- $$\{ \v{v_1}, \ldots, \v{v_k} \} \subseteq \R^{n}$$ è un insieme linearmente
+  indipendente quando $$A \v{\lambda} = \v{0}$$ implica che
+  $$\v{\lambda} = \v{0}$$, ovvero $$A \v{\lambda} = \v{0}$$ ammette solo una
+  soluzione nulla (per il teorema di Rouché-Capelli, c'è un unica soluzione
+  quando $$rg(A) = k$$).
+
+- Se $$A \v{\lambda} = \v{0}$$ ha soluzioni non nulle, allora l'insieme è
+  linearmente dipendente.

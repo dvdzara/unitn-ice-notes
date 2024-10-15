@@ -48,6 +48,21 @@ export default function rehypeKatex() {
           displayMode: mathDisplay,
           // Makes the build fail when an invalid math block is found.
           throwOnError: true,
+          macros: {
+            "\\st": "\\ : \\ ",
+
+            "\\Z": "\\mathbb{Z}",
+            "\\Q": "\\mathbb{Q}",
+            "\\R": "\\mathbb{R}",
+            "\\C": "\\mathbb{C}",
+
+            "\\span": "\\text{span}",
+
+            // Vector.
+            "\\v": "\\underline",
+            // Vector segment.
+            "\\vs": "\\overrightarrow",
+          },
         }) +
         `</${containerTag}>`;
 
