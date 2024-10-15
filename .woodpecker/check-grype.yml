@@ -5,7 +5,7 @@ steps:
       - /grype
       - --verbose
       - dir:.
-    image: docker.io/anchore/grype:v0.82.0@sha256:647f6ed684917a9b6c3ae51bd15f8baf92cdc7bdcf59a4fdfb431256a8860166
+    image: docker.io/anchore/grype:v0.82.1@sha256:9226c86d70e504976c645c42c02b4908bada3490b9ce20e56b46e3bf52155472
     name: check-grype
 
 when:

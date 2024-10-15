@@ -3,7 +3,7 @@
 steps:
   - commands:
       - checkov -d .
-    image: ghcr.io/bridgecrewio/checkov:3.2.263@sha256:92a45dd78a7b1b3e2bb7d998d82ff2cde1d6cb58bd0f0853b814c42be4d10f0f
+    image: ghcr.io/bridgecrewio/checkov:3.2.266@sha256:6bbb7349349912f402fea1fee3217d1974a71b2082a58dde00932f6dd87ada82
     name: check-checkov
 
 when:
