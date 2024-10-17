@@ -9,7 +9,6 @@ title: Programmazione 1
 ---
 
 import { getCollection } from "astro:content";
-import { Details } from "../../../components";
 
 ## Programma del corso
 
@@ -17,7 +16,7 @@ import { Details } from "../../../components";
 - linguaggio formale;
 - programmazione:
   - aspetti teorici e formali;
-  - linguaggio di programmazione imperativo (C,C++,java);
+  - linguaggio di programmazione imperativo (C, C++, java);
   - implementazione di programmi in C;
 - strutture di dati (in C);
 - analisi di algoritmi e le loro prestazioni;
@@ -95,7 +94,8 @@ Basta fare corso di sicurezza generale su Moodle.
 
 ---
 
-<Details summary="Lezioni">
+<details>
+<summary>Lezioni</summary>
 
 <ul>
   {(await getCollection("docs"))
@@ -107,4 +107,4 @@ Basta fare corso di sicurezza generale su Moodle.
     ))}
 </ul>
 
-</Details>
+</details>

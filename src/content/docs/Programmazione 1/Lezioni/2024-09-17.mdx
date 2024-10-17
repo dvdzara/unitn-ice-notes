@@ -2,8 +2,7 @@
 title: Lezione 1 (2024-09-17)
 ---
 
-import Details from "../../../../components/Details.astro";
-import { Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import { Steps } from "@astrojs/starlight/components";
 
 ## Definizione di informatica
 
@@ -26,18 +25,19 @@ Entrambe le definizioni non implicano l'uso di un calcolatore.
 > Sequenza precisa di operazioni che definisce una sequenza **finita** di passi
 > che portano alla realizzazione di un compito.
 
-<Details summary="Esempio">
+<details>
+<summary>Esempio</summary>
 
 Sommare 2 numeri con un pallottoliere:
 
 ```text
-  a=4
+  a = 4
   OOOO---OOOOOOOOOO
 
-  b=7
+  b = 7
   OOOOOOO---OOOOOOO
 
-  a+b=11
+  a+b = 11
   OOOOOOOOOOO---OOO
 ```
 
@@ -45,13 +45,13 @@ Sommare 2 numeri con un pallottoliere:
 
 1. Nella prima riga spostare un disco da sinistra a destra;
 2. Nella terza riga spostare un disco da destra a sinistra;
-3. Ripetere 1,2 fino ad esaurimento dischi;
-4. Ripetere 1,2,3 ma con la seconda riga;
+3. Ripetere 1, 2 fino ad esaurimento dischi;
+4. Ripetere 1, 2, 3 ma con la seconda riga;
 5. I dischi a sinistra sulla terza riga sono la somma;
 
 </Steps>
 
-</Details>
+</details>
 
 Un algoritmo deve avere una descrizione comprensibile al suo esecutore.
 
@@ -60,14 +60,15 @@ Proprietà di un algoritmo:
 - correttezza;
 - efficienza;
 
-<Details summary="Altri esempi di algoritmi">
+<details>
+<summary>Altri esempi di algoritmi</summary>
 
 - cercare un partner;
 - trovare un appartamento;
 
 [Problema della segretaria](https://en.wikipedia.org/wiki/Secretary_problem)
 
-</Details>
+</details>
 
 ## Grafi
 
@@ -103,12 +104,3 @@ sub-algoritmo per specificare.
 
 Questo metodo si chiama top-down, si parte da istruzioni generali e si
 rifiniscono fino ad arrivare a quelle specifiche.
-
----
-
-<CardGrid>
-  <LinkCard
-    title="Appunti di Andrea"
-    href="https://drive.google.com/file/d/1OxwvicjdCMxen4uZtnzq_Rw4uWLrCZp3/view"
-  />
-</CardGrid>

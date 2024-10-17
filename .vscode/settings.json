@@ -2,19 +2,32 @@
   "cSpell.enableFiletypes": ["mdx", "md"],
   "cSpell.words": [
     "approssimabile",
+    "arccos",
+    "arcsin",
+    "arctan",
     "astrojs",
     "biiettiva",
+    "binom",
     "bmatrix",
+    "darray",
+    "Desmos",
     "ennupla",
     "ennuple",
     "infty",
     "iniettiva",
+    "iniettive",
     "Iniettività",
+    "liminf",
+    "limsup",
     "mathbb",
+    "Moivre",
     "overrightarrow",
+    "Riscalamento",
     "Rouché",
+    "rref",
     "sottosuccessione",
     "Sottosuccessioni",
-    "suriettività"
+    "suriettività",
+    "uple"
   ]
 }

@@ -2,18 +2,17 @@
 title: Lezione 2 (2024-09-11)
 ---
 
-import { Details } from "../../../../components";
-import { Steps, Card, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import { Steps, Card } from "@astrojs/starlight/components";
 
 ## Numeri reali
 
 ### Insiemi numerici
 
-- $$\mathbb{N} = \{ \ 0,1,2,3,\ldots \ \}$$
-- $$\mathbb{Z} = \{ \ 2,1,-2,\ldots \ \}$$
-- $$\mathbb{Q} = \left\{\ \frac{p}{q} \ : \ p,q \in \mathbb{Z}, q \neq 0 \ \right\}$$
+- $$\N = \PC{ 0, 1, 2, 3, \ldots }$$
+- $$\Z = \PC{ 2, 1, -2, \ldots }$$
+- $$\Q = \PC{ \frac{p}{q} \st p, \ q \in \Z, \ q \neq 0 }$$
 
-$$\mathbb{N} \subsetneqq \mathbb{Z}$$, $$\mathbb{Z} \subsetneqq \mathbb{Q}$$
+$$\N \subsetneqq \Z$$, $$\Z \subsetneqq \Q$$
 
 Sono insiemi ordinati.
 
@@ -21,35 +20,34 @@ Sono definite le operazioni di somma e prodotto.
 
 ---
 
-Non esiste nessun numero razionale $$x \ : \ x^{2} = 2$$.
+Non esiste nessun numero razionale $$x \st x^{2} = 2$$.
 
 Ogni numero razionale si può rappresentare in forma decimale limitata o
 periodica e viceversa.
 
 Alcuni numeri decimali non possono essere rappresentati con numeri razionali. I
-numeri reali contengono $$\mathbb{Q}$$ e tutti i numeri non rappresentabili
+numeri reali contengono $$\Q$$ e tutti i numeri non rappresentabili
 razionalmente.
 
 ### Intervalli
 
-- $$(a,b) = \{ \ x \in \mathbb{R} \ : \ a < x < b \ \}$$: intervallo aperto;
-- $$[a,b] = \{ \ x \in \mathbb{R} \ : \ a \leq x \leq b \ \}$$: intervallo
-  chiuso;
+- $$(a, b) = \PC{ x \in \R \st a < x < b }$$: intervallo aperto;
+- $$[a, b] = \PC{ x \in \R \st a \leq x \leq b }$$: intervallo chiuso;
 
 Gli intervalli possono essere aperti da una parte e chiusi dall'altra.
 
 Intervalli illimitati: un intervallo che ha un lato aperto e che tende ad
 infinito.
 
-$$\pm\infty$$ non sono numeri $$\in \mathbb{R}$$, sono solo simboli, quindi un
-intervallo non può essere chiuso in $$\pm\infty$$.
+$$\pm \infty$$ non sono numeri $$\in \R$$, sono solo simboli, quindi un
+intervallo non può essere chiuso in $$\pm \infty$$.
 
 #### Maggioranti/minoranti
 
-Dato $$A \in \mathbb{R}, \ A \neq 0$$:
+Dato $$A \in \R, \ A \neq 0$$:
 
-- maggiorante: $$\exists M \ : \ \forall x \in A, \ x \leq M$$
-- minorante: $$\exists m \ : \ \forall x \in A, \ x \geq m$$
+- maggiorante: $$\exists M \st \forall x \in A, \ x \leq M$$
+- minorante: $$\exists m \st \forall x \in A, \ x \geq m$$
 
 $$M$$ o $$m$$ non devono necessariamente far parte di $$A$$.
 
@@ -67,38 +65,35 @@ $$M$$/$$m$$ è massimo/minimo di $$A$$ se:
 
 Più piccolo/grande di maggioranti/minoranti di $$A$$.
 
-Si scrive come $$\overline{x}$$/$$\underline{x}$$ o $$\sup(A)$$/$$\inf(A)$$.
+Si scrive $$\sup(A)$$/$$\inf(A)$$.
 
 ### Assioma di completezza dei numeri reali
 
-Dati:
+Dato: $$A \subseteq \R, \ A \neq 0, \ \exists \sup(A)$$:
 
-- $$A \subseteq \mathbb{R}$$
-- $$A \neq 0, \ \exists \sup(A)$$
-
-$$\exists \ \sup(A) \in \mathbb{R}$$
+$$\exists \ \sup(A) \in \R$$
 
 Questa proprietà non vale per i numeri razionali.
 
 ### Parte intera di un numero reale
 
-Dato $$x \in \mathbb{R}$$.
+Dato $$x \in \R$$.
 
-$$\llcorner x \lrcorner = \sup( \{ \ y \in \mathbb{Z} \ : \ y < x \ \} )$$
+$$\lfloor x \rfloor = \sup( \PC{ y \in \Z \st y < x } )$$
 
-$$\llcorner x \lrcorner$$ è l'estremo superiore dell'insieme dei numeri interi
+$$\lfloor x \rfloor$$ è l'estremo superiore dell'insieme dei numeri interi
 $$\leq x$$.
 
 :::caution
 
 Per i numeri negativi la parte intera è data dal numero intero minore
-($$\llcorner -3.5 \lrcorner = -4$$)
+($$\lfloor -3.5 \rfloor = -4$$)
 
 :::
 
 ### Proprietà di Archimede
 
-$$\sup(\mathbb{N}) =+ \infty$$
+$$\sup(\N) = +\infty$$
 
 L'insieme dei numeri naturali non è limitato superiormente.
 
@@ -106,31 +101,31 @@ L'insieme dei numeri naturali non è limitato superiormente.
 
 Dati:
 
-- $$\forall a,b \in \mathbb{R}$$
+- $$\forall a, b \in \R$$
 - $$a < b$$
 
-$$\exists x \in \mathbb{Q} \ : \ a < q < b$$
+$$\exists x \in \Q \st a < q < b$$
 
 <Card title="Dimostrazione">
 
 Dati:
 
 - $$(a < b) \equiv (b - a > 0)$$
-- $$\exists n \in \mathbb{N} \ : \ \left( n > \frac{1}{b - a} \right) \equiv \left( b - a = \frac{1}{n} \right), \ n > 0$$
-- $$m = \frac{\llcorner{na}\lrcorner + 1}{n}, \ m \in \mathbb{Z}$$
+- $$\exists n \in \N \st \left( n > \frac{1}{b - a} \right) \equiv \left( b - a = \frac{1}{n} \right), \ n > 0$$
+- $$m = \frac{\lfloor na \rfloor + 1}{n}, \ m \in \Z$$
 
 Dimostro che $$q$$ è minore di $$b$$.
 
 <Steps>
 
-1. $$q = \frac{m}{n} = \frac{\llcorner{na}\lrcorner + 1}{n} = \frac{\llcorner{na}\lrcorner}{n} + \frac{1}{n} \leq \frac{na}{n} + \frac{1}{n} = a + \frac{1}{n}$$
+1. $$q = \frac{m}{n} = \frac{\lfloor na \rfloor + 1}{n} = \frac{\lfloor na \rfloor}{n} + \frac{1}{n} \leq \frac{na}{n} + \frac{1}{n} = a + \frac{1}{n}$$
 2. $$q \leq a + \frac{1}{n} < a + (b - a) = b \rightarrow q < b$$
 
 </Steps>
 
 Dimostro che $$q$$ è maggiore di $$a$$.
 
-$$q = \frac{m}{n} = \frac{\llcorner{na}\lrcorner + 1}{n} > \frac{(na - 1) + 1}{n} = \frac{na}{n} \rightarrow q > a$$
+$$q = \frac{m}{n} = \frac{\lfloor na \rfloor + 1}{n} > \frac{(na - 1) + 1}{n} = \frac{na}{n} \rightarrow q > a$$
 
 </Card>
 
@@ -140,12 +135,3 @@ Per indicare la fine di una dimostrazione di solito si usa un quadrato:
 $$\square$$.
 
 :::
-
----
-
-<CardGrid>
-  <LinkCard
-    title="Appunti di Andrea"
-    href="https://drive.google.com/file/d/1tXVkUQnrgn2l67QEPPy9IXwSRVp92wHp/view"
-  />
-</CardGrid>

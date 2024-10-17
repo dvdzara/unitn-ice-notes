@@ -1,0 +1,156 @@
+---
+title: Lezione 16 (2024-10-16)
+---
+
+import { Desmos } from "../../../../components";
+import { Steps } from "@astrojs/starlight/components";
+
+## Teoremi delle funzioni continue
+
+### Teorema degli zeri
+
+Serve a capire se una funzione si annulla ($$f(x) = 0$$) in determinati punti e
+quali sono questi punti.
+
+Sia $$f: [a, b] \to \R, \ f \in C^{0}([a, b]), \ f(a) f(b) < 0$$, allora:
+
+$$
+\exists x_{0} \in (a, b) \st f(x_{0}) = 0
+$$
+
+I valori $$a$$ e $$b$$ agli estremi degli intervalli devono avere segno opposto.
+
+Esiste almeno un punto di $$f(x)$$ che ha valore $$0$$.
+
+<details>
+<summary>Esempio</summary>
+
+Voglio trovare le soluzioni di di $$p(x) = x^{3} + 2x^{2} + 3$$ (ovvero gli
+$$x_{0} \in \R \st p(x_{0}) = 0$$).
+
+:::note
+
+Il numero di soluzioni, se esistono, è al massimo il grado del polinomio.
+
+:::
+
+Esiste almeno una soluzione reale, infatti:
+
+- $$\lim_{x \to -\infty} p(x) = -\infty$$, quindi
+  $$\exists x_{0} \in \R \st p(x_{1}) < 0$$.
+- $$\lim_{x \to +\infty} p(x) = +\infty$$, quindi
+  $$\exists x_{0} \in \R \st p(x_{2}) > 0$$.
+
+Prendo $$x_{1} = -4, p(-4) < 0$$ e $$x_{2} = 0, p(0) > 0$$, allora
+$$\exists x_{0} \in (-4, 0) \st p(x_{0} = 0$$.
+
+Poi devo ridurre l'intervallo $$(-4, 0)$$ fino a quando riesco ad approssimare
+la soluzione abbastanza precisamente:
+
+<Steps>
+
+1. Trovo il punto medio $$x_{0}$$ dell'intervallo.
+2. Se $$x_{0}$$ è la soluzione allora mi fermo, sennò ripeto nella metà
+   dell'intervallo che contiene la soluzione.
+
+</Steps>
+
+</details>
+
+Conseguenza del teorema degli zeri:
+
+Date $$f, g: [a, b] \to \R, f(a) > g(a), f(b) < g(b)$$, allora:
+
+$$
+\exists x_{0} \in (a, b) \st f(x_{0}) = g(x_{0})
+$$
+
+Basta applicare il teorema a $$f(x) - g(x)$$.
+
+### Teorema dei valori intermedi
+
+$$
+\forall x_{0} \in \left( \inf_{x \in [a, b]} f(x), \sup_{x \in [a, b]} f(x) \right) \st \exists f(x) = x_{0}
+$$
+
+Data $$f: [a, b] \to R$$, funzione continua, allora $$f(x)$$ assume tutti i
+valori compresi tra $$\inf_{x \in [a, b]} f(x)$$ e $$\sup_{x \in [a, b]} f(x)$$.
+
+$$\inf_{x \in [a, b]} f(x)$$ e $$\sup_{x \in [a, b]} f(x)$$ sono l'estremo
+inferiore e superiore dell'immagine di $$f(x)$$.
+
+## Massimo e minimo assoluto
+
+Data $$f: D \to \R$$:
+
+- Il massimo assoluto è un valore
+  $$M \in \R \st \forall x \in D, \ f(x) \leq M, \ \exists x_{0} \in D \st f(x_{0}) = M$$.
+- Il minimo assoluto è un valore
+  $$m \in \R \st \forall x \in D, \ f(x) \geq m, \ \exists x_{0} \in D \st f(x_{0}) = m$$.
+
+Il punto $$x_{0}$$ si dice punto di massimo o minimo.
+
+:::note
+
+Il valore di massimo/minimo è unico, i punti di massimo/minimo no.
+
+:::
+
+Non è garantito che esistano $$\max_{D} f$$ e $$\min_{D} f$$.
+
+### Teorema di Weierstrass
+
+Quali sono le condizioni che garantiscono la presenza di punti di massimo o
+minimo?
+
+Sia $$f: [a, b] \to \R$$ una funzione continua, allora esistono $$\max_{D} f$$ e
+$$\min_{D} f$$.
+
+L'intervallo deve essere chiuso e quindi limitato.
+
+## Derivate
+
+Data $$f: (a, b) \to \R$$ e un punto $$x_{0} \in (a, b)$$, $$f$$ è derivabile in
+$$x_{0}$$ se esiste ed è finito il limite:
+
+$$
+\lim_{x \to x_{0}} \frac{f(x) - f(x_{0})}{x - x_{0}} =
+\lim_{h \to 0} \frac{f(x_{0} + h) - f(x_{0})}{h} = f'(x)
+$$
+
+Quindi
+
+$$
+\liminf_{x \to x_{0}} \frac{f(x) - f(x_{0})}{x - x_{0}} =
+\limsup_{x \to x_{0}} \frac{f(x) - f(x_{0})}{x - x_{0}}
+$$
+
+### Significato geometrico della derivata
+
+Il coefficiente angolare di $$r$$ è dato da
+$$m = \frac{f(x) - f(x_{0})}{x - x_{0}}$$.
+
+Per definizione, $$f'(x_{0})$$ si ottiene avvicinando il più possibile $$f(x)$$
+a $$f(x_{0})$$. Il valore della derivata sarà pari al coefficiente angolare
+della retta $$r$$.
+
+<Desmos graph="igo2v9yyex" />
+
+### Continuità di una funzione derivabile
+
+Supponiamo che $$f: (a, b) \in \R$$ sia derivabile in $$x_{0} \in (a, b)$$,
+allora $$f(x)$$ è continua in $$x_{0}$$.
+
+Il viceversa è falso. (Esempio: $$x_{0} = 0, \ \nexists (|x|)'$$).
+
+### Punti di non derivabilità
+
+- punti angolosi: punti di una funzione dove il grafico fa un angolo (limite
+  destro $$\neq$$ limite sinistro)
+
+  <Desmos graph="uk36b65qvu" />
+
+- cuspidi: $$f'(x_{0}^{-}) = f'(x_{0}^{+}) = \pm \infty$$
+
+- punti a tangente verticale:
+  $$f'(x_{0}^{-}) = \pm \infty, \ f'(x_{0}^{+}) = \mp \infty$$

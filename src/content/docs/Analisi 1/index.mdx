@@ -9,8 +9,6 @@ title: Analisi 1
 ---
 
 import { getCollection } from "astro:content";
-import { Details } from "../../../components";
-import { LinkCard, CardGrid } from "@astrojs/starlight/components";
 
 ## Programma del corso
 
@@ -18,7 +16,7 @@ import { LinkCard, CardGrid } from "@astrojs/starlight/components";
   - teoria degli insiemi;
   - numeri reali e complessi;
 - successioni numeriche e limiti;
-- funzioni (solo con $$(D, \ C) \in \mathbb{R}$$), continuità;
+- funzioni (solo con $$(D, \ C) \in \R$$), continuità;
 - derivate;
 - integrali;
 
@@ -48,7 +46,8 @@ Codice corso: `7h44olb`.
 
 ---
 
-<Details summary="Lezioni">
+<details>
+<summary>Lezioni</summary>
 
 <ul>
   {(await getCollection("docs"))
@@ -60,13 +59,4 @@ Codice corso: `7h44olb`.
     ))}
 </ul>
 
-</Details>
-
----
-
-<CardGrid>
-  <LinkCard
-    title="Appunti di Andrea"
-    href="https://drive.google.com/file/d/15Rjy3GDumPuUqGxEZMU4dAQIuaAqJs0Y/view"
-  />
-</CardGrid>
+</details>

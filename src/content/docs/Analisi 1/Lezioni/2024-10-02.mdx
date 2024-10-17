@@ -2,19 +2,17 @@
 title: Lezione 10 (2024-10-02)
 ---
 
-import { Details } from "../../../../components";
-
 ## Limiti di sottosuccessioni
 
-Se $$a_n \to l$$, allora esiste il limite e vale $$a_{n_k} \to l$$.
+Se $$a_{n} \to l$$, allora esiste il limite e vale $$a_{n_{k}} \to l$$.
 
-Se una sottosuccessione $$a_n \to l, \; l \in \mathbb{R}$$, allora
-$$\exists \; a_n \to l.$$
+Se una sottosuccessione $$a_{n} \to l, \; l \in \R$$, allora
+$$\exists \; a_{n} \to l.$$
 
 ---
 
 $$
-a_n = \begin{cases}
+a_{n} = \begin{cases}
 n & \text{se } n \leq 100 \\
 3 & \text{se } n > 100
 \end{cases}
@@ -24,79 +22,80 @@ Il limite è $$3$$ perché conta il comportamento a $$+\infty$$.
 
 ## Successioni monotone
 
-- Crescente: $$a_n \leq a_{n + 1}$$;
-- Strettamente crescente: $$a_n < a_{n + 1}$$;
+- Crescente: $$a_{n} \leq a_{n + 1}$$;
+- Strettamente crescente: $$a_{n} < a_{n + 1}$$;
 
 Viceversa, esistono anche successioni decrescenti e strettamente decrescenti.
 
 ## Teorema dei limiti di successioni monotone
 
-Sia $$a_n$$ una successione monotona crescente o decrescente, allora
-$$\exists \; a_n \to \sup \{ a_n \} \text{ o } \inf \{ a_n \}$$.
+Sia $$a_{n}$$ una successione monotona crescente o decrescente, allora
+$$\exists \; a_{n} \to \sup \PC{ a_{n} } \text{ o } \inf \PC{ a_{n} }$$.
 
 Se la successione è superiormente o inferiormente limitata, allora il limite è
 finito.
 
 ## Numero di Nepero
 
-Data una successione $$a_n = \left( 1 + \frac{1}{n} \right)^n$$, che è
-strettamente crescente e limitata, il numero di Nepero ($$e$$) è il limite di
-$$a_n$$:
+Data una successione $$a_{n} = \PR{ 1 + \frac{1}{n} }^{n}$$, che è strettamente
+crescente e limitata, il numero di Nepero ($$e$$) è il limite di $$a_{n}$$:
 
 $$
-\lim_{n \to \infty} a_n = e
+\lim_{n \to \infty} a_{n} = e
 $$
 
 Inoltre, si ha:
 
 $$
-\lim_{n \to \infty} |a_n| = +\infty \Rightarrow \lim_{n \to \infty} \left( 1 + \frac{1}{a_n} \right)^{a_n} = e
+\lim_{n \to \infty} |a_{n}| = +\infty \Rightarrow \lim_{n \to \infty} \PR{ 1 + \frac{1}{a_{n}} }^{a_{n}} = e
 $$
 
 ## Teorema di permanenza del segno
 
-Sapendo che $$a_n \to l$$ e che
-$$\exists n \; | \; \forall n' > n \; \Rightarrow a_n \geq 0 \Rightarrow l > 0$$.
+Sapendo che $$a_{n} \to l$$ e che
+$$\exists n \st \forall n' > n \Rightarrow a_{n} \geq 0 \Rightarrow l > 0$$.
 
 Se dopo un certo $$n$$ una successione ha sempre membri positivi o negativi,
 allora il suo limite (se esiste) è positivo o negativo.
 
 ## Teorema del confronto
 
-Sapendo che $$a_n \to l_a$$ e $$b_n \to l_b$$,
-$$\exists n \; | \; \forall n' > n \; \Rightarrow a_n \leq b_n \Rightarrow l_a \leq l_b$$.
+Sapendo che $$a_{n} \to l_{a}$$ e $$b_{n} \to l_{b}$$,
+$$\exists n \; | \; \forall n' > n \; \Rightarrow a_{n} \leq b_{n} \Rightarrow l_{a} \leq l_{b}$$.
 
-Non posso affermare che $$l_a < l_b$$, anche se
-$$\forall n \in \mathbb{N} \; a_n < b_n$$.
+Non posso affermare che $$l_{a} < l_{b}$$, anche se
+$$\forall n \in \N \; a_{n} < b_{n}$$.
 
 ## Teorema dei carabinieri
 
 Dati
-$$a_n, b_n, c_n \; | \; \forall n \in \mathbb{N} \; a_n \leq c_n \leq b_n, \; a_n \to l_c, \; b_n \to l_c$$,
-allora $$\exists c_n \to l_c$$.
+$$a_{n}, b_{n}, c_{n} \; | \; \forall n \in \N \; a_{n} \leq c_{n} \leq b_{n}, \; a_{n} \to l_{c}, \; b_{n} \to l_{c}$$,
+allora $$\exists c_{n} \to l_{c}$$.
 
-Se $$l_c = -\infty$$, allora $$a_n$$ è irrilevante, e viceversa, se
-$$l_c = +\infty$$, allora $$b_n$$ è irrilevante.
+Se $$l_{c} = -\infty$$, allora $$a_{n}$$ è irrilevante, e viceversa, se
+$$l_{c} = +\infty$$, allora $$b_{n}$$ è irrilevante.
 
 Una successione limitata da un'infinitesima (che tende a zero) è anch'essa
 infinitesima.
 
-<Details summary="Esempio">
+<details>
+<summary>Esempio</summary>
 
-Dire se $$a_n = \frac{(-1)^n}{n}$$ ammette limite e calcolarlo:
+Dire se $$a_{n} = \frac{(-1)^{n}}{n}$$ ammette limite e calcolarlo:
 
-- $$(-1)^n$$ è una successione limitata;
+- $$(-1)^{n}$$ è una successione limitata;
 - $$\frac{1}{n}$$ tende a $$0$$;
 
-Quindi, secondo il teorema dei carabinieri, $$a_n$$ è una successione
+Quindi, secondo il teorema dei carabinieri, $$a_{n}$$ è una successione
 infinitesima.
 
-</Details>
+</details>
 
 ## Operazioni con i limiti
 
-Date $$a_n \to l_a$$ e $$b_n \to l_b$$:
+Date $$a_{n} \to l_{a}$$ e $$b_{n} \to l_{b}$$:
 
-- $$\lim_{n} (a_n \pm b_n) = l_a \pm l_b$$;
-- $$\lim_{n} a_n b_n = l_a l_b$$;
-- $$\lim_{n} \frac{a_n}{b_n} = \frac{l_a}{l_b}$$ solo se $$l_b \neq 0$$;
+- $$\lim_{n} (a_{n} \pm b_{n}) = l_{a} \pm l_{b}$$;
+- $$\lim_{n} a_{n} b_{n} = l_{a} l_{b}$$;
+- $$\lim_{n} \frac{a_{n}}{b_{n}} = \frac{l_{a}}{l_{b}}$$ solo se
+  $$l_{b} \neq 0$$;

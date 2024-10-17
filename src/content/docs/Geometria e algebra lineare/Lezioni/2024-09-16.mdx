@@ -2,49 +2,39 @@
 title: Lezione 3 (2024-09-16)
 ---
 
-import Details from "../../../../components/Details.astro";
-
 ## Fasci di piani
 
-<Details summary="Dati">
+Data una retta $$r$$ con equazioni cartesiane:
 
-- una retta $$r$$ con equazioni cartesiane:
-
-  $$
-  \begin{cases}
-  ax+by+cz+d=0\\
-  a_1x+b_1y+c_1z+d_1=0
-  \end{cases}
-  $$
-
-</Details>
+$$
+\begin{cases}
+a x + b y + c z + d = 0                 \\
+a_{1} x + b_{1} y + c_{1} z + d_{1} = 0
+\end{cases}
+$$
 
 Esiste un infinito numero di piani che contengono $$r$$. Questo insieme è detto
 fascio di piani di sostegno $$r$$ ed è descritto come:
 
-$$\lambda(ax+by+cz+d)+\mu(a_1x+b_1y+c_1z+d_1)=0$$
+$$\lambda(a x + b y + c z + d) + \mu(a_{1} x + b_{1} y + c_{1} z + d_{1}) = 0$$
 
-Per ogni coppia di scalari $$(\lambda,\mu)\neq(0,0)$$ otteniamo l'equazione
+Per ogni coppia di scalari $$(\lambda, \mu) \neq (0, 0)$$ otteniamo l'equazione
 cartesiana di un piano contenente la retta $$r$$.
 
 ## Posizione reciproca nello spazio
 
 ### Tra 2 rette
 
-<Details summary="Dati">
+Date $$r$$ e $$r_{1}$$ distinte nello spazio e individuate dai punti $$P, Q$$ e
+dai vettori direzionali $$\v{v}, \v{w}$$:
 
-- $$r$$ e $$r_1$$ distinte nello spazio e individuate dai punti $$P,Q$$ e dai
-  vettori direzionali $$\underline{v},\underline{w}$$;
+$$r$$ ed $$r_{1}$$ possono essere:
 
-</Details>
-
-$$r$$ ed $$r_1$$ possono essere:
-
-- parallele: se $$\underline{v}=\lambda\underline{w},\lambda\in\mathbb{R}$$;
+- parallele: se $$\v{v} = \lambda \v{w}, \lambda \in \R$$;
 - incidenti: se hanno un punto in comune;
 - sghembe: altrimenti;
 
-$$r$$ e $$r_1$$ sono ortogonali se $$\underline{v}\cdot\underline{w}=0$$
+$$r$$ e $$r_{1}$$ sono ortogonali se $$\v{v} \cdot \v{w} = 0$$
 
 2 rette possono essere incidenti e ortogonali oppure sghembe e ortogonali.
 
@@ -54,46 +44,42 @@ Rette parallele o incidenti giacciono sullo stesso piano.
 
 Per trovare il piano $$\pi$$ che contiene 2 rette complanari:
 
-- se $$r$$ e $$r_1$$ sono incidenti posso ottenere equazioni parametriche di
-  $$\pi$$ usando le coordinate di $$P$$ (punto di intersezione),
-  $$\underline{v}$$ e $$\underline{w}$$;
+- se $$r$$ e $$r_{1}$$ sono incidenti posso ottenere equazioni parametriche di
+  $$\pi$$ usando le coordinate di $$P$$ (punto di intersezione), $$\v{v}$$ e
+  $$\v{w}$$;
 - in entrambi i casi (sia parallele che incidenti):
-  - dato un fascio di piani di sostegno $$r$$, ce n'è uno che contiene $$r_1$$;
+  - dato un fascio di piani di sostegno $$r$$, ce n'è uno che contiene
+    $$r_{1}$$;
   - prendo l'equazione del fascio di sostegno $$r$$ e impongo il passaggio per
-    un punto appartenente ad $$r_1$$ e diverso da quello di intersezione;
+    un punto appartenente ad $$r_{1}$$ e diverso da quello di intersezione;
 
 ### Tra 2 piani
 
-<Details summary="Dati">
+Dati:
 
-- $$\pi: ax+by+cz+d=0$$;
-- $$\pi_1: a_1x+b_1y+c_1z+d=0$$;
-- $$\underline{n}: (a,b,c)$$;
-- $$\underline{n_1}: (a_1,b_1,c_1)$$;
+- $$\pi: a x + b y + c z + d = 0$$;
+- $$\pi_{1}: a_{1} x + b_{1} y + c_{1} z + d = 0$$;
+- $$\v{n}: (a, b, c)$$;
+- $$\v{n_{1}}: (a_{1}, b_{1}, c_{1})$$;
 
-</Details>
+$$\pi$$ e $$\pi_{1}$$ sono:
 
-$$\pi$$ e $$\pi_1$$ sono:
-
-- paralleli se $$\underline{n}=\lambda\underline{n_1}, \lambda\in\mathbb{R}$$;
+- paralleli se $$\v{n} = \lambda \v{n_{1}}, \lambda \in \R$$;
 - incidenti: altrimenti (l'intersezione tra i 2 è una retta);
 
-$$\pi$$ e $$\pi_1$$ sono ortogonali se $$\underline{n}\cdot\underline{n_1}=0$$.
+$$\pi$$ e $$\pi_{1}$$ sono ortogonali se $$\v{n} \cdot \v{n_{1}} = 0$$.
 
 ### Tra una retta e un piano
 
-<Details summary="Dati">
+Dati:
 
-- piano $$\pi$$ con vettore normale $$\underline{n}$$;
-- $$r$$ con vettore direzionale $$\underline{v}$$;
-
-</Details>
+- un piano $$\pi$$ con vettore normale $$\v{n}$$;
+- una retta $$r$$ con vettore direzionale $$\v{v}$$;
 
 $$r$$ e $$\pi$$ sono:
 
-- paralleli: quando $$\underline{n}$$ e $$\underline{v}$$ sono ortogonali;
+- paralleli: quando $$\v{n}$$ e $$\v{v}$$ sono ortogonali;
 - incidenti: se hanno un punto in comune (se e solo se
-  $$\underline{v}\cdot\underline{n}\neq0$$);
+  $$\v{v} \cdot \v{n} \neq 0$$);
 
-$$r$$ e $$\pi$$ sono ortogonali se
-$$\underline{v}=\lambda\underline{n}, \lambda\in\mathbb{R}$$.
+$$r$$ e $$\pi$$ sono ortogonali se $$\v{v} = \lambda \v{n}, \lambda \in \R$$.

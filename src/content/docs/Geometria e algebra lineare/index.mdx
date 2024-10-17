@@ -9,8 +9,6 @@ title: Geometria e algebra lineare
 ---
 
 import { getCollection } from "astro:content";
-import { Details } from "../../../components";
-import { LinkCard, CardGrid } from "@astrojs/starlight/components";
 
 ## Programma del corso
 
@@ -36,7 +34,8 @@ Con voto $$\geq \frac{15}{30}$$ si può fare un esame orale per alzare il voto.
 
 ---
 
-<Details summary="Lezioni">
+<details>
+<summary>Lezioni</summary>
 
 <ul>
   {(await getCollection("docs"))
@@ -48,18 +47,4 @@ Con voto $$\geq \frac{15}{30}$$ si può fare un esame orale per alzare il voto.
     ))}
 </ul>
 
-</Details>
-
----
-
-<CardGrid>
-  <LinkCard
-    title="Appunti di Andrea"
-    href="https://drive.google.com/file/d/13ROsY25K-fUHkE5WhlXo5bli1vQMUIuD/view"
-  />
-
-  <LinkCard
-    title="Formulario di Andrea"
-    href="https://drive.google.com/file/d/1mPEF3uJCYgSdU0tTJW--F9vNva8hdNDT/view"
-  />
-</CardGrid>
+</details>

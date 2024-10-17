@@ -2,24 +2,25 @@
 title: Lezione 6 (2024-09-19)
 ---
 
-import { Details, Desmos } from "../../../../components";
-import { LinkCard, CardGrid, Steps } from "@astrojs/starlight/components";
+import { Desmos } from "../../../../components";
+import { Steps } from "@astrojs/starlight/components";
 
 ## Funzioni definite a tratti
 
 Il dominio è diviso in parti, e per ogni parte il grafico è descritto da una
 funzione diversa.
 
-<Details summary="Esempio">
+<details>
+<summary>Esempio</summary>
 
 $$
 f(x) = |x| = \begin{cases}
-x &\text{se} \ x \geq 0 \\
--x &\text{se} \ x < 0
+x \geq 0 & \Rightarrow x  \\
+x < 0    & \Rightarrow -x
 \end{cases}
 $$
 
-</Details>
+</details>
 
 ## Trasformazioni del grafico di una funzione
 
@@ -42,7 +43,7 @@ $$
 - verticale: $$k f(x)$$:
   - se $$k > 1$$: il grafico si espande;
   - se $$k < 1$$: il grafico si comprime;
-- orizzontale: $$f(kx)$$:
+- orizzontale: $$f(k x)$$:
   - se $$k > 1$$: il grafico si comprime;
   - se $$k < 1$$: il grafico si espande;
 
@@ -50,30 +51,25 @@ $$
 
 ### Composizione di funzioni
 
-<Details summary="Dati">
-
-- $$f(x) = 1 - |x|$$;
-- $$g(x) = \sin^{-1}(x)$$;
-
-</Details>
+Date $$f(x) = 1 - |x|$$, $$g(x) = \arcsin(x)$$:
 
 $$f \circ g(x)$$:
 
 <Steps>
 
-1. $$g(x) = \sin^{-1}(x)$$:
+1. $$g(x) = \arcsin(x)$$:
 
    <Desmos graph="bfdqd7px55" />
 
-2. $$|\sin^{-1}(x)|$$:
+2. $$|\arcsin(x)|$$:
 
    <Desmos graph="b0owsso02j" />
 
-3. $$-|\sin^{-1}(x)|$$:
+3. $$-|\arcsin(x)|$$:
 
    <Desmos graph="31wu1ceydl" />
 
-4. $$-|\sin^{-1}(x)| + 1$$:
+4. $$-|\arcsin(x)| + 1$$:
 
    <Desmos graph="zo27edijbs" />
 
@@ -85,19 +81,19 @@ $$g \circ f(x)$$:
 
 <Steps>
 
-1. $$f(x) = \sin^{-1}(x)$$:
+1. $$f(x) = \arcsin(x)$$:
 
    <Desmos graph="bfdqd7px55" />
 
-2. $$\sin^{-1}(-x)$$:
+2. $$\arcsin(-x)$$:
 
    <Desmos graph="lrg3j1i45l" />
 
-3. $$\sin^{-1}(-x + 1)$$:
+3. $$\arcsin(-x + 1)$$:
 
    <Desmos graph="vti12ozocm" />
 
-4. $$\sin^{-1}(-|x| + 1)$$:
+4. $$\arcsin(-|x| + 1)$$:
 
    <Desmos graph="xkcwabn5vi" />
 
@@ -105,12 +101,7 @@ $$g \circ f(x)$$:
 
 ### Inversa di una funzione
 
-<Details summary="Dati">
-
-- $$f: \left[\frac{1}{2}, +\infty\right) \rightarrow \mathbb{R}$$;
-- $$f(x) = x^2 - x + 1$$;
-
-</Details>
+Data $$f: \left[\frac{1}{2}, +\infty\right) \to \R, \ f(x) = x^{2} - x + 1$$;
 
 <Desmos graph="ujadjaawuw" />
 
@@ -122,7 +113,7 @@ $$f^{-1}(x): \left[\frac{3}{4}, +\infty\right) \rightarrow \left[\frac{1}{2}, +\
 
 1. Trovo l'inversa:
 
-   $$x^2 - x + 1 - y = 0$$
+   $$x^{2} - x + 1 - y = 0$$
 
 2. Risolvo l'equazione di 2° grado:
 
