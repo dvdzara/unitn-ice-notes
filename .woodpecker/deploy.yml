@@ -7,7 +7,7 @@ steps:
       - pnpm install
       - pnpm exec playwright install chromium --with-deps
       - pnpm build
-    image: docker.io/library/node:23.0.0-bookworm@sha256:80ef312505a3baedb95061e4f88f4d53bbbdbf797572138cb79bcb13b347efbc
+    image: docker.io/library/node:23.0.0-bookworm@sha256:e643c0b70dca9704dff42e12b17f5b719dbe4f95e6392fc2dfa0c5f02ea8044d
     name: build
     volumes:
       - woodpecker-repo-${CI_REPO_REMOTE_ID}-pnpm:/pnpm
@@ -19,7 +19,7 @@ steps:
     environment:
       # renovate: datasource=npm depName=wrangler versioning=npm
       WRANGLER_VERSION: 3.80.2
-    image: docker.io/library/node:23.0.0-bookworm@sha256:80ef312505a3baedb95061e4f88f4d53bbbdbf797572138cb79bcb13b347efbc
+    image: docker.io/library/node:23.0.0-bookworm@sha256:e643c0b70dca9704dff42e12b17f5b719dbe4f95e6392fc2dfa0c5f02ea8044d
     name: deploy
     secrets:
       - CLOUDFLARE_API_TOKEN
