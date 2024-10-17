@@ -1,4 +1,4 @@
-FROM docker.io/library/node:23.0.0-bookworm@sha256:4ca0770b829ec8adf901e6e6046737d961f78411bd664774f1fc04b1b4cd73f6
+FROM docker.io/library/node:23.0.0-bookworm@sha256:ee15fc1b7ee0e8352e37a58669c465ad2b94c864d209cc18619d4511808407c0
 
 RUN corepack enable
 
