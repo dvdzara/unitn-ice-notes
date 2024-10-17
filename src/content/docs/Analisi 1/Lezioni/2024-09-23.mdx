@@ -2,51 +2,52 @@
 title: Lezione 7 (2024-09-23)
 ---
 
-import { Details, Desmos } from "../../../../components";
+import { Desmos } from "../../../../components";
 import { Card } from "@astrojs/starlight/components";
 
-## Risoluzione di equazioni in $$\mathbb{C}$$
+## Risoluzione di equazioni in $$\C$$
 
-$$z=0 \Leftrightarrow \begin{cases}Re(z)=0\\Im(z)=0\end{cases}$$
+$$z = 0 \Leftrightarrow \begin{cases} Re(z) = 0 \\ Im(z) = 0 \end{cases}$$
 
-<Details summary="Esempio">
+<details>
+<summary>Esempio</summary>
 
 Determinare tutti i numeri complessi $$z$$ che risolvono l'equazione.
 
-$$z^2 + Im(z) + 2\overline{z} = 0$$
+$$z^{2} + Im(z) + 2 \overline{z} = 0$$
 
 Scrivo $$z$$ nella forma cartesiana:
 
-$$(x+iy)^2 + iy + 2(x-iy) = x^2 + y^2 + 2x + i(2xy - y) = 0$$
+$$(x + iy)^{2} + iy + 2(x - iy) = x^{2} + y^{2} + 2x + i(2 x y - y) = 0$$
 
 Perché un numero complesso sia uguale a $$0$$, sia la parte reale, sia quella
 immaginaria devono essere $$0$$.
 
 $$
 \begin{cases}
-x^2 + y^2 +2x = 0 \\
+x^{2} + y^{2} + 2x = 0 \\
 2xy - y = 0
 \end{cases}
 $$
 
 $$
 \begin{cases}
-x^2 + y^2 +2x = 0 \\
+x^{2} + y^{2} + 2x = 0 \\
 y = 0
 \end{cases}
 \cup
 \begin{cases}
-x^2 + y^2 +2x = 0 \\
+x^{2} + y^{2} + 2x = 0 \\
 y = \frac{1}{2}
 \end{cases}
 $$
 
-E trovo le soluzioni di $$x^2 + y^2 +2x = 0$$ in entrambi i casi.
+E trovo le soluzioni di $$x^{2} + y^{2} +2x = 0$$ in entrambi i casi.
 
 Alla fine la soluzione saranno 4 numeri complessi distinti, 2 dove la parte
 immaginaria è $$0$$ e 2 dove è $$\frac{1}{2}$$.
 
-</Details>
+</details>
 
 ## Coordinate cartesiane e polari
 
@@ -57,7 +58,8 @@ Sul piano cartesiano:
 - polari: un punto è rappresentato dalla sua distanza $$\rho$$ dall'origine e
   dall'angolo $$\theta$$ con l'asse delle x;
 
-<Details summary="Esempi">
+<details>
+<summary>Esempi</summary>
 
 - cartesiane: $$(1, 0)$$, polari: $$(1, 0)$$
 
@@ -71,24 +73,18 @@ Sul piano cartesiano:
 
   <Desmos graph="youd29fvjx" />
 
-</Details>
+</details>
 
 ### Come si passa da polari a cartesiane
 
 - polari $$(\rho, \theta)$$ $$\rightarrow$$ cartesiane
   $$(\rho \cos(\theta), \rho \sin(\theta))$$;
 - cartesiane $$(x, y)$$ $$\rightarrow$$ polari
-  $$(\sqrt{x^2+y^2}, \cos(\frac{x}{\rho})\ o\ \sin(\frac{y}{\rho}))$$;
+  $$(\sqrt{x^{2} + y^{2}}, \cos(\frac{x}{\rho})\ o\ \sin(\frac{y}{\rho}))$$;
 
 ## Forma trigonometrica di un numero complesso
 
-<Details summary="Dati">
-
-- $$z \in\mathbb{C}$$;
-- $$x = Re(z)$$;
-- $$y = Im(z)$$;
-
-</Details>
+Dati $$z \in \C$$, $$x = Re(z)$$, $$y = Im(z)$$:
 
 - $$r = |z|$$ (distanza dall'origine);
 - $$\theta = \arccos(\frac{x}{|z|})\ o\ \arcsin(\frac{y}{|z|})$$ (argomento
@@ -100,15 +96,15 @@ $$z = |z|(\cos(\theta) + i\sin(\theta)$$.
 La forma trigonometrica è utile per fare il prodotto o il quoziente tra 2 numeri
 complessi:
 
-- $$z_1 z_2 = |z_1||z_2|(\cos(\theta_1 + \theta_2) + \sin(\theta_1 + \theta_2))$$
-- $$\frac{z_1}{z_2} = \frac{|z_1|}{|z_2|}(\cos(\theta_1 - \theta_2) + \sin(\theta_1 - \theta_2))$$
+- $$z_{1} z_{2} = |z_{1}||z_{2}|(\cos(\theta_{1} + \theta_{2}) + \sin(\theta_{1} + \theta_{2}))$$
+- $$\frac{z_{1}}{z_{2}} = \frac{|z_{1}|}{|z_{2}|}(\cos(\theta_{1} - \theta_{2}) + \sin(\theta_{1} - \theta_{2}))$$
 
 ### Formula di De Moivre
 
-$$z_i = |z_i|(\cos(\theta_i) + \sin(\theta_i))$$, $$i \in\mathbb{N}$$
+$$z_{i} = |z_{i}|(\cos(\theta_{i}) + \sin(\theta_{i}))$$, $$i \in \N$$
 
-- $$z_i z_{i+1} = |z_i||z_{i+1}|(\cos(\theta_i + \theta_{i+1}) + \sin(\theta_i + \theta_{i+1}))$$;
-- $$z^n = |z|^n(\cos(n\theta) + \sin(n\theta))$$;
+- $$z_{i} z_{i + 1} = |z_{i}||z_{i + 1}|(\cos(\theta_{i} + \theta_{i + 1}) + \sin(\theta_{i} + \theta_{i + 1}))$$;
+- $$z^{n} = |z|^{n}(\cos(n\theta) + \sin(n \theta))$$;
 
 ## Forma esponenziale di un numero complesso
 
@@ -121,5 +117,5 @@ $$z = |z|(\cos(\theta) + i\sin(\theta)) = |z|e^{i\theta}$$
 
 Operazioni di moltiplicazione e divisione:
 
-- $$z_1 z_2 = |z_1||z_2|e^{i(\theta_1 + \theta_2)}$$
-- $$\frac{z_1}{z_2} = \frac{|z_1|}{|z_2|}e^{i(\theta_1 - \theta_2)}$$
+- $$z_{1} z_{2} = |z_{1}||z_{2}|e^{i(\theta_{1} + \theta_{2})}$$
+- $$\frac{z_{1}}{z_{2}} = \frac{|z_{1}|}{|z_{2}|}e^{i(\theta_{1} - \theta_{2})}$$

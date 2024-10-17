@@ -2,5 +2,6 @@
   "$schema": "https://raw.githubusercontent.com/DavidAnson/markdownlint/v0.35.0/schema/markdownlint-config-schema.json",
   "line-length": false,
   "no-inline-html": false,
+  "no-space-in-code": false,
   "ul-style": { "style": "dash" }
 }

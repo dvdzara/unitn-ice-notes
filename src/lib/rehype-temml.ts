@@ -51,17 +51,28 @@ export default function rehypeKatex() {
           macros: {
             "\\st": "\\ : \\ ",
 
-            "\\Z": "\\mathbb{Z}",
+            "\\C": "\\mathbb{C}",
+            "\\N": "\\mathbb{N}",
             "\\Q": "\\mathbb{Q}",
             "\\R": "\\mathbb{R}",
-            "\\C": "\\mathbb{C}",
+            "\\Z": "\\mathbb{Z}",
 
+            "\\PC": "\\left\\{\\ {#1}\\ \\right\\}",
+            "\\PR": "\\left({#1}\\right)",
+
+            // TODO
+            // trygonometric functions with \PR
+            // graf & rg with \PR
+            // rref with \PR
+            // span with \PR
+
+            "\\rref": "\\text{rref}",
             "\\span": "\\text{span}",
 
             // Vector.
             "\\v": "\\underline",
             // Vector segment.
-            "\\vs": "\\overrightarrow",
+            "\\V": "\\overrightarrow",
           },
         }) +
         `</${containerTag}>`;
