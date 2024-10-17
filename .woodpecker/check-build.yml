@@ -7,7 +7,7 @@ steps:
       - pnpm install
       - pnpm exec playwright install chromium --with-deps
       - pnpm build
-    image: docker.io/library/node:23.0.0-bookworm@sha256:12eceafc86e04862a24f9cdbbdbada57fc36644bdc7e0f643e6767866cedeb1c
+    image: docker.io/library/node:23.0.0-bookworm@sha256:80ef312505a3baedb95061e4f88f4d53bbbdbf797572138cb79bcb13b347efbc
     name: check-build
     volumes:
       - woodpecker-repo-${CI_REPO_REMOTE_ID}-pnpm:/pnpm
