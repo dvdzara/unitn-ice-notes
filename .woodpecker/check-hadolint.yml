@@ -7,7 +7,7 @@ steps:
         git ls-tree --name-only -r HEAD | grep -E "^(.+\/)?(.*[^\/\s]\.)?(Containerfile|Dockerfile)$" | while read f ; do
           echo "checking $f" && hadolint "$f"
         done
-    image: docker.io/hadolint/hadolint:v2.12.0-alpine
+    image: docker.io/hadolint/hadolint:v2.12.0-alpine@sha256:3c206a451cec6d486367e758645269fd7d696c5ccb6ff59d8b03b0e45268a199
     name: check-hadolint
 
 when:
