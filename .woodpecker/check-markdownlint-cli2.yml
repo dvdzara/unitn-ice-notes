@@ -2,12 +2,16 @@
 
 steps:
   - commands:
-      - npx "markdownlint-cli2@$MARKDOWNLINT_CLI2_VERSION" **/*.md
+      - npm config --global set progress false
+      - npm config --global set cache /cache/npm
+      - npx "markdownlint-cli2@$MARKDOWNLINT_CLI2_VERSION" **/*.md **.*.mdx
     environment:
       # renovate: datasource=npm depName=markdownlint-cli2 versioning=npm
       MARKDOWNLINT_CLI2_VERSION: 0.14.0
     image: docker.io/library/node:23.0.0-bookworm@sha256:e643c0b70dca9704dff42e12b17f5b719dbe4f95e6392fc2dfa0c5f02ea8044d
     name: check-markdownlint-cli2
+    volumes:
+      - wp-cache_global_npm:/cache/npm
 
 when:
   - event: pull_request

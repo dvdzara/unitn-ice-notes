@@ -2,18 +2,20 @@
 
 steps:
   - commands:
+      # Setup pnpm
       - corepack enable
-      - pnpm config set store-dir /pnpm
+      - pnpm config --global set store-dir /cache/pnpm
+
       - pnpm install
       - pnpm exec playwright install chromium --with-deps
       - pnpm build
     image: docker.io/library/node:23.0.0-bookworm@sha256:e643c0b70dca9704dff42e12b17f5b719dbe4f95e6392fc2dfa0c5f02ea8044d
     name: check-build
     volumes:
-      - woodpecker-repo-${CI_REPO_REMOTE_ID}-pnpm:/pnpm
-      - woodpecker-repo-${CI_REPO_REMOTE_ID}-apt-lists:/var/lib/apt
-      - woodpecker-repo-${CI_REPO_REMOTE_ID}-apt-cache:/var/cache/apt
-      - woodpecker-repo-${CI_REPO_REMOTE_ID}-playwright:/root/.cache/ms-playwright
+      - wp-cache_${CI_REPO_REMOTE_ID}_playwright:/root/.cache/ms-playwright
+      - wp-cache_${CI_REPO_REMOTE_ID}_pnpm:/cache/pnpm
+      - wp-cache_global_apt-cache:/var/cache/apt
+      - wp-cache_global_apt-lists:/var/lib/apt/lists
 
 when:
   - event: pull_request

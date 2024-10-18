@@ -3,10 +3,13 @@
 steps:
   - entrypoint:
       - /grype
-      - --verbose
       - dir:.
+    environment:
+      GRYPE_DB_CACHE_DIR: /cache/grype
     image: docker.io/anchore/grype:v0.82.1@sha256:9226c86d70e504976c645c42c02b4908bada3490b9ce20e56b46e3bf52155472
     name: check-grype
+    volumes:
+      - wp-cache_global_grype:/cache/grype
 
 when:
   - event: pull_request
