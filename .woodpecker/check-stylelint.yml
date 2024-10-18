@@ -2,14 +2,16 @@
 
 steps:
   - commands:
+      # Setup pnpm
       - corepack enable
-      - pnpm config set store-dir /pnpm
+      - pnpm config --global set store-dir /cache/pnpm
+
       - pnpm install
       - pnpm check:stylelint
     image: docker.io/library/node:23.0.0-bookworm@sha256:e643c0b70dca9704dff42e12b17f5b719dbe4f95e6392fc2dfa0c5f02ea8044d
     name: check-stylelint
     volumes:
-      - woodpecker-repo-${CI_REPO_REMOTE_ID}-pnpm:/pnpm
+      - wp-cache_${CI_REPO_REMOTE_ID}_pnpm:/cache/pnpm
 
 when:
   - event: pull_request

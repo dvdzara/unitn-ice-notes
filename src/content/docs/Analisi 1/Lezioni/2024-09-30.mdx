@@ -2,7 +2,7 @@
 title: Lezione 9 (2024-09-30)
 ---
 
-import { Steps, Card } from "@astrojs/starlight/components";
+import { Card } from "@astrojs/starlight/components";
 
 ## Triangolo di Tartaglia
 
@@ -43,15 +43,14 @@ Somma dei primi n termini:
 
 $$S_{n} = \sum_{k = 0}^{n} q^{k} = 1 + q + q^{2} + \ldots + q^{n}$$
 
-$$q S_{n} = q + q^{2} + \ldots + q^{n + 1}$$
-
-<Steps>
-
-1. $$q S_{n} - S_{n} = -1 + q^{n + 1}$$
-2. $$S_{n} (q - 1) = q^{n + 1} - 1$$
-3. $$q \neq 1 \Rightarrow S_{n} = \frac{q^{n + 1}}{q - 1}$$
-
-</Steps>
+$$
+\begin{darray}{l}
+q S_{n} = q + q^{2} + \ldots + q^{n + 1} \\
+q S_{n} - S_{n} = -1 + q^{n + 1}         \\
+S_{n} (q - 1) = q^{n + 1} - 1            \\
+q \neq 1 \Rightarrow S_{n} = \frac{q^{n + 1}}{q - 1}
+\end{darray}
+$$
 
 Se $$q = 1$$ allora $$S_{n} = 1 (n + 1)$$.
 
@@ -71,7 +70,7 @@ $$a_{n} \to 0$$ se per ogni numero $$\epsilon > 0, \ \epsilon \in \R$$ è
 possibile determinare un numero
 $$\nu_{\epsilon} \in \R \st \forall n > \nu_{\epsilon}, \ -\epsilon < a_{n} < \epsilon$$.
 
-Quindi il limite è verificato tutti i valori della successione con
+Quindi il limite è verificato se tutti i valori della successione con
 $$n > \nu_{\epsilon}$$ sono compresi tra $$-\epsilon$$ e $$\epsilon$$.
 
 </Card>
@@ -98,7 +97,7 @@ limite esiste solo se $$\forall n > \nu\_{\epsilon}$$:
 - $$a_{n} > \epsilon$$ ($$+\infty$$);
 - $$a_{n} < -\epsilon$$ ($$-\infty$$);
 
-### Limiti tendenti ad $$l \in \R$$
+### Limiti tendenti a $$l \in \R$$
 
 $$a_{n} \to l$$ è equivalente a $$a_{n} - l \to 0$$.
 
@@ -112,7 +111,7 @@ Non serve dimostrazione per questi limiti.
 
 ## Successioni senza limiti
 
-Per alcuni tipi di successione ($$a_{n} = \sin(n)$$), non esiste un limite.
+Per alcuni tipi di successione ($$a_{n} = \sin{n}$$), non esiste un limite.
 
 ## Proprietà dei limiti di successione
 

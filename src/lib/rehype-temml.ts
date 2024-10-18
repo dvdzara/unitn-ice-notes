@@ -66,6 +66,21 @@ export default function rehypeKatex() {
             // rref with \PR
             // span with \PR
 
+            "\\cos": "\\text{cos}\\PR{#1}",
+            "\\arccos": "\\text{arccos}\\PR{#1}",
+            "\\cosh": "\\text{cosh}\\PR{#1}",
+            "\\sin": "\\text{sin}\\PR{#1}",
+            "\\arcsin": "\\text{arcsin}\\PR{#1}",
+            "\\sinh": "\\text{sinh}\\PR{#1}",
+            "\\tan": "\\text{tan}\\PR{#1}",
+            "\\arctan": "\\arctan{arcsin}\\PR{#1}",
+            "\\cot": "\\text{cot}\\PR{#1}",
+            "\\arccot": "\\text{arccot}\\PR{#1}",
+
+            // "\\ln": "\\text{ln}\\PR{#1}",
+            // "\\log": "\\text{log}_{#1}\\PR{#2}",
+
+
             "\\rref": "\\text{rref}",
             "\\span": "\\text{span}",
 

@@ -20,5 +20,6 @@
     "ghcr.io/devcontainers/features/common-utils": {},
     "ghcr.io/devcontainers/features/git": {}
   },
-  "postCreateCommand": "corepack prepare pnpm && pnpm install && pnpm exec playwright install chromium --with-deps"
+  "postCreateCommand": "pnpm install && pnpm exec playwright install chromium --with-deps",
+  "postStartCommand": "pnpm install"
 }

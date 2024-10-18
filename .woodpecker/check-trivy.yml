@@ -2,11 +2,11 @@
 
 steps:
   - commands:
-      - trivy repo --exit-code=1 --cache-dir=/cache --no-progress --scanners=vuln,secret,misconfig .
+      - trivy repo --exit-code=1 --cache-dir=/cache/trivy --no-progress --scanners=vuln,secret,misconfig .
     image: docker.io/aquasec/trivy:0.56.2@sha256:26245f364b6f5d223003dc344ec1eb5eb8439052bfecb31d79aeba0c74344b3a
     name: check-trivy
     volumes:
-      - woodpecker-repo-${CI_REPO_REMOTE_ID}-trivy:/cache
+      - wp_cache_global_trivy:/cache/trivy
 
 when:
   - event: pull_request

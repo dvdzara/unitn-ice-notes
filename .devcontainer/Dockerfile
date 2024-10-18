@@ -2,10 +2,9 @@ FROM docker.io/library/node:23.0.0-bookworm@sha256:e643c0b70dca9704dff42e12b17f5
 
 RUN corepack enable
 
-# Will be replaced by vscode user.
-# hadolint ignore=DL3059
-RUN userdel node
-
 ENTRYPOINT []
+
+RUN userdel node
 USER vscode
+
 HEALTHCHECK NONE
