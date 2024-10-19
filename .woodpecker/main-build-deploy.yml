@@ -9,7 +9,7 @@ steps:
       - pnpm install
       - pnpm exec playwright install chromium --with-deps
       - pnpm build
-    image: docker.io/library/node:23.0.0-bookworm@sha256:e643c0b70dca9704dff42e12b17f5b719dbe4f95e6392fc2dfa0c5f02ea8044d
+    image: docker.io/library/node:23.0.0-bookworm@sha256:e96bb23d6ba66e6e2913f72207de972e3f36ee5c5ce77966016192e59277a73a
     name: build
     volumes:
       - wp-cache_${CI_REPO_REMOTE_ID}_playwright:/root/.cache/ms-playwright
@@ -24,7 +24,7 @@ steps:
     environment:
       # renovate: datasource=npm depName=wrangler versioning=npm
       WRANGLER_VERSION: 3.80.2
-    image: docker.io/library/node:23.0.0-bookworm@sha256:e643c0b70dca9704dff42e12b17f5b719dbe4f95e6392fc2dfa0c5f02ea8044d
+    image: docker.io/library/node:23.0.0-bookworm@sha256:e96bb23d6ba66e6e2913f72207de972e3f36ee5c5ce77966016192e59277a73a
     name: deploy
     secrets:
       - CLOUDFLARE_API_TOKEN
