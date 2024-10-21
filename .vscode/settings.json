@@ -1,5 +1,5 @@
 {
-  "cSpell.enableFiletypes": ["mdx", "md"],
+  "cSpell.enableFiletypes": ["!css", "!javascript", "!typescript", "md", "mdx"],
   "cSpell.words": [
     "approssimabile",
     "arccos",
@@ -27,7 +27,6 @@
     "rref",
     "sottosuccessione",
     "Sottosuccessioni",
-    "suriettività",
-    "uple"
+    "suriettività"
   ]
 }
