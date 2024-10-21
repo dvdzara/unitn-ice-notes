@@ -1,18 +1,15 @@
-/* Credits: https://github.com/ronkok/Temml */
-
 @font-face {
   font-family: Temml;
   src: url("/fonts/Temml.woff2") format("woff2");
-  font-weight: normal;
-  font-style: normal;
 }
 
 @font-face {
-  font-family: Fira Math;
-  src: url("/fonts/FiraMath-Regular.woff2");
+  font-family: "Latin Modern Math";
+  src: url("/fonts/LatinModern-Math.woff2") format("woff2");
 }
 
 math {
+  font-family: "Latin Modern Math", math;
   font-style: normal;
   font-weight: normal;
   line-height: normal;
@@ -23,18 +20,10 @@ math {
   word-wrap: normal;
   direction: ltr;
 
-  /* Prevent Firefox from omitting the dot on i or j. */
-  font-feature-settings: "dtls" off;
-  font-family: "Fira Math", math, sans-serif;
-
   /* flex-wrap for line-breaking in Chromium */
   display: inline-flex;
   flex-wrap: wrap;
   align-items: baseline;
-
-  mrow {
-    padding: 0.5ex 0;
-  }
 
   * {
     border-color: currentcolor;
@@ -45,16 +34,20 @@ math {
   .tml-display {
     display: block;
   }
+
+  > mrow {
+    padding: 0.5ex 0;
+  }
 }
 
-*.mathscr {
-  font-family: Temml, math, sans-serif;
+.mathscr {
+  font-family: Temml, math;
 }
 
 mo {
   /* Chromium prime alignment */
   .tml-prime {
-    font-family: Temml, math, sans-serif;
+    font-family: Temml, math;
   }
 
   /* Prevent f' from overlapping in Chromium */
@@ -257,12 +250,12 @@ mo {
 }
 
 /* Avoid flex-wrap in Firefox */
-@document url-prefix() {
+@-moz-document url-prefix() {
   math {
     display: inline;
+  }
 
-    mrow {
-      padding: 0;
-    }
+  math > mrow {
+    padding: 0;
   }
 }

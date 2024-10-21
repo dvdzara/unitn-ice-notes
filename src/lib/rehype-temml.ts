@@ -1,10 +1,54 @@
 import type { Root } from "hast";
-import { fromHtmlIsomorphic } from "hast-util-from-html-isomorphic";
+import { fromHtml } from "hast-util-from-html";
 import { toString } from "hast-util-to-string";
 import temml from "temml";
 import { SKIP, visitParents } from "unist-util-visit-parents";
 
-export default function rehypeKatex() {
+// This plugin doesn't support math inside ```math...``` blocks, only math
+// inside $$...$$ blocks.
+
+const macros = {
+  "\\st": "\\ : \\ ",
+
+  "\\C": "\\mathbb{C}",
+  "\\N": "\\mathbb{N}",
+  "\\Q": "\\mathbb{Q}",
+  "\\R": "\\mathbb{R}",
+  "\\Z": "\\mathbb{Z}",
+
+  "\\PC": "\\left\\{\\ {#1}\\ \\right\\}",
+  "\\PR": "\\left({#1}\\right)",
+
+  // TODO
+  // trygonometric functions with \PR
+  // graf & rg with \PR
+  // rref with \PR
+  // span with \PR
+
+  "\\cos": "\\text{cos}\\left({#1}\\right)",
+  "\\arccos": "\\text{arccos}\\left({#1}\\right)",
+  "\\cosh": "\\text{cosh}\\left({#1}\\right)",
+  "\\sin": "\\text{sin}\\left({#1}\\right)",
+  "\\arcsin": "\\text{arcsin}\\left({#1}\\right)",
+  "\\sinh": "\\text{sinh}\\left({#1}\\right)",
+  "\\tan": "\\text{tan}\\left({#1}\\right)",
+  "\\arctan": "\\text{arctan}\\left({#1}\\right)",
+  "\\cot": "\\text{cot}\\left({#1}\\right)",
+  "\\arccot": "\\text{arccot}\\left({#1}\\right)",
+
+  "\\ln": "\\text{ln}\\left({#1}\\right)",
+  "\\log": "\\text{log}_{#1}\\left({#2}\\right)",
+
+  "\\rref": "\\text{rref}",
+  "\\span": "\\text{span}",
+
+  // Vector.
+  "\\v": "\\underline",
+  // Vector segment.
+  "\\V": "\\overrightarrow",
+};
+
+export default () => {
   return (tree: Root) => {
     visitParents(tree, "element", function (element, parents) {
       const classes = Array.isArray(element.properties.className)
@@ -39,59 +83,18 @@ export default function rehypeKatex() {
       }
 
       const containerTag = mathDisplay ? "div" : "span";
-      const spanClasses = "math-container";
-
       const mathRenderedString =
-        `<${containerTag} class="${spanClasses}">` +
+        `<${containerTag} class="math-container">` +
         temml.renderToString(toString(element), {
-          strict: true,
           displayMode: mathDisplay,
+          macros,
+          strict: true,
           // Makes the build fail when an invalid math block is found.
           throwOnError: true,
-          macros: {
-            "\\st": "\\ : \\ ",
-
-            "\\C": "\\mathbb{C}",
-            "\\N": "\\mathbb{N}",
-            "\\Q": "\\mathbb{Q}",
-            "\\R": "\\mathbb{R}",
-            "\\Z": "\\mathbb{Z}",
-
-            "\\PC": "\\left\\{\\ {#1}\\ \\right\\}",
-            "\\PR": "\\left({#1}\\right)",
-
-            // TODO
-            // trygonometric functions with \PR
-            // graf & rg with \PR
-            // rref with \PR
-            // span with \PR
-
-            // "\\cos": "\\text{cos}\\PR{#1}",
-            // "\\arccos": "\\text{arccos}\\PR{#1}",
-            // "\\cosh": "\\text{cosh}\\PR{#1}",
-            // "\\sin": "\\text{sin}\\PR{#1}",
-            // "\\arcsin": "\\text{arcsin}\\PR{#1}",
-            // "\\sinh": "\\text{sinh}\\PR{#1}",
-            // "\\tan": "\\text{tan}\\PR{#1}",
-            // "\\arctan": "\\arctan{arcsin}\\PR{#1}",
-            // "\\cot": "\\text{cot}\\PR{#1}",
-            // "\\arccot": "\\text{arccot}\\PR{#1}",
-
-            // "\\ln": "\\text{ln}\\PR{#1}",
-            // "\\log": "\\text{log}_{#1}\\PR{#2}",
-
-            "\\rref": "\\text{rref}",
-            "\\span": "\\text{span}",
-
-            // Vector.
-            "\\v": "\\underline",
-            // Vector segment.
-            "\\V": "\\overrightarrow",
-          },
         }) +
         `</${containerTag}>`;
 
-      const mathRenderedElement = fromHtmlIsomorphic(mathRenderedString, {
+      const mathRenderedElement = fromHtml(mathRenderedString, {
         fragment: true,
       });
 
@@ -100,4 +103,4 @@ export default function rehypeKatex() {
       return SKIP;
     });
   };
-}
+};
