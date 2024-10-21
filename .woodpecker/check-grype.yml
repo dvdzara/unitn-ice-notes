@@ -6,7 +6,7 @@ steps:
       - dir:.
     environment:
       GRYPE_DB_CACHE_DIR: /cache/grype
-    image: docker.io/anchore/grype:v0.82.1@sha256:9226c86d70e504976c645c42c02b4908bada3490b9ce20e56b46e3bf52155472
+    image: docker.io/anchore/grype:v0.82.2@sha256:92803caa4271dd8ec31f6400187a91649dc39ecc0009d6c03b4053bcc4ffb731
     name: check-grype
     volumes:
       - wp-cache_global_grype:/cache/grype
