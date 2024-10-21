@@ -24,6 +24,19 @@ export default defineConfig({
       social: {
         github: "https://github.com/dvdzara/unitn-ice-notes",
       },
+      sidebar: [
+        "Analisi 1",
+        "Geometria e algebra lineare",
+        "Programmazione 1",
+      ].map((c) => {
+        return {
+          label: c,
+          autogenerate: {
+            directory: c,
+            collapsed: true,
+          },
+        };
+      }),
     }),
   ],
   devToolbar: { enabled: false },
