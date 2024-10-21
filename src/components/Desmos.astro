@@ -1,35 +1,22 @@
 ---
-import { Details } from ".";
-
 interface Props {
   graph: string;
-  height?: number;
-  width?: number;
-  size?: number;
 }
 
-let { graph, height, width, size } = Astro.props;
-
-if (!size) {
-  size = 300;
-}
-
-if (!width) {
-  width = size;
-}
-
-if (!height) {
-  height = size;
-}
+const { graph } = Astro.props;
 ---
 
-<Details summary="Grafico">
+<details>
+  <summary>Grafico</summary>
+
   <iframe
     src={`https://www.desmos.com/calculator/${graph}?embed`}
-    style={`width: ${width}px; height: ${height}px;`}
+    style={`width: 300px; height: 300px;`}
     loading="lazy"
-    title={graph}></iframe>
-</Details>
+    title={graph}
+  >
+  </iframe>
+</details>
 
 <style>
   iframe {

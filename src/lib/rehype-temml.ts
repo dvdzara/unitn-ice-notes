@@ -4,9 +4,6 @@ import { toString } from "hast-util-to-string";
 import temml from "temml";
 import { SKIP, visitParents } from "unist-util-visit-parents";
 
-// This plugin doesn't support math inside ```math...``` blocks, only math
-// inside $$...$$ blocks.
-
 const macros = {
   "\\st": "\\ : \\ ",
 
@@ -41,6 +38,8 @@ const macros = {
 
   "\\rref": "\\text{rref}",
   "\\span": "\\text{span}",
+
+  "\\dx": "D\\left[{#1}\\right]",
 
   // Vector.
   "\\v": "\\underline",

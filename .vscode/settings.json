@@ -28,5 +28,11 @@
     "sottosuccessione",
     "Sottosuccessioni",
     "suriettività"
-  ]
+  ],
+  "[markdown]": {
+    "editor.quickSuggestions": { "other": "on" }
+  },
+  "[mdx]": {
+    "editor.quickSuggestions": { "other": "on" }
+  }
 }
