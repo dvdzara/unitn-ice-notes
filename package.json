@@ -36,7 +36,7 @@
     "@astrojs/starlight": "0.28.3",
     "astro": "4.16.6",
     "autoprefixer": "10.4.20",
-    "hast-util-from-html-isomorphic": "2.0.0",
+    "hast-util-from-html": "2.0.3",
     "hast-util-to-string": "3.0.1",
     "playwright": "1.48.1",
     "rehype-mermaid": "3.0.0",
