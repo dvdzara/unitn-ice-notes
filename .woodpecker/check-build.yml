@@ -2,10 +2,8 @@
 
 steps:
   - commands:
-      # Setup pnpm
       - corepack enable
       - pnpm config --global set store-dir /cache/pnpm
-
       - pnpm install
       - pnpm exec playwright install chromium --with-deps
       - pnpm build
