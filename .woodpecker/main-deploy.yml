@@ -31,7 +31,7 @@ steps:
     volumes:
       - wp-cache_global_npm:/cache/npm
 
-  - image: docker.io/woodpecker/plugin-deployments:next
+  - image: docker.io/woodpeckerci/plugin-deployments:next
     name: create-github-deployment
     settings:
       forge_token:
