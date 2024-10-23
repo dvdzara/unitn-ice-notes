@@ -8,9 +8,9 @@ import { Steps, Card } from "@astrojs/starlight/components";
 
 ### Insiemi numerici
 
-- $$\N = \PC{ 0, 1, 2, 3, \ldots }$$
-- $$\Z = \PC{ 2, 1, -2, \ldots }$$
-- $$\Q = \PC{ \frac{p}{q} \st p, \ q \in \Z, \ q \neq 0 }$$
+- $$\N = \lb 0, 1, 2, 3, \ldots \rb$$
+- $$\Z = \lb 2, 1, -2, \ldots \rb$$
+- $$\Q = \lb \frac{p}{q} \st p, \ q \in \Z, \ q \neq 0 \rb$$
 
 $$\N \subsetneqq \Z$$, $$\Z \subsetneqq \Q$$
 
@@ -31,8 +31,8 @@ razionalmente.
 
 ### Intervalli
 
-- $$(a, b) = \PC{ x \in \R \st a < x < b }$$: intervallo aperto;
-- $$[a, b] = \PC{ x \in \R \st a \leq x \leq b }$$: intervallo chiuso;
+- $$(a, b) = \lb x \in \R \st a < x < b \rb$$: intervallo aperto;
+- $$[a, b] = \lb x \in \R \st a \leq x \leq b \rb$$: intervallo chiuso;
 
 Gli intervalli possono essere aperti da una parte e chiusi dall'altra.
 
@@ -46,8 +46,8 @@ intervallo non può essere chiuso in $$\pm \infty$$.
 
 Dato $$A \in \R, \ A \neq 0$$:
 
-- maggiorante: $$\exists M \st \forall x \in A, \ x \leq M$$
-- minorante: $$\exists m \st \forall x \in A, \ x \geq m$$
+- maggiorante: $$\exists{M} \st \forall{x} \in A, \ x \leq M$$
+- minorante: $$\exists{m} \st \forall{x} \in A, \ x \geq m$$
 
 $$M$$ o $$m$$ non devono necessariamente far parte di $$A$$.
 
@@ -79,7 +79,7 @@ Questa proprietà non vale per i numeri razionali.
 
 Dato $$x \in \R$$.
 
-$$\lfloor x \rfloor = \sup( \PC{ y \in \Z \st y < x } )$$
+$$\lfloor x \rfloor = \sup \lb y \in \Z \st y < x \rb$$
 
 $$\lfloor x \rfloor$$ è l'estremo superiore dell'insieme dei numeri interi
 $$\leq x$$.
@@ -111,7 +111,7 @@ $$\exists x \in \Q \st a < q < b$$
 Dati:
 
 - $$(a < b) \equiv (b - a > 0)$$
-- $$\exists n \in \N \st \PR{n > \frac{1}{b - a}} \equiv \PR{b - a = \frac{1}{n}}, \ n > 0$$
+- $$\exists n \in \N \st \(n > \frac{1}{b - a}\) \equiv \(b - a = \frac{1}{n}\), \ n > 0$$
 - $$m = \frac{\lfloor na \rfloor + 1}{n}, \ m \in \Z$$
 
 Dimostro che $$q$$ è minore di $$b$$.

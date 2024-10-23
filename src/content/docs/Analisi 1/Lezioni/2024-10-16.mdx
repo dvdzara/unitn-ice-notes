@@ -70,7 +70,7 @@ Basta applicare il teorema a $$f(x) - g(x)$$.
 ### Teorema dei valori intermedi
 
 $$
-\forall x_{0} \in \PR{\inf_{x \in [a, b]} f(x), \sup_{x \in [a, b]} f(x)}, \ \exists f(x) = x_{0}
+\forall x_{0} \in \(\inf_{x \in [a, b]} f(x), \sup_{x \in [a, b]} f(x)\), \ \exists f(x) = x_{0}
 $$
 
 Data $$f: [a, b] \to R$$, funzione continua, allora $$f(x)$$ assume tutti i
@@ -115,7 +115,7 @@ $$x_{0}$$ se esiste ed è finito il limite:
 
 $$
 \lim_{x \to x_{0}} \frac{f(x) - f(x_{0})}{x - x_{0}} =
-\lim_{h \to 0} \frac{f(x_{0} + h) - f(x_{0})}{h} = f'(x)
+\lim_{h \to 0} \frac{f(x_{0} + h) - f(x_{0})}{h} = \dx{f(x)}
 $$
 
 Quindi
@@ -130,9 +130,9 @@ $$
 Il coefficiente angolare di $$r$$ è dato da
 $$m = \frac{f(x) - f(x_{0})}{x - x_{0}}$$.
 
-Per definizione, $$f'(x_{0})$$ si ottiene avvicinando il più possibile $$f(x)$$
-a $$f(x_{0})$$. Il valore della derivata sarà pari al coefficiente angolare
-della retta $$r$$.
+Per definizione, $$\dx{f(x_{0})}$$ si ottiene avvicinando il più possibile
+$$f(x)$$ a $$f(x_{0})$$. Il valore della derivata sarà pari al coefficiente
+angolare della retta $$r$$.
 
 <Desmos graph="igo2v9yyex" />
 
@@ -141,7 +141,7 @@ della retta $$r$$.
 Supponiamo che $$f: (a, b) \in \R$$ sia derivabile in $$x_{0} \in (a, b)$$,
 allora $$f(x)$$ è continua in $$x_{0}$$.
 
-Il viceversa è falso. (Esempio: $$x_{0} = 0, \ \nexists (|x|)'$$).
+Il viceversa è falso. (Esempio: $$x_{0} = 0, \ \nexists \dx{|x|}$$).
 
 ### Punti di non derivabilità
 
@@ -150,7 +150,7 @@ Il viceversa è falso. (Esempio: $$x_{0} = 0, \ \nexists (|x|)'$$).
 
   <Desmos graph="uk36b65qvu" />
 
-- cuspidi: $$f'(x_{0}^{-}) = f'(x_{0}^{+}) = \pm \infty$$
+- cuspidi: $$\dx{f(x_{0}^{-})} = \dx{f(x_{0}^{+})} = \pm \infty$$
 
 - punti a tangente verticale:
-  $$f'(x_{0}^{-}) = \pm \infty, \ f'(x_{0}^{+}) = \mp \infty$$
+  $$\dx{f(x_{0}^{-})} = \pm \infty, \ \dx{(x_{0}^{+})} = \mp \infty$$

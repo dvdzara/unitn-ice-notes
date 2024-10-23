@@ -22,11 +22,11 @@ righe successive) abbiamo una delle seguenti possibilità:
 <summary>Esempio</summary>
 
 $$
-A = \begin{bmatrix}
+A = \matrix{
 p_{1} & *     & * & *     \\
 0     & p_{2} & * & *     \\
 0     & 0     & 0 & p_{4}
-\end{bmatrix}
+}
 $$
 
 Un $$*$$ indica un qualsiasi numero.
@@ -44,19 +44,19 @@ $$p_{1}$$, $$p_{2}$$ e $$p_{3}$$ sono detti pivot.
 1. cerco la prima colonna che contiene un termine non nullo e lo chiamiamo
    $$p_{1}$$;
 2. scambio le righe in modo che $$p_{1}$$ arrivi alla prima riga;
-3. utilizzo operazioni elementari ($$E_{j}1(\mu)$$) finché tutti i termini nella
+3. utilizzo operazioni elementari ($$E_{j1}\(\mu\)$$) finché tutti i termini nella
    colonna sotto a $$p_{1}$$ diventano nulli;
 4. ripeto il procedimento sulla matrice ottenuta, escludendo la prima riga;
 
 </Steps>
 
-Il rango di una matrice $$A$$ ($$rg(A)$$) è il numero di pivot di una sua forma
+Il rango di una matrice $$A$$ ($$\rg{A}$$) è il numero di pivot di una sua forma
 a scalini (i pivot possono cambiare di valore a seconda di come è stata ridotta
 la matrice).
 
 ## Riduzione per righe
 
-Una matrice $$A$$ è ridotta per righe $$\rref(A)$$ se è a scalini e ogni pivot è
+Una matrice $$A$$ è ridotta per righe $$\rref{A}$$ se è a scalini e ogni pivot è
 pari a 1 ed è l'unico elemento non nullo della propria colonna.
 
 Ogni matrice ammette un'unica forma a scalini ridotta per righe.
@@ -65,12 +65,11 @@ Ogni matrice ammette un'unica forma a scalini ridotta per righe.
 <summary>Esempio</summary>
 
 $$
-\rref(A) =
-\begin{bmatrix}
+\rref{A} = \matrix{
 1 & 0 & 0 \\
 0 & 1 & 0 \\
 0 & 0 & 1
-\end{bmatrix}
+}
 $$
 
 </details>
@@ -81,10 +80,10 @@ Si usa per passare da una matrice a scalini alla sua forma ridotta per righe.
 
 <Steps>
 
-1. per ogni pivot $$p_{k}$$, eseguiamo l'operazione $$D_{k}(\frac{1}{p_{k}})$$,
+1. per ogni pivot $$p_{k}$$, eseguiamo l'operazione $$D_{k}\(\frac{1}{p_{k}}\)$$,
    in modo da fargli assumere valore 1;
 2. riduciamo a 0 tutti i termini della colonna di $$p_{k}$$ (tranne $$p_{k}$$)
-   tramite operazioni di tipo $$E_{j, k}(\mu)$$;
+   tramite operazioni di tipo $$E_{j, k}\(\mu\)$$;
 
 </Steps>
 
@@ -97,12 +96,12 @@ che contengono questi coefficienti siano quelle più in basso.
 
 ## Teorema di Rouché-Capelli
 
-Dato un sistema lineare in $$n$$ incognite, sia $$(A|\v{b})$$ la matrice
+Dato un sistema lineare in $$n$$ incognite, sia $$\(A | \v{b}\)$$ la matrice
 completa associata. Tale sistema è compatibile se e solo se
-$$rg(A) = rg(A|\v{b})$$. In questo caso il sistema avrà:
+$$\rg{A} = \rg{A | \v{b}}$$. In questo caso il sistema avrà:
 
-- un'unica soluzione se $$rg(A) = n$$;
-- infinite soluzioni se $$rg(A) < n$$;
+- un'unica soluzione se $$\rg{A} = n$$;
+- infinite soluzioni se $$\rg{A} < n$$;
 
 ## Applicazione dell'algoritmo di Gauss-Jordan nella geometria
 
