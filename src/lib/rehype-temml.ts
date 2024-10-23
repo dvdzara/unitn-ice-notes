@@ -13,33 +13,36 @@ const macros = {
   "\\R": "\\mathbb{R}",
   "\\Z": "\\mathbb{Z}",
 
-  "\\PC": "\\left\\{\\ {#1}\\ \\right\\}",
-  "\\PR": "\\left({#1}\\right)",
+  "\\(": "\\left(",
+  "\\)": "\\right)",
+  "\\[": "\\left[",
+  "\\]": "\\right]",
+  "\\lb": "\\left\\{\\ ",
+  "\\rb": "\\ \\right\\}",
 
-  // TODO
-  // trygonometric functions with \PR
-  // graf & rg with \PR
-  // rref with \PR
-  // span with \PR
+  "\\cos": "\\text{cos}\\(#1\\)",
+  "\\arccos": "\\text{arccos}\\(#1\\)",
+  "\\cosh": "\\text{cosh}\\(#1\\)",
+  "\\sin": "\\text{sin}\\(#1\\)",
+  "\\arcsin": "\\text{arcsin}\\(#1\\)",
+  "\\sinh": "\\text{sinh}\\(#1\\)",
+  "\\tan": "\\text{tan}\\(#1\\)",
+  "\\arctan": "\\text{arctan}\\(#1\\)",
+  "\\cot": "\\text{cot}\\(#1\\)",
+  "\\arccot": "\\text{arccot}\\(#1\\)",
 
-  "\\cos": "\\text{cos}\\left({#1}\\right)",
-  "\\arccos": "\\text{arccos}\\left({#1}\\right)",
-  "\\cosh": "\\text{cosh}\\left({#1}\\right)",
-  "\\sin": "\\text{sin}\\left({#1}\\right)",
-  "\\arcsin": "\\text{arcsin}\\left({#1}\\right)",
-  "\\sinh": "\\text{sinh}\\left({#1}\\right)",
-  "\\tan": "\\text{tan}\\left({#1}\\right)",
-  "\\arctan": "\\text{arctan}\\left({#1}\\right)",
-  "\\cot": "\\text{cot}\\left({#1}\\right)",
-  "\\arccot": "\\text{arccot}\\left({#1}\\right)",
+  "\\ln": "\\text{ln}\\(#1\\)",
+  "\\log": "\\text{log}_{#1}\\(#2\\)",
 
-  "\\ln": "\\text{ln}\\left({#1}\\right)",
-  "\\log": "\\text{log}_{#1}\\left({#2}\\right)",
+  "\\rg": "\\text{rg}\\(#1\\)",
+  "\\rref": "\\text{rref}\\(#1\\)",
+  "\\span": "\\text{span}\\(#1\\)",
+  "\\graf": "\\text{graf}\\(#1\\)",
 
-  "\\rref": "\\text{rref}",
-  "\\span": "\\text{span}",
+  // Derivative of a function.
+  "\\dx": "D\\left[ #1 \\right]",
 
-  "\\dx": "D\\left[{#1}\\right]",
+  "\\matrix": "\\begin{bmatrix} #1 \\end{bmatrix}",
 
   // Vector.
   "\\v": "\\underline",
