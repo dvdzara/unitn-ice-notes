@@ -2,7 +2,8 @@
 title: Lezione 16 (2024-10-16)
 ---
 
-import Desmos from "../../../../components/Desmos.astro";
+import graph01 from "../../../../images/analisi-1/2024-10-16/01.svg";
+import { Image } from "astro:assets";
 import { Steps } from "@astrojs/starlight/components";
 
 ## Teoremi delle funzioni continue
@@ -134,8 +135,6 @@ Per definizione, $$\dx{f(x_{0})}$$ si ottiene avvicinando il più possibile
 $$f(x)$$ a $$f(x_{0})$$. Il valore della derivata sarà pari al coefficiente
 angolare della retta $$r$$.
 
-<Desmos graph="igo2v9yyex" />
-
 ### Continuità di una funzione derivabile
 
 Supponiamo che $$f: (a, b) \in \R$$ sia derivabile in $$x_{0} \in (a, b)$$,
@@ -148,7 +147,7 @@ Il viceversa è falso. (Esempio: $$x_{0} = 0, \ \nexists \dx{|x|}$$).
 - punti angolosi: punti di una funzione dove il grafico fa un angolo (limite
   destro $$\neq$$ limite sinistro)
 
-  <Desmos graph="uk36b65qvu" />
+  <Image src={graph01} alt="graph" />
 
 - cuspidi: $$\dx{f(x_{0}^{-})} = \dx{f(x_{0}^{+})} = \pm \infty$$
 
