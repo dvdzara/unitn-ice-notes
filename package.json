@@ -7,7 +7,7 @@
   "scripts": {
     "build": "astro sync && astro build",
     "check:astro": "astro check",
-    "check:eslint": "eslint",
+    "check:eslint": "astro sync && eslint",
     "check:prettier": "prettier --check .",
     "check:stylelint": "stylelint **/*.{css,astro}",
     "clean": "rm -rf dist .astro node_modules",
