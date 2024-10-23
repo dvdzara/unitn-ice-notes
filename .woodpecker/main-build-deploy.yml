@@ -35,9 +35,9 @@ steps:
 
   - image: docker.io/woodpecker/plugin-deployments:latest
     settings:
-      url: https://ice-notes.zarantonello.dev
       forge_token:
         from_secrets: GITHUB_TOKEN
+      url: https://ice-notes.zarantonello.dev
 
 when:
   - branch: main
