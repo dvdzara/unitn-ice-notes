@@ -3,36 +3,24 @@
   "configMigration": true,
   "dependencyDashboard": true,
   "extends": ["config:best-practices", "customManagers:dockerfileVersions"],
-  "osvVulnerabilityAlerts": true,
   "packageRules": [
     {
       "matchFileNames": [".devcontainer/**"],
-      "groupName": "devcontainer",
-      "groupSlug": "devcontainer",
       "automerge": true
     },
     {
       "matchManagers": ["woodpecker"],
-      "groupName": "woodpecker",
-      "groupSlug": "woodpecker",
       "automerge": true
     },
     {
-      "matchManagers": ["npm"],
-      "matchPackageNames": [
-        "eslint",
-        "@eslint/js",
-        "eslint-*",
-        "typescript-eslint"
-      ],
-      "groupName": "eslint",
-      "groupSlug": "eslint"
+      "matchDepTypes": ["devDependencies"],
+      "automerge": true
     }
   ],
   "semanticCommits": "enabled",
   "lockFileMaintenance": {
     "enabled": true,
-    "schedule": ["before 6am on Monday"]
+    "extends": ["schedule:weekly"]
   },
   "assignees": ["dvdzara"],
   "customManagers": [
@@ -40,7 +28,7 @@
       "customType": "regex",
       "fileMatch": ["^\\.woodpecker(?:/[^/]+)?\\.ya?ml$"],
       "matchStrings": [
-        "# renovate: datasource=(?<datasource>[a-z-.]+?) depName=(?<depName>[^\\s]+?)(?: (lookupName|packageName)=(?<packageName>[^\\s]+?))?(?: versioning=(?<versioning>[^\\s]+?))?(?: extractVersion=(?<extractVersion>[^\\s]+?))?(?: registryUrl=(?<registryUrl>[^\\s]+?))?\\s(?:ENV|ARG)\\s+[A-Za-z0-9_]+?_VERSION[ =][\"']?(?<currentValue>.+?)[\"']?\\s"
+        "# renovate: datasource=(?<datasource>[a-z-.]+?) depName=(?<depName>[^\\s]+?)(?: (?:packageName)=(?<packageName>[^\\s]+?))?(?: versioning=(?<versioning>[^\\s]+?))?(?: extractVersion=(?<extractVersion>[^\\s]+?))?(?: registryUrl=(?<registryUrl>[^\\s]+?))?\\s+[A-Za-z0-9_]+?_VERSION\\s*:\\s*[\"']?(?<currentValue>.+?)[\"']?\\s"
       ]
     }
   ]

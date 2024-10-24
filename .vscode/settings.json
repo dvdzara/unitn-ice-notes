@@ -1,5 +1,14 @@
 {
-  "cSpell.enableFiletypes": ["!css", "!javascript", "!typescript", "md", "mdx"],
+  "cSpell.enableFiletypes": [
+    "!css",
+    "!javascript",
+    "!json",
+    "!jsonc",
+    "!typescript",
+    "!yaml",
+    "md",
+    "mdx"
+  ],
   "cSpell.words": [
     "approssimabile",
     "arccos",
@@ -8,7 +17,6 @@
     "astrojs",
     "biiettiva",
     "binom",
-    "bmatrix",
     "darray",
     "derivabilità",
     "Desmos",

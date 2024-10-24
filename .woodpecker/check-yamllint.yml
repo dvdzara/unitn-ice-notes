@@ -7,7 +7,7 @@ steps:
     environment:
       # renovate: datasource=pypi depName=yamllint versioning=pep440
       YAMLLINT_VERSION: 1.35.1
-    image: docker.io/library/python:3.13.0-bookworm@sha256:feee4734fdc44cc09a3c9cdb72e05bb8ff7e964f64766bc1a68638b2c667cf35
+    image: docker.io/library/python:3.13.0-alpine
     name: check-yamllint
     volumes:
       - wp-cache_global_pip:/cache/pip

@@ -2,34 +2,25 @@
 
 steps:
   - commands:
-      - corepack enable
-      - pnpm config --global set store-dir /cache/pnpm
-      - pnpm install
-      - pnpm exec playwright install chromium --with-deps
-      - pnpm build
-    environment:
-      DEBIAN_FRONTEND: noninteractive
-    image: docker.io/library/node:23.0.0-bookworm@sha256:9d09fa506f5b8465c5221cbd6f980e29ae0ce9a3119e2b9bc0842e6a3f37bb59
+      - deno install --allow-scripts
+      - deno run build
+    image: docker.io/denoland/deno:2.0.2
     name: build
     volumes:
-      - wp-cache_${CI_REPO_REMOTE_ID}_playwright:/root/.cache/ms-playwright
-      - wp-cache_${CI_REPO_REMOTE_ID}_pnpm:/cache/pnpm
-      - wp-cache_global_apt-cache:/var/cache/apt
-      - wp-cache_global_apt-lists:/var/lib/apt/lists
-
+      - wp-cache_global_deno:/deno-dir
+  # Need to wait for Deno to support some NodeJS cli options.
   - commands:
       - npm config --global set progress false
-      - npm config --global set cache /cache/npm
-      - npx "wrangler@$WRANGLER_VERSION" pages deploy dist --project-name $CI_REPO_NAME
+      - npx "wrangler@$WRANGLER_VERSION" pages deploy ./dist --project-name $CI_REPO_NAME
     environment:
       CLOUDFLARE_API_TOKEN:
         from_secret: CLOUDFLARE_API_TOKEN
+      GITHUB_TOKEN:
+        from_secret: GITHUB_TOKEN
       # renovate: datasource=npm depName=wrangler versioning=npm
       WRANGLER_VERSION: 3.80.2
-    image: docker.io/library/node:23.0.0-bookworm@sha256:9d09fa506f5b8465c5221cbd6f980e29ae0ce9a3119e2b9bc0842e6a3f37bb59
-    name: deploy-to-pages
-    volumes:
-      - wp-cache_global_npm:/cache/npm
+    image: docker.io/library/node:23.0.0-alpine
+    name: deploy
 
 when:
   - branch: main
