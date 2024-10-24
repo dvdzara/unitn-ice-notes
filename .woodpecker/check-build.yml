@@ -1,5 +1,9 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/woodpecker-ci/woodpecker/main/pipeline/frontend/yaml/linter/schema/schema.json
 
+# Needed by sharp.
+labels:
+  platform: linux/amd64
+
 steps:
   - commands:
       # Used by starlight's lastUpdated option.
