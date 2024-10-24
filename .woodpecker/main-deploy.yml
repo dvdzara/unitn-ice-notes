@@ -18,7 +18,7 @@ steps:
       GITHUB_TOKEN:
         from_secret: GITHUB_TOKEN
       # renovate: datasource=npm depName=wrangler versioning=npm
-      WRANGLER_VERSION: 3.80.2
+      WRANGLER_VERSION: 3.83.0
     image: docker.io/library/node:23.0.0-alpine
     name: deploy
 
