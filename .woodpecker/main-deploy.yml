@@ -6,7 +6,7 @@ steps:
       - apt install --no-install-recommends -y git
       - bun install
       - bun run build
-    image: docker.io/oven/bun:1.1.33-slim
+    image: docker.io/oven/bun:1.1.33-slim@sha256:fac38fc9f43345a8dea1f354c3e8976f0a7610050049d12d72bab335ea4905e6
     name: build
     volumes:
       - wp-cache_global_bun:/root/.bun/install/cache/
@@ -17,7 +17,7 @@ steps:
         from_secret: CLOUDFLARE_API_TOKEN
       # renovate: datasource=npm depName=wrangler versioning=npm
       WRANGLER_VERSION: 3.83.0
-    image: docker.io/oven/bun:1.1.33-slim
+    image: docker.io/oven/bun:1.1.33-slim@sha256:fac38fc9f43345a8dea1f354c3e8976f0a7610050049d12d72bab335ea4905e6
     name: deploy
     volumes:
       - wp-cache_global_bun:/root/.bun/install/cache/
