@@ -1,14 +1,12 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/woodpecker-ci/woodpecker/main/pipeline/frontend/yaml/linter/schema/schema.json
 
-# Needed by sharp.
-labels:
-  platform: linux/amd64
-
 steps:
   - commands:
       # Used by starlight's lastUpdated option.
       - apk add --no-cache git
       - bun install
+      # I want to cry.
+      - cd node_modules/sharp && bun install && cd $CI_WORKSPACE
       - bun run build
     image: docker.io/oven/bun:1.1.33-alpine
     name: build
