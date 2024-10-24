@@ -4,7 +4,7 @@ steps:
   - commands:
       - deno install --allow-scripts
       - deno run build
-    image: docker.io/denoland/deno:2.0.2
+    image: docker.io/denoland/deno:2.0.2@sha256:22d5b3a7164db3190b9591aa270f1f5e65c888ba38fa5f489532b58d57a4dd6d
     name: build
     volumes:
       - wp-cache_global_deno:/deno-dir
@@ -19,7 +19,7 @@ steps:
         from_secret: GITHUB_TOKEN
       # renovate: datasource=npm depName=wrangler versioning=npm
       WRANGLER_VERSION: 3.83.0
-    image: docker.io/library/node:23.0.0-alpine
+    image: docker.io/library/node:23.0.0-alpine@sha256:b20f8fad528b0e768936cb88ccb7b0e37cf41587d177e2d6fcdbd48bb4e083ec
     name: deploy
 
 when:

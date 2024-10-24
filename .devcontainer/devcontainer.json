@@ -19,6 +19,7 @@
     "install git": "apt-get update && apt-get install --no-install-recommends -y ca-certificates git gpg"
   },
   "postStartCommand": {
-    "set git editor": "git config --global core.editor code"
+    "set git editor": "git config --global core.editor code",
+    "deno install": "deno install --allow-scripts"
   }
 }
