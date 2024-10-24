@@ -2,6 +2,7 @@
 
 steps:
   - commands:
+      - apk add --no-cache git
       - bun install
       - bun run build
     image: docker.io/oven/bun:1.1.33-alpine
