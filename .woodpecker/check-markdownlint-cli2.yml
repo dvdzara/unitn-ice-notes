@@ -2,7 +2,7 @@
 
 steps:
   - commands:
-      - deno run --allow-read --allow-sys --allow-env "npm:markdownlint-cli2@$MARKDOWNLINT_CLI2_VERSION" **/*.md **/*.mdx
+      - deno run --allow-read --allow-sys --allow-env --node-modules-dir=none "npm:markdownlint-cli2@$MARKDOWNLINT_CLI2_VERSION" **/*.md **/*.mdx
     environment:
       # renovate: datasource=npm depName=markdownlint-cli2 versioning=npm
       MARKDOWNLINT_CLI2_VERSION: 0.14.0
