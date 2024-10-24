@@ -1,12 +1,11 @@
 {
   "name": "unitn-ice-notes",
-  "image": "docker.io/denoland/deno:2.0.2",
+  "image": "docker.io/oven/bun:1.1.33-alpine",
   "customizations": {
     "vscode": {
       "extensions": [
         "astro-build.astro-vscode",
         "DavidAnson.vscode-markdownlint",
-        "denoland.vscode-deno",
         "esbenp.prettier-vscode",
         "redhat.vscode-yaml",
         "streetsidesoftware.code-spell-checker-italian",
@@ -16,10 +15,11 @@
     }
   },
   "postCreateCommand": {
-    "install git": "apt-get update && apt-get install --no-install-recommends -y ca-certificates git gpg"
+    "install packages": "apk add git gpg"
   },
   "postStartCommand": {
     "set git editor": "git config --global core.editor code",
-    "deno install": "deno install --allow-scripts"
+    "set git safe directory": "git config --global --add safe.directory /workspaces/unitn-ice-notes",
+    "bun install": "bun install"
   }
 }

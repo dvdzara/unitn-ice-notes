@@ -2,12 +2,12 @@
 
 steps:
   - commands:
-      - deno install --allow-scripts
-      - deno run check:astro
-    image: docker.io/denoland/deno:2.0.2@sha256:22d5b3a7164db3190b9591aa270f1f5e65c888ba38fa5f489532b58d57a4dd6d
+      - bun install
+      - bun run check:astro
+    image: docker.io/oven/bun:1.1.33-alpine
     name: check-astro
     volumes:
-      - wp-cache_global_deno:/deno-dir
+      - wp-cache_global_bun:/root/.bun/install/cache/
 
 when:
   - event: pull_request
