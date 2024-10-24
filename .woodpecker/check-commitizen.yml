@@ -7,7 +7,7 @@ steps:
     environment:
       # renovate: datasource=pypi depName=commitizen versioning=pep440
       COMMITIZEN_VERSION: 3.30.0
-    image: docker.io/library/python:3.13.0-alpine@sha256:feee4734fdc44cc09a3c9cdb72e05bb8ff7e964f64766bc1a68638b2c667cf35
+    image: docker.io/library/python:3.13.0-alpine@sha256:c38ead8bcf521573dad837d7ecfdebbc87792202e89953ba8b2b83a9c5a520b6
     name: check-commitizen
     volumes:
       - wp-cache_global_pip:/cache/pip
