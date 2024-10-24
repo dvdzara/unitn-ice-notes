@@ -40,7 +40,7 @@ const macros = {
   "\\graf": "\\text{graf}\\(#1\\)",
 
   // Derivative of a function.
-  "\\dx": "D\\left[ #1 \\right]",
+  "\\dx": "D\\[ #1 \\]",
 
   "\\matrix": "\\begin{bmatrix} #1 \\end{bmatrix}",
 

@@ -1,13 +1,12 @@
 {
   "name": "unitn-ice-notes",
-  "build": {
-    "dockerfile": "Dockerfile"
-  },
+  "image": "docker.io/denoland/deno:2.0.2",
   "customizations": {
     "vscode": {
       "extensions": [
         "astro-build.astro-vscode",
         "DavidAnson.vscode-markdownlint",
+        "denoland.vscode-deno",
         "esbenp.prettier-vscode",
         "redhat.vscode-yaml",
         "streetsidesoftware.code-spell-checker-italian",
@@ -16,10 +15,10 @@
       ]
     }
   },
-  "features": {
-    "ghcr.io/devcontainers/features/common-utils": {},
-    "ghcr.io/devcontainers/features/git": {}
+  "postCreateCommand": {
+    "install git": "apt-get update && apt-get install --no-install-recommends -y ca-certificates git gpg"
   },
-  "postCreateCommand": "corepack prepare pnpm && pnpm install && pnpm exec playwright install chromium --with-deps",
-  "postStartCommand": "pnpm install"
+  "postStartCommand": {
+    "set git editor": "git config --global core.editor code"
+  }
 }
