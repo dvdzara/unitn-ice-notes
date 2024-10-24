@@ -30,7 +30,9 @@
     "katex": "0.16.11",
     "postcss": "8.4.47",
     "rehype-katex": "7.0.1",
-    "remark-math": "6.0.0",
+    "remark-math": "6.0.0"
+  },
+  "trustedDependencies": {
     "sharp": "0.33.5"
   }
 }

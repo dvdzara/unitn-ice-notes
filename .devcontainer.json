@@ -19,6 +19,7 @@
   },
   "postStartCommand": {
     "set git editor": "git config --global core.editor code",
-    "set git safe directory": "git config --global --add safe.directory /workspaces/unitn-ice-notes"
+    "set git safe directory": "git config --global --add safe.directory /workspaces/unitn-ice-notes",
+    "bun install": "bun install"
   }
 }
