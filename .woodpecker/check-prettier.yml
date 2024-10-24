@@ -4,7 +4,7 @@ steps:
   - commands:
       - bun install
       - bun run check:prettier
-    image: docker.io/oven/bun:1.1.33-alpine
+    image: docker.io/oven/bun:1.1.33-slim
     name: check-prettier
     volumes:
       - wp-cache_global_bun:/root/.bun/install/cache/

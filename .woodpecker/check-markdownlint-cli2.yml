@@ -6,7 +6,7 @@ steps:
     environment:
       # renovate: datasource=npm depName=markdownlint-cli2 versioning=npm
       MARKDOWNLINT_CLI2_VERSION: 0.14.0
-    image: docker.io/oven/bun:1.1.33-alpine
+    image: docker.io/oven/bun:1.1.33-slim
     name: check-markdownlint-cli2
     volumes:
       - wp-cache_global_bun:/root/.bun/install/cache/
