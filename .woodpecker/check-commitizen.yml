@@ -3,7 +3,7 @@
 steps:
   - commands:
       - pip install --root-user-action=ignore --cache-dir=/cache/pip --progress-bar=off "commitizen==$COMMITIZEN_VERSION"
-      - cz check --rev-range "$CI_REPO_DEFAULT_BRANCH"..HEAD
+      - cz check --message "$CI_COMMIT_MESSAGE"
     environment:
       # renovate: datasource=pypi depName=commitizen versioning=pep440
       COMMITIZEN_VERSION: 3.30.0
