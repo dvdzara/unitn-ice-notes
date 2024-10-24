@@ -2,8 +2,8 @@
 
 steps:
   - commands:
-      # Used by starlight's lastUpdated option.
-      - apk add --no-cache git
+      - apt update
+      - apt install --no-install-recommends -y git
       - bun install
       - bun run build
     image: docker.io/oven/bun:1.1.33-alpine
