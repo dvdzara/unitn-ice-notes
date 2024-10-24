@@ -4,7 +4,7 @@ steps:
   - commands:
       - bun install
       - bun run check:astro
-    image: docker.io/oven/bun:1.1.33-alpine@sha256:3dc101cc42433f8a470da07701441afdb1aab4c6d056a291eb405e348c5a5c37
+    image: docker.io/oven/bun:1.1.33-slim
     name: check-astro
     volumes:
       - wp-cache_global_bun:/root/.bun/install/cache/
