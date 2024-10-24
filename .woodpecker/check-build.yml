@@ -2,6 +2,7 @@
 
 steps:
   - commands:
+      # Used by starlight's lastUpdated option.
       - apk add --no-cache git
       - bun install
       - bun run build

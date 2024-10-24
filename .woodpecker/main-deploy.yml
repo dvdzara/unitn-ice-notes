@@ -2,6 +2,7 @@
 
 steps:
   - commands:
+      # Used by starlight's lastUpdated option.
       - apk add --no-cache git
       - bun install
       - bun run build
@@ -9,7 +10,6 @@ steps:
     name: build
     volumes:
       - wp-cache_global_bun:/root/.bun/install/cache/
-  # Need to wait for Deno to support some NodeJS cli options.
   - commands:
       - bun x "wrangler@$WRANGLER_VERSION" pages deploy ./dist --project-name $CI_REPO_NAME
     environment:

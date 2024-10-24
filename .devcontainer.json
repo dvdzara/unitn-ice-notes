@@ -6,7 +6,6 @@
       "extensions": [
         "astro-build.astro-vscode",
         "DavidAnson.vscode-markdownlint",
-        "denoland.vscode-deno",
         "esbenp.prettier-vscode",
         "redhat.vscode-yaml",
         "streetsidesoftware.code-spell-checker-italian",
@@ -20,7 +19,6 @@
   },
   "postStartCommand": {
     "set git editor": "git config --global core.editor code",
-    "set git safe directory": "git config --global --add safe.directory /workspaces/unitn-ice-notes",
-    "deno install": "bun install"
+    "set git safe directory": "git config --global --add safe.directory /workspaces/unitn-ice-notes"
   }
 }
