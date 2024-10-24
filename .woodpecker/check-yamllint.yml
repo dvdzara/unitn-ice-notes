@@ -2,7 +2,7 @@
 
 steps:
   - commands:
-      - pip install --root-user-action=ignore --cache-dir=/cache/pip --progress-bar=off "yamllint==$YAMLLINT_VERSION"
+      - pip install --root-user-action=ignore --progress-bar=off "yamllint==$YAMLLINT_VERSION"
       - yamllint .
     environment:
       # renovate: datasource=pypi depName=yamllint versioning=pep440
@@ -10,7 +10,7 @@ steps:
     image: docker.io/library/python:3.13.0-alpine@sha256:c38ead8bcf521573dad837d7ecfdebbc87792202e89953ba8b2b83a9c5a520b6
     name: check-yamllint
     volumes:
-      - wp-cache_global_pip:/cache/pip
+      - wp-cache_global_pip:/root/.cache/pip
 
 when:
   - event: pull_request

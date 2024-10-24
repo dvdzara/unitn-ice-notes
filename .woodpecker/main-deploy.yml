@@ -2,25 +2,24 @@
 
 steps:
   - commands:
-      - deno install --allow-scripts
-      - deno run build
-    image: docker.io/denoland/deno:2.0.2@sha256:22d5b3a7164db3190b9591aa270f1f5e65c888ba38fa5f489532b58d57a4dd6d
+      - bun install
+      - bun run build
+    image: docker.io/oven/bun:1.1.33-alpine
     name: build
     volumes:
-      - wp-cache_global_deno:/deno-dir
+      - wp-cache_global_bun:/root/.bun/install/cache/
   # Need to wait for Deno to support some NodeJS cli options.
   - commands:
-      - npm config --global set progress false
-      - npx "wrangler@$WRANGLER_VERSION" pages deploy ./dist --project-name $CI_REPO_NAME
+      - bun x "wrangler@$WRANGLER_VERSION" pages deploy ./dist --project-name $CI_REPO_NAME
     environment:
       CLOUDFLARE_API_TOKEN:
         from_secret: CLOUDFLARE_API_TOKEN
-      GITHUB_TOKEN:
-        from_secret: GITHUB_TOKEN
       # renovate: datasource=npm depName=wrangler versioning=npm
       WRANGLER_VERSION: 3.83.0
-    image: docker.io/library/node:23.0.0-alpine@sha256:b20f8fad528b0e768936cb88ccb7b0e37cf41587d177e2d6fcdbd48bb4e083ec
+    image: docker.io/oven/bun:1.1.33-alpine
     name: deploy
+    volumes:
+      - wp-cache_global_bun:/root/.bun/install/cache/
 
 when:
   - branch: main

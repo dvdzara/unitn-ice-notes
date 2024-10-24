@@ -50,8 +50,8 @@ Tutti gli esempi in C possono essere compilati con il comando:
 
 ```sh
 # Compila il codice.
-clang file-esempio.c -o a.out
-# Avvia il programma.
+clang -std=c89 -Wall -Wpedantic -Wextra -o a.out main.c
+# Esegue il programma.
 ./a.out
 ```
 
