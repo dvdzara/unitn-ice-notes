@@ -2,7 +2,7 @@ import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
 
 import remarkMath from "remark-math";
-import rehypeTemml from "./src/lib/rehype-temml";
+import rehypeTemml from "./src/lib/rehype-temml.ts";
 
 export default defineConfig({
   site: "https://ice-notes.zarantonello.dev",

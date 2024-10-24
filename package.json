@@ -18,14 +18,15 @@
     "@types/hast": "3.0.4",
     "hast-util-from-html": "2.0.3",
     "hast-util-to-string": "3.0.1",
-    "prettier-plugin-astro": "0.14.1",
     "prettier": "3.3.3",
+    "prettier-plugin-astro": "0.14.1",
     "typescript": "5.6.3",
     "unist-util-visit-parents": "6.0.1"
   },
   "dependencies": {
     "@astrojs/starlight": "0.28.3",
     "astro": "4.16.7",
+    "postcss": "8.4.47",
     "remark-math": "6.0.0",
     "sharp": "0.33.5",
     "temml": "0.10.29"
